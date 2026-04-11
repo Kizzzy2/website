@@ -1,4 +1,16 @@
+import { useState, useEffect } from 'react'
 import './Home.css'
+import img from '../lib/images'
+
+const heroSlides = [
+  { src: img.lamboUrus, alt: 'White Lamborghini Urus mobile detailing in Cypress TX', caption: 'Lamborghini Urus — Full Detail Reset, Cypress, TX' },
+  { src: img.ceramicVette, alt: 'Orange Corvette ZR1 ceramic coated by LabShine Houston TX', caption: 'Corvette ZR1 — Ceramic Coating, Houston, TX' },
+  { src: img.rollsGhost, alt: 'White Rolls Royce Ghost full detail with LabShine mobile unit Sugar Land TX', caption: 'Rolls Royce Ghost — Full Detail, Sugar Land, TX' },
+  { src: img.blackM3, alt: 'Black BMW M3 Competition exterior detail Cypress TX', caption: 'BMW M3 Competition — Exterior Detail, Cypress, TX' },
+  { src: img.ferrariFront, alt: 'White Ferrari California T full detail Katy TX', caption: 'Ferrari California T — Full Detail, Katy, TX' },
+  { src: img.rangeRoverSV, alt: 'Matte blue Range Rover SV ceramic coating The Woodlands TX', caption: 'Range Rover SV — Ceramic Coating, The Woodlands, TX' },
+  { src: img.escaladeRed, alt: 'Cadillac Escalade Sport matte red full detail Houston TX', caption: 'Cadillac Escalade Sport — Full Detail, Houston, TX' },
+]
 
 const services = [
   { icon: '🚗', title: 'Full Detail', desc: 'Complete interior and exterior detailing for a showroom-worthy finish.' },
@@ -17,18 +29,35 @@ const areas = [
 ]
 
 export default function Home() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent(c => (c + 1) % heroSlides.length)
+    }, 4500)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <main>
-      {/* Hero */}
+      {/* Hero with slideshow */}
       <section className="hero" id="home">
-        <div className="hero-overlay" />
+        {heroSlides.map((slide, i) => (
+          <div
+            key={i}
+            className="hero-slide"
+            style={{ backgroundImage: `url(${slide.src})`, opacity: i === current ? 1 : 0 }}
+          />
+        ))}
+        <div className="hero-overlay-l" />
+        <div className="hero-overlay-b" />
         <div className="hero-content container">
           <span className="hero-badge">Houston Mobile Detailing</span>
           <h1 className="hero-title">Your Vehicle,<br/>Our Obsession.</h1>
           <p className="hero-sub">
             Professional mobile auto detailing at your driveway, garage, or office.
-            Ceramic coating, paint correction, interior detailing, and full detail services
-            delivered across Houston and 24 surrounding cities.
+            Ceramic coating, paint correction, interior detailing, and full detail
+            services delivered across Houston and 24 surrounding cities.
           </p>
           <div className="hero-btns">
             <a href="https://app.squareup.com/appointments/book/labshine" target="_blank" rel="noopener" className="btn-primary">
@@ -43,6 +72,18 @@ export default function Home() {
             <span>•</span>
             <span>24 Cities Served</span>
           </div>
+          <div className="hero-caption">{heroSlides[current].caption}</div>
+        </div>
+        {/* Slide dots */}
+        <div className="hero-dots">
+          {heroSlides.map((_, i) => (
+            <button
+              key={i}
+              className={`hero-dot${i === current ? ' active' : ''}`}
+              onClick={() => setCurrent(i)}
+              aria-label={`Slide ${i + 1}`}
+            />
+          ))}
         </div>
       </section>
 
@@ -89,10 +130,19 @@ export default function Home() {
                 Get a Quote
               </a>
             </div>
-            <div className="ceramic-image">
-              <div className="ceramic-glow" />
+            <div className="ceramic-image" style={{ backgroundImage: `url(${img.ceramicVette})` }}>
+              <div className="ceramic-badge">9H Ceramic</div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Gallery Strip */}
+      <section className="gallery-strip">
+        <div className="gallery-strip-grid">
+          {[img.bmwX6M, img.challengerPink, img.raptorWhite, img.bmwM4Carbon, img.vetteZR1Porsche, img.porsche911Rear].map((src, i) => (
+            <div key={i} className="gallery-strip-item" style={{ backgroundImage: `url(${src})` }} />
+          ))}
         </div>
       </section>
 
