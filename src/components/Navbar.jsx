@@ -1,65 +1,71 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './Navbar.css'
+import img from '../lib/images'
 
-const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Services', href: '/#services' },
-  { label: 'Ceramic Coating', href: '/#ceramic' },
-  { label: 'Pricing', href: '/#pricing' },
-  { label: 'Gallery', href: '/#gallery' },
-  { label: 'About', href: '/#about' },
-  { label: 'Areas', href: '/#areas' },
-  { label: 'Fleet', href: '/#fleet' },
-  { label: 'Blog', href: '/blog' },
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/ceramic-coating', label: 'Ceramic Coating' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/about', label: 'About' },
+  { href: '/areas', label: 'Areas' },
+  { href: '/fleet', label: 'Fleet' },
+  { href: '/blog', label: 'Blog' },
 ]
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
+    const handleScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  useEffect(() => {
-    setMenuOpen(false)
-  }, [location])
+  useEffect(() => { setOpen(false) }, [location])
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="nav-container">
+    <header className={`navbar${scrolled ? ' scrolled' : ''}`}>
+      <div className="nav-inner">
         <Link to="/" className="nav-logo">
-          <img src="/logo.png" alt="LabShine Auto Detailing" />
+          <img src={img.logo} alt="LabShine Auto Detailing" className="logo-img" />
         </Link>
 
-        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+        <nav className={`nav-links${open ? ' open' : ''}`}>
+          {links.map(l => (
+            <Link
+              key={l.href}
+              to={l.href}
+              className={`nav-link${location.pathname === l.href ? ' active' : ''}`}
+            >
+              {l.label}
+            </Link>
+          ))}
+          <a
+            href="https://app.squareup.com/appointments/book/labshine"
+            target="_blank"
+            rel="noopener"
+            className="btn-primary nav-book"
+          >
+            Book Now
+          </a>
+          <a href="tel:3464529991" className="nav-phone">
+            📞 (346) 452-9991
+          </a>
+        </nav>
+
+        <button
+          className={`hamburger${open ? ' open' : ''}`}
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
           <span /><span /><span />
         </button>
-
-        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          {navLinks.map(link => (
-            <li key={link.label}>
-              <a href={link.href} className={location.pathname === link.href ? 'active' : ''}>
-                {link.label}
-              </a>
-            </li>
-          ))}
-          <li>
-            <a href="https://app.squareup.com/appointments/book/labshine" target="_blank" rel="noopener" className="nav-book-btn">
-              Book Now
-            </a>
-          </li>
-          <li>
-            <a href="tel:3464529991" className="nav-phone">
-              📞 (346) 452-9991
-            </a>
-          </li>
-        </ul>
       </div>
-    </nav>
+    </header>
   )
 }
