@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import './Pricing.css'
 import img from '../lib/images'
 
@@ -137,6 +138,17 @@ const services = [
 
 export default function Pricing() {
   return (
+    <>
+    <Helmet>
+      <title>Auto Detailing Prices Houston | Full Detail $199 | LabShine</title>
+      <meta name="description" content="Transparent auto detailing pricing in Houston. Full detail from $199, interior detail from $175, ceramic coating from $500, paint correction from $350. No hidden fees." />
+      <link rel="canonical" href="https://labshineautodetailing.com/pricing" />
+      <meta property="og:title" content="Auto Detailing Prices Houston | LabShine" />
+      <meta property="og:description" content="Transparent detailing prices. Full detail $199, interior $175, ceramic coating $500. No hidden fees. Houston mobile detailing." />
+      <meta property="og:url" content="https://labshineautodetailing.com/pricing" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
+    </Helmet>
     <main className="pricing-page">
       <section className="page-hero" style={{ backgroundImage: `url(${img.escaladeRed})` }}>
         <div className="page-hero-overlay" />
@@ -210,5 +222,6 @@ export default function Pricing() {
         </div>
       </section>
     </main>
+    </>
   )
 }

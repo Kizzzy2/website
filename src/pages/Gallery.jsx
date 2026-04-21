@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import './Gallery.css'
 import img from '../lib/images'
 
@@ -38,6 +39,17 @@ export default function Gallery() {
   const filtered = filter === 'All' ? galleryItems : galleryItems.filter(i => i.cat === filter)
 
   return (
+    <>
+    <Helmet>
+      <title>Before & After Detailing Gallery | Houston Cars | LabShine</title>
+      <meta name="description" content="See LabShine's before and after detailing results — Ferraris, Lamborghinis, Rolls Royces, BMW M cars, and more. Houston's finest mobile auto detailing gallery." />
+      <link rel="canonical" href="https://labshineautodetailing.com/gallery" />
+      <meta property="og:title" content="Before & After Detailing Gallery | LabShine Houston" />
+      <meta property="og:description" content="Real results from real Houston cars. Before and after photos of full details, ceramic coatings, and paint correction." />
+      <meta property="og:url" content="https://labshineautodetailing.com/gallery" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
+    </Helmet>
     <main className="gallery-page">
       <section className="page-hero" style={{ backgroundImage: `url(${img.vetteZR1Porsche})` }}>
         <div className="page-hero-overlay" />
@@ -102,5 +114,6 @@ export default function Gallery() {
         </div>
       </section>
     </main>
+    </>
   )
 }

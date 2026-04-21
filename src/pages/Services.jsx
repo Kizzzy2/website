@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import './Services.css'
 import img from '../lib/images'
 
@@ -70,6 +71,17 @@ const services = [
 
 export default function Services() {
   return (
+    <>
+    <Helmet>
+      <title>Mobile Detailing Services Houston | Full Detail, Paint Correction | LabShine</title>
+      <meta name="description" content="Full detail from $199, interior detail from $175, paint correction, ceramic coating, and fleet services. Professional mobile auto detailing in Houston — we come to you." />
+      <link rel="canonical" href="https://labshineautodetailing.com/services" />
+      <meta property="og:title" content="Mobile Detailing Services Houston | LabShine" />
+      <meta property="og:description" content="Full detail from $199, paint correction, ceramic coating & fleet services. Houston mobile auto detailing — we come to you." />
+      <meta property="og:url" content="https://labshineautodetailing.com/services" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
+    </Helmet>
     <main className="services-page">
       <section className="page-hero" style={{ backgroundImage: `url(${img.lamboUrus})` }}>
         <div className="page-hero-overlay" />
@@ -116,5 +128,6 @@ export default function Services() {
         </div>
       </section>
     </main>
+    </>
   )
 }

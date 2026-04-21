@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import './Fleet.css'
 import img from '../lib/images'
 
@@ -19,6 +20,17 @@ const benefits = [
 
 export default function Fleet() {
   return (
+    <>
+    <Helmet>
+      <title>Fleet Detailing Houston | Commercial Auto Detailing Programs | LabShine</title>
+      <meta name="description" content="Commercial fleet detailing in Houston for dealerships, service trucks, corporate vehicles, and large fleets. Recurring programs, volume pricing, and flexible scheduling." />
+      <link rel="canonical" href="https://labshineautodetailing.com/fleet" />
+      <meta property="og:title" content="Fleet Detailing Houston | Commercial Programs | LabShine" />
+      <meta property="og:description" content="Fleet detailing for Houston dealerships, service companies, and corporate fleets. Recurring programs and volume pricing available." />
+      <meta property="og:url" content="https://labshineautodetailing.com/fleet" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
+    </Helmet>
     <main className="fleet-page">
       <section className="page-hero" style={{ backgroundImage: `url(${img.poolTruck})` }}>
         <div className="page-hero-overlay" />
@@ -100,5 +112,6 @@ export default function Fleet() {
         </div>
       </section>
     </main>
+    </>
   )
 }

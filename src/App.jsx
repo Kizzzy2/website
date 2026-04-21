@@ -11,6 +11,14 @@ import Areas from './pages/Areas'
 import Fleet from './pages/Fleet'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
+import Testimonials from './pages/Testimonials'
+import Contact from './pages/Contact'
+import FulshearMobileDetailing from './pages/FulshearMobileDetailing'
+import KatyMobileDetailing from './pages/KatyMobileDetailing'
+import CypressMobileDetailing from './pages/CypressMobileDetailing'
+import SugarLandMobileDetailing from './pages/SugarLandMobileDetailing'
+import WoodlandsMobileDetailing from './pages/WoodlandsMobileDetailing'
+import PearlandMobileDetailing from './pages/PearlandMobileDetailing'
 
 export default function App() {
   return (
@@ -27,6 +35,14 @@ export default function App() {
         <Route path="/fleet" element={<Fleet />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/fulshear-mobile-detailing" element={<FulshearMobileDetailing />} />
+        <Route path="/katy-mobile-detailing" element={<KatyMobileDetailing />} />
+        <Route path="/cypress-mobile-detailing" element={<CypressMobileDetailing />} />
+        <Route path="/sugar-land-mobile-detailing" element={<SugarLandMobileDetailing />} />
+        <Route path="/woodlands-mobile-detailing" element={<WoodlandsMobileDetailing />} />
+        <Route path="/pearland-mobile-detailing" element={<PearlandMobileDetailing />} />
       </Routes>
       <Footer />
     </>

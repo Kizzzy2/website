@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import './Ceramic.css'
 import img from '../lib/images'
 
@@ -18,6 +19,17 @@ const faqs = [
 
 export default function CeramicCoating() {
   return (
+    <>
+    <Helmet>
+      <title>Ceramic Coating Houston TX | 9H Paint Protection | LabShine</title>
+      <meta name="description" content="Professional 9H ceramic coating in Houston from $500. 2–5 years of paint protection, hydrophobic effect, and showroom gloss. Certified mobile application — we come to you." />
+      <link rel="canonical" href="https://labshineautodetailing.com/ceramic-coating" />
+      <meta property="og:title" content="Ceramic Coating Houston TX | 9H Paint Protection | LabShine" />
+      <meta property="og:description" content="Professional 9H ceramic coating from $500. 2–5 years of paint protection in Houston's brutal heat. Mobile application — we come to you." />
+      <meta property="og:url" content="https://labshineautodetailing.com/ceramic-coating" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
+    </Helmet>
     <main className="ceramic-page">
       <section className="page-hero" style={{ backgroundImage: `url(${img.ceramicVette})` }}>
         <div className="page-hero-overlay" />
@@ -158,5 +170,6 @@ export default function CeramicCoating() {
         </div>
       </section>
     </main>
+    </>
   )
 }

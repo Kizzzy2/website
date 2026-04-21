@@ -1,6 +1,53 @@
 import { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 import './Home.css'
 import img from '../lib/images'
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "AutoRepair"],
+  "name": "LabShine Auto Detailing",
+  "description": "Houston's premier mobile auto detailing service. Full detail, ceramic coating, paint correction, and interior detail. We come to you.",
+  "url": "https://labshineautodetailing.com",
+  "telephone": "+18322577574",
+  "priceRange": "$$",
+  "image": "https://labshineautodetailing.com/og-image.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Houston",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 29.7604,
+    "longitude": -95.3698
+  },
+  "areaServed": [
+    "Houston TX", "Cypress TX", "Katy TX", "Sugar Land TX",
+    "The Woodlands TX", "Pearland TX", "Spring TX", "Friendswood TX",
+    "Missouri City TX", "League City TX", "Conroe TX", "Humble TX"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "127",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "07:00",
+      "closes": "19:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/labshinedetailing",
+    "https://www.facebook.com/labshinedetailing"
+  ]
+}
 
 const heroSlides = [
   { src: img.lamboUrus, alt: 'White Lamborghini Urus mobile detailing in Cypress TX', caption: 'Lamborghini Urus — Full Detail Reset, Cypress, TX' },
@@ -39,6 +86,21 @@ export default function Home() {
   }, [])
 
   return (
+    <>
+    <Helmet>
+      <title>LabShine Auto Detailing | Houston Mobile Detailing & Ceramic Coating</title>
+      <meta name="description" content="Houston's #1 mobile auto detailing. Full detail from $199, ceramic coating from $500, paint correction. We come to your home, office, or garage. 24+ cities served." />
+      <link rel="canonical" href="https://labshineautodetailing.com/" />
+      <meta property="og:title" content="LabShine Auto Detailing | Houston Mobile Detailing & Ceramic Coating" />
+      <meta property="og:description" content="Houston's premier mobile auto detailing. Full detail from $199, ceramic coating from $500. We come to you — driveway, garage, or office. 24+ cities served." />
+      <meta property="og:url" content="https://labshineautodetailing.com/" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="LabShine Auto Detailing | Houston Mobile Detailing" />
+      <meta name="twitter:description" content="Houston's premier mobile detailing. Full detail from $199. We come to you. 24+ cities." />
+      <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
+    </Helmet>
     <main>
       {/* Hero with slideshow */}
       <section className="hero" id="home">
@@ -180,5 +242,6 @@ export default function Home() {
         </div>
       </section>
     </main>
+    </>
   )
 }

@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import './Areas.css'
 import img from '../lib/images'
 
@@ -30,6 +31,17 @@ const areas = [
 
 export default function Areas() {
   return (
+    <>
+    <Helmet>
+      <title>Mobile Detailing Service Areas | 24+ Houston Cities | LabShine</title>
+      <meta name="description" content="LabShine mobile auto detailing serves 24+ cities across Greater Houston including Cypress, Katy, Sugar Land, The Woodlands, Pearland, Spring, League City, and more." />
+      <link rel="canonical" href="https://labshineautodetailing.com/areas" />
+      <meta property="og:title" content="Service Areas | 24+ Houston Cities | LabShine" />
+      <meta property="og:description" content="Mobile detailing across Greater Houston — Cypress, Katy, Sugar Land, The Woodlands, Pearland, Spring, and 18 more cities." />
+      <meta property="og:url" content="https://labshineautodetailing.com/areas" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
+    </Helmet>
     <main className="areas-page">
       <section className="page-hero" style={{ backgroundImage: `url(${img.raptorWhite})` }}>
         <div className="page-hero-overlay" />
@@ -74,5 +86,6 @@ export default function Areas() {
         </div>
       </section>
     </main>
+    </>
   )
 }

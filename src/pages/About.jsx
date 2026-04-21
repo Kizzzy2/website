@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import './About.css'
 import img from '../lib/images'
 
@@ -10,6 +11,17 @@ const stats = [
 
 export default function About() {
   return (
+    <>
+    <Helmet>
+      <title>About LabShine | Houston's Mobile Auto Detailing Experts</title>
+      <meta name="description" content="LabShine Auto Detailing — Houston's premier mobile detailing team. 500+ vehicles detailed, 5-star rated, serving Cypress, Katy, Sugar Land, The Woodlands, and 24+ Houston cities." />
+      <link rel="canonical" href="https://labshineautodetailing.com/about" />
+      <meta property="og:title" content="About LabShine | Houston's Mobile Detailing Experts" />
+      <meta property="og:description" content="500+ vehicles detailed. 5-star rated. Serving 24+ Houston cities with professional mobile auto detailing." />
+      <meta property="og:url" content="https://labshineautodetailing.com/about" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
+    </Helmet>
     <main className="about-page">
       <section className="page-hero" style={{ backgroundImage: `url(${img.bmwX6MAbout})` }}>
         <div className="page-hero-overlay" />
@@ -102,5 +114,6 @@ export default function About() {
         </div>
       </section>
     </main>
+    </>
   )
 }

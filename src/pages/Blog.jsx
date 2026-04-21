@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getBlogPosts } from '../lib/contentful'
+import { Helmet } from 'react-helmet-async'
 import './Blog.css'
 
 export default function Blog() {
@@ -9,7 +10,6 @@ export default function Blog() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    document.title = 'Blog | LabShine Auto Detailing Houston'
     getBlogPosts()
       .then(setPosts)
       .catch(() => setError('Could not load posts. Please try again later.'))
@@ -17,6 +17,17 @@ export default function Blog() {
   }, [])
 
   return (
+    <>
+    <Helmet>
+      <title>Auto Detailing Blog | Houston Car Care Tips | LabShine</title>
+      <meta name="description" content="Expert auto detailing tips, ceramic coating guides, paint correction advice, and Houston car care news from LabShine's mobile detailing team." />
+      <link rel="canonical" href="https://labshineautodetailing.com/blog" />
+      <meta property="og:title" content="Auto Detailing Blog | Houston Car Care Tips | LabShine" />
+      <meta property="og:description" content="Ceramic coating guides, detailing tips, and Houston car care advice from LabShine's expert team." />
+      <meta property="og:url" content="https://labshineautodetailing.com/blog" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
+    </Helmet>
     <main className="blog-page">
       <div className="blog-hero">
         <div className="container">
@@ -75,5 +86,6 @@ export default function Blog() {
         )}
       </div>
     </main>
+    </>
   )
 }
