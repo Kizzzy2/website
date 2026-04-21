@@ -1,5 +1,1 @@
-/blog              /blog/index.html                        200
-/blog/             /blog/index.html                        200
-/blog/posts/:slug  /blog/posts/:slug/index.html            200
-/blog/posts/:slug/ /blog/posts/:slug/index.html            200
-/*                 /index.html                             200
+/*    /index.html   200
