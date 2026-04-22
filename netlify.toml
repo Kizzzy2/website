@@ -1,5 +1,9 @@
 [build]
+  command = ""
   publish = "."
+
+[build.environment]
+  NODE_VERSION = "18"
 
 [[redirects]]
   from = "/blog"
