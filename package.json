@@ -2,6 +2,6 @@
   "name": "labshine",
   "version": "1.0.0",
   "scripts": {
-    "build": "echo 'No build needed — static site'"
+    "build": "mkdir -p dist/assets dist/blog && cp index.html dist/index.html && cp assets/index-BVkxXJWg.js dist/assets/ && cp assets/index-BtQPpQ33.css dist/assets/ && cp -r blog dist/ && cp sitemap.xml robots.txt _redirects dist/ && echo 'Static copy complete'"
   }
 }
