@@ -2,6 +2,6 @@
   "name": "labshine",
   "version": "1.0.0",
   "scripts": {
-    "build": "mkdir -p dist/assets dist/blog dist/cypress-tx dist/katy-tx && cp index.html dist/index.html && cp assets/index-BVkxXJWg.js dist/assets/ && cp assets/index-BtQPpQ33.css dist/assets/ && cp -r blog dist/ && cp -r cypress-tx dist/ && cp -r katy-tx dist/ && cp sitemap.xml robots.txt _redirects dist/ && echo 'Static copy complete'"
+    "build": "mkdir -p dist/assets dist/blog dist/cypress-tx dist/katy-tx dist/services dist/ceramic-coating dist/pricing dist/gallery dist/about dist/areas dist/fleet && cp index.html dist/index.html && cp assets/index-BVkxXJWg.js dist/assets/ && cp assets/index-BtQPpQ33.css dist/assets/ && cp -r blog dist/ && cp -r cypress-tx dist/ && cp -r katy-tx dist/ && cp -r services dist/ && cp -r ceramic-coating dist/ && cp -r pricing dist/ && cp -r gallery dist/ && cp -r about dist/ && cp -r areas dist/ && cp -r fleet dist/ && cp sitemap.xml robots.txt _redirects dist/ && echo 'Static copy complete'"
   }
 }
