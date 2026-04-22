@@ -2,6 +2,6 @@
   "name": "labshine",
   "version": "1.0.0",
   "scripts": {
-    "build": "mkdir -p dist/assets dist/blog && cp index.html dist/index.html && cp assets/index-BVkxXJWg.js dist/assets/ && cp assets/index-BtQPpQ33.css dist/assets/ && cp -r blog dist/ && cp sitemap.xml robots.txt _redirects dist/ && echo 'Static copy complete'"
+    "build": "mkdir -p dist/assets dist/blog dist/cypress-tx dist/katy-tx && cp index.html dist/index.html && cp assets/index-BVkxXJWg.js dist/assets/ && cp assets/index-BtQPpQ33.css dist/assets/ && cp -r blog dist/ && cp -r cypress-tx dist/ && cp -r katy-tx dist/ && cp sitemap.xml robots.txt _redirects dist/ && echo 'Static copy complete'"
   }
 }

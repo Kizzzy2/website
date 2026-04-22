@@ -23,6 +23,36 @@
   status = 200
 
 [[redirects]]
+  from = "/cypress-tx"
+  to = "/cypress-tx/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/cypress-tx/"
+  to = "/cypress-tx/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/katy-tx"
+  to = "/katy-tx/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/katy-tx/"
+  to = "/katy-tx/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/mobile-detailing-cypress-tx"
+  to = "/cypress-tx/index.html"
+  status = 301
+
+[[redirects]]
+  from = "/mobile-detailing-katy-tx"
+  to = "/katy-tx/index.html"
+  status = 301
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

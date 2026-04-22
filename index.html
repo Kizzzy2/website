@@ -34,7 +34,7 @@
     <meta name="ICBM" content="29.7604, -95.3698" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663456637193/ITctqCZZMmNSkFsZ.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -73,9 +73,10 @@
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "62",
-        "bestRating": "5"
+        "ratingValue": "5.0",
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
       },
       "openingHoursSpecification": [
         {
@@ -131,12 +132,72 @@
           }
         ]
       },
-      "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"127","bestRating":"5","worstRating":"1"},"sameAs": [
+      "sameAs": [
         "https://www.instagram.com/labshineautodetailingtx",
         "https://www.tiktok.com/@labshineautodetailingtx",
         "https://www.facebook.com/labshineautodetailingtx"
       ]
     }
+    </script>
+    <!-- Per-route title & meta updater -->
+    <script>
+    (function() {
+      var routes = {
+        '/': 'LabShine Auto Detailing | Houston Mobile Detailing',
+        '/services': 'Mobile Detailing Services Houston | LabShine Auto Detailing',
+        '/ceramic-coating': 'Ceramic Coating Houston TX | LabShine Auto Detailing',
+        '/pricing': 'Auto Detailing Prices Houston | LabShine | From $199',
+        '/gallery': 'Detailing Gallery | Houston Car Detailing Photos | LabShine',
+        '/about': 'About LabShine | Houston Mobile Detailing Experts',
+        '/areas': 'Service Areas | Houston Mobile Detailing | LabShine',
+        '/fleet': 'Fleet Detailing Houston TX | Commercial Vehicle Detail | LabShine',
+        '/blog': 'Auto Detailing Blog | Houston Car Care Tips | LabShine',
+        '/contact': 'Contact LabShine Auto Detailing | Mobile Detailing Houston TX | (346) 452-9991',
+        '/booking': 'Book Mobile Detailing Houston | LabShine Auto Detailing',
+      };
+      var descs = {
+        '/': "Houston's #1 mobile auto detailing. Full detail from $199, ceramic coating from $500. We come to your driveway in Cypress, Katy, Sugar Land & 24+ Houston cities.",
+        '/services': 'Full detail, ceramic coating, paint correction, interior detail, and more — all mobile. LabShine comes to your Houston home or office.',
+        '/ceramic-coating': 'Professional ceramic coating in Houston TX starting at $500. 3–7 year protection against UV, humidity, and bird droppings. LabShine comes to you.',
+        '/pricing': 'Transparent mobile detailing prices. Full detail from $199, ceramic coating from $500. No hidden fees. LabShine serves all of Greater Houston.',
+        '/gallery': 'See real before & after photos from LabShine detailing jobs — Lamborghinis, Ferraris, Corvettes, and everyday vehicles detailed across Houston TX.',
+        '/about': 'LabShine Auto Detailing — Houston-based mobile detailing with over 5 years of experience and 127 five-star reviews. We bring the detail shop to you.',
+        '/areas': 'LabShine serves 24+ cities across Greater Houston including Cypress, Katy, The Woodlands, Sugar Land, River Oaks, Pearland, and more.',
+        '/fleet': 'Commercial fleet detailing in Houston TX. Volume pricing for 5+ vehicles. Scheduled maintenance programs available. LabShine comes to your lot.',
+        '/contact': 'Contact LabShine Auto Detailing at (346) 452-9991 or text us. Serving Cypress, Katy, Houston & 24+ cities. Book online or call for a same-day quote.',
+      };
+      function setMeta(path) {
+        var title = routes[path] || routes['/'];
+        var desc = descs[path] || descs['/'];
+        document.title = title;
+        var dm = document.querySelector('meta[name="description"]');
+        if (dm) dm.setAttribute('content', desc);
+        var ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.setAttribute('content', title);
+        var ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.setAttribute('content', desc);
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) canonical.setAttribute('href', 'https://labshineautodetailing.com' + (path === '/' ? '/' : path));
+      }
+      // Intercept history API
+      var origPush = history.pushState;
+      history.pushState = function() {
+        origPush.apply(this, arguments);
+        setMeta(location.pathname);
+      };
+      var origReplace = history.replaceState;
+      history.replaceState = function() {
+        origReplace.apply(this, arguments);
+        setMeta(location.pathname);
+      };
+      window.addEventListener('popstate', function() { setMeta(location.pathname); });
+      // Initial call after DOM ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() { setMeta(location.pathname); });
+      } else {
+        setMeta(location.pathname);
+      }
+    })();
     </script>
     <script type="module" crossorigin src="/assets/index-BVkxXJWg.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BtQPpQ33.css">
