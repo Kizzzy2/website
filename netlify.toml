@@ -93,6 +93,16 @@
   status = 200
 
 [[redirects]]
+  from = "/pricing"
+  to = "/pricing/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/pricing/"
+  to = "/pricing/index.html"
+  status = 200
+
+[[redirects]]
   from = "/mobile-detailing-cypress-tx"
   to = "/cypress-tx/index.html"
   status = 301
