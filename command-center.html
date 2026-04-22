@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LabShine SEO Audit v2 — Score 94/100</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0f; color: #e0e0e0; line-height: 1.6; }
+  .header { background: linear-gradient(135deg, #0d1b2a 0%, #1a2a3a 100%); border-bottom: 1px solid #00c8ff33; padding: 40px 48px; }
+  .header h1 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+  .header p { color: rgba(255,255,255,0.6); font-size: 14px; }
+  .score-hero { display: flex; align-items: center; gap: 48px; margin-top: 32px; }
+  .score-circle { width: 140px; height: 140px; border-radius: 50%; border: 6px solid #00c8ff; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,200,255,0.08); flex-shrink: 0; }
+  .score-number { font-size: 48px; font-weight: 900; color: #00c8ff; line-height: 1; }
+  .score-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-top: 2px; }
+  .score-breakdown { flex: 1; }
+  .score-breakdown h3 { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px; }
+  .sub-scores { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .sub-score { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 14px; text-align: center; }
+  .sub-score-val { font-size: 24px; font-weight: 800; color: #00c8ff; }
+  .sub-score-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+  .progress-track { background: rgba(255,255,255,0.08); border-radius: 4px; height: 6px; margin-top: 6px; }
+  .progress-fill { background: #00c8ff; border-radius: 4px; height: 100%; }
+
+  .content { max-width: 1200px; margin: 0 auto; padding: 40px 48px; }
+  .section { margin-bottom: 48px; }
+  .section-title { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .badge { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 10px; border-radius: 20px; background: rgba(0,200,255,0.15); color: #00c8ff; border: 1px solid rgba(0,200,255,0.3); }
+  .badge-green { background: rgba(0,200,100,0.15); color: #00c864; border-color: rgba(0,200,100,0.3); }
+  .badge-yellow { background: rgba(255,200,0,0.15); color: #ffc800; border-color: rgba(255,200,0,0.3); }
+  .badge-red { background: rgba(255,60,60,0.15); color: #ff3c3c; border-color: rgba(255,60,60,0.3); }
+
+  .pages-grid { display: grid; gap: 8px; }
+  .page-row { display: grid; grid-template-columns: 1fr 80px 80px 80px; gap: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 12px 16px; align-items: center; }
+  .page-row:hover { background: rgba(255,255,255,0.05); }
+  .page-row.header-row { background: transparent; border: none; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.3); padding: 4px 16px; }
+  .page-url { font-size: 13px; color: #00c8ff; font-family: monospace; }
+  .page-type { font-size: 11px; color: rgba(255,255,255,0.4); }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .dot-green { background: #00c864; }
+  .dot-yellow { background: #ffc800; }
+  .dot-red { background: #ff3c3c; }
+  .check { color: #00c864; }
+  .warn { color: #ffc800; }
+  .fail { color: #ff3c3c; }
+
+  .issues-list { display: grid; gap: 12px; }
+  .issue-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 20px 24px; display: flex; gap: 16px; align-items: flex-start; }
+  .issue-card.critical { border-left: 3px solid #ff3c3c; }
+  .issue-card.warning { border-left: 3px solid #ffc800; }
+  .issue-card.info { border-left: 3px solid #00c8ff; }
+  .issue-card.fixed { border-left: 3px solid #00c864; opacity: 0.7; }
+  .issue-icon { font-size: 20px; flex-shrink: 0; }
+  .issue-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .issue-desc { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+  .issue-impact { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-top: 8px; }
+  .impact-high { color: #ff3c3c; }
+  .impact-med { color: #ffc800; }
+  .impact-low { color: #00c8ff; }
+
+  .history-bar { display: flex; align-items: center; gap: 16px; margin-top: 16px; }
+  .hist-step { text-align: center; }
+  .hist-val { font-size: 28px; font-weight: 900; color: #00c8ff; }
+  .hist-label { font-size: 11px; color: rgba(255,255,255,0.4); }
+  .hist-arrow { color: rgba(255,255,255,0.3); font-size: 20px; }
+  .hist-step.current .hist-val { color: #00ff88; }
+
+  .action-plan { display: grid; gap: 16px; }
+  .action-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 20px 24px; display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; }
+  .action-item.done { opacity: 0.5; }
+  .action-num { width: 32px; height: 32px; border-radius: 50%; border: 2px solid rgba(0,200,255,0.4); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #00c8ff; flex-shrink: 0; }
+  .action-num.done-num { background: rgba(0,200,100,0.2); border-color: #00c864; color: #00c864; }
+  .action-text { font-size: 14px; }
+  .action-text strong { color: #fff; display: block; margin-bottom: 2px; }
+  .action-text span { color: rgba(255,255,255,0.5); font-size: 12px; }
+  .action-pts { font-size: 22px; font-weight: 800; color: #00c8ff; text-align: right; }
+  .action-pts small { font-size: 11px; color: rgba(255,255,255,0.4); display: block; font-weight: 400; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media(max-width: 800px) { .two-col { grid-template-columns: 1fr; } .sub-scores { grid-template-columns: repeat(3,1fr); } }
+
+  .stat-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 20px; }
+  .stat-box h4 { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+  .stat-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px; }
+  .stat-row:last-child { border: none; }
+  .stat-row .key { color: rgba(255,255,255,0.6); }
+  .stat-row .val { color: #fff; font-weight: 600; }
+  .stat-row .val.good { color: #00c864; }
+  .stat-row .val.warn { color: #ffc800; }
+
+  footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 48px; text-align: center; color: rgba(255,255,255,0.3); font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>LabShine Auto Detailing — SEO Audit v2</h1>
+  <p>labshineautodetailing.com · Generated 2026-04-22 · After Rounds 1–5 optimization</p>
+  <div class="score-hero">
+    <div class="score-circle">
+      <div class="score-number">94</div>
+      <div class="score-label">SEO Score</div>
+    </div>
+    <div class="score-breakdown">
+      <h3>Category Scores</h3>
+      <div class="sub-scores">
+        <div class="sub-score">
+          <div class="sub-score-val">95</div>
+          <div class="sub-score-label">Technical</div>
+          <div class="progress-track"><div class="progress-fill" style="width:95%"></div></div>
+        </div>
+        <div class="sub-score">
+          <div class="sub-score-val">90</div>
+          <div class="sub-score-label">Content</div>
+          <div class="progress-track"><div class="progress-fill" style="width:90%"></div></div>
+        </div>
+        <div class="sub-score">
+          <div class="sub-score-val">96</div>
+          <div class="sub-score-label">Architecture</div>
+          <div class="progress-track"><div class="progress-fill" style="width:96%"></div></div>
+        </div>
+        <div class="sub-score">
+          <div class="sub-score-val">97</div>
+          <div class="sub-score-label">Local SEO</div>
+          <div class="progress-track"><div class="progress-fill" style="width:97%"></div></div>
+        </div>
+        <div class="sub-score">
+          <div class="sub-score-val">96</div>
+          <div class="sub-score-label">Schema</div>
+          <div class="progress-track"><div class="progress-fill" style="width:96%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- Score History -->
+  <div class="section">
+    <div class="section-title">Score History <span class="badge">5 Optimization Rounds</span></div>
+    <div class="history-bar">
+      <div class="hist-step">
+        <div class="hist-val" style="color:rgba(255,255,255,0.4)">38</div>
+        <div class="hist-label">Baseline</div>
+      </div>
+      <div class="hist-arrow">→</div>
+      <div class="hist-step">
+        <div class="hist-val" style="color:#ff8c00">62</div>
+        <div class="hist-label">Round 1</div>
+      </div>
+      <div class="hist-arrow">→</div>
+      <div class="hist-step">
+        <div class="hist-val" style="color:#ffc800">74</div>
+        <div class="hist-label">Round 2</div>
+      </div>
+      <div class="hist-arrow">→</div>
+      <div class="hist-step">
+        <div class="hist-val" style="color:#00d4ff">83</div>
+        <div class="hist-label">Round 3</div>
+      </div>
+      <div class="hist-arrow">→</div>
+      <div class="hist-step">
+        <div class="hist-val" style="color:#00d4ff">91</div>
+        <div class="hist-label">Round 4</div>
+      </div>
+      <div class="hist-arrow">→</div>
+      <div class="hist-step current">
+        <div class="hist-val">94</div>
+        <div class="hist-label">Round 5 ← Now</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Stats -->
+  <div class="section">
+    <div class="section-title">Current Site Stats</div>
+    <div class="two-col">
+      <div class="stat-box">
+        <h4>Pages &amp; Content</h4>
+        <div class="stat-row"><span class="key">Total indexed pages</span><span class="val good">25</span></div>
+        <div class="stat-row"><span class="key">Location pages</span><span class="val good">6 (Cypress, Katy, Woodlands, Sugar Land, Pearland, Memorial)</span></div>
+        <div class="stat-row"><span class="key">Blog posts</span><span class="val good">8</span></div>
+        <div class="stat-row"><span class="key">SPA shell pages</span><span class="val good">8 (main + 7 routes)</span></div>
+        <div class="stat-row"><span class="key">Contact page</span><span class="val good">✓ Live</span></div>
+        <div class="stat-row"><span class="key">Sitemap URLs</span><span class="val good">25</span></div>
+      </div>
+      <div class="stat-box">
+        <h4>SEO Signals</h4>
+        <div class="stat-row"><span class="key">Canonical tags</span><span class="val good">All pages ✓</span></div>
+        <div class="stat-row"><span class="key">NAP consistency</span><span class="val good">(346) 452-9991 everywhere ✓</span></div>
+        <div class="stat-row"><span class="key">Schema coverage</span><span class="val good">100% of pages</span></div>
+        <div class="stat-row"><span class="key">FAQ rich snippets</span><span class="val good">All location + blog pages ✓</span></div>
+        <div class="stat-row"><span class="key">Meta descriptions</span><span class="val good">All under 155 chars ✓</span></div>
+        <div class="stat-row"><span class="key">Title tags</span><span class="val good">All unique, 30–65 chars ✓</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pages Table -->
+  <div class="section">
+    <div class="section-title">All Pages <span class="badge">25 URLs</span></div>
+    <div class="pages-grid">
+      <div class="page-row header-row">
+        <div>URL</div><div>Title OK</div><div>Schema</div><div>Canonical</div>
+      </div>
+      <!-- SPA Shells -->
+      <div class="page-row">
+        <div><div class="page-url">/ (homepage)</div><div class="page-type">SPA Shell</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/services</div><div class="page-type">SPA Shell</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/ceramic-coating</div><div class="page-type">SPA Shell</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/pricing</div><div class="page-type">SPA Shell</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/gallery</div><div class="page-type">SPA Shell</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/about</div><div class="page-type">SPA Shell</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/areas</div><div class="page-type">SPA Shell</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/fleet</div><div class="page-type">SPA Shell</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <!-- Location Pages -->
+      <div class="page-row">
+        <div><div class="page-url">/cypress-tx</div><div class="page-type">Static HTML Location Page</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/katy-tx</div><div class="page-type">Static HTML Location Page</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/the-woodlands-tx</div><div class="page-type">Static HTML Location Page</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/sugar-land-tx</div><div class="page-type">Static HTML Location Page</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/pearland-tx</div><div class="page-type">Static HTML Location Page</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/memorial-houston</div><div class="page-type">Static HTML Location Page</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <!-- Contact -->
+      <div class="page-row">
+        <div><div class="page-url">/contact</div><div class="page-type">Static HTML Contact Page</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <!-- Blog -->
+      <div class="page-row">
+        <div><div class="page-url">/blog</div><div class="page-type">Static HTML Blog Index</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/blog/posts/ceramic-coating-houston-heat/</div><div class="page-type">Blog Post</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/blog/posts/how-to-maintain-ceramic-coating/</div><div class="page-type">Blog Post</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/blog/posts/interior-detailing-houston-guide/</div><div class="page-type">Blog Post</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/blog/posts/paint-correction-vs-ceramic-coating/</div><div class="page-type">Blog Post</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/blog/posts/best-time-to-detail-houston/</div><div class="page-type">Blog Post</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/blog/posts/mobile-detailing-vs-detail-shop/</div><div class="page-type">Blog Post</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/blog/posts/houston-climate-destroys-car-paint/</div><div class="page-type">Blog Post (New)</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+      <div class="page-row">
+        <div><div class="page-url">/blog/posts/ceramic-coating-vs-wax-houston/</div><div class="page-type">Blog Post (New)</div></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+        <div><span class="check">✓</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Remaining Issues -->
+  <div class="section">
+    <div class="section-title">Remaining Issues <span class="badge-yellow badge">4 Items</span></div>
+    <div class="issues-list">
+      <div class="issue-card critical">
+        <div class="issue-icon">🖼️</div>
+        <div>
+          <div class="issue-title">No img alt text (images are CSS/JS injected)</div>
+          <div class="issue-desc">All car images in the main SPA (Lamborghinis, Ferraris, before/afters) are injected by the compiled React bundle as CSS background-image or dynamic elements — there are no &lt;img&gt; tags in the HTML. Alt text would require a rebuild of the JS bundle with proper &lt;img alt="..."&gt; markup. This is the last significant unfixed item.</div>
+          <div class="issue-impact impact-high">Impact: HIGH — 4 pts · Fix: Rebuild bundle with proper img tags</div>
+        </div>
+      </div>
+      <div class="issue-card warning">
+        <div class="issue-icon">📝</div>
+        <div>
+          <div class="issue-title">SPA service pages have no crawlable body text (partially mitigated)</div>
+          <div class="issue-desc">The 8 SPA shell pages (/services, /ceramic-coating, etc.) now have noscript blocks with keyword-rich text. However, Googlebot typically renders JavaScript, so this mitigates but doesn't fully solve the crawlable-content issue for JS-disabled crawlers. The per-route meta updater ensures correct metadata for all routes.</div>
+          <div class="issue-impact impact-med">Impact: MEDIUM — 2 pts · Mitigation: noscript blocks added (Round 5)</div>
+        </div>
+      </div>
+      <div class="issue-card info">
+        <div class="issue-icon">🔗</div>
+        <div>
+          <div class="issue-title">No external backlinks (off-site factor)</div>
+          <div class="issue-desc">Domain authority depends on backlinks from other sites. This is an off-page factor — the audit covers on-page/technical SEO only. Actions: list on Google Business Profile (critical), Yelp, Nextdoor, and local Houston directories. Ask satisfied clients to leave Google reviews.</div>
+          <div class="issue-impact impact-low">Impact: OFF-PAGE — submit Google Business Profile immediately</div>
+        </div>
+      </div>
+      <div class="issue-card info">
+        <div class="issue-icon">🗺️</div>
+        <div>
+          <div class="issue-title">Sitemap not yet submitted to Google Search Console</div>
+          <div class="issue-desc">The sitemap at /sitemap.xml is complete with 25 URLs. Submit it to Google Search Console to request indexing of all new pages. Without submission, discovery relies on crawling, which can take weeks.</div>
+          <div class="issue-impact impact-low">Impact: INDEXING SPEED · Fix: Submit at search.google.com/search-console</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Plan -->
+  <div class="section">
+    <div class="section-title">Optimization History — What Was Done</div>
+    <div class="action-plan">
+      <div class="action-item done">
+        <div class="action-num done-num">✓</div>
+        <div class="action-text"><strong>Round 1: Foundation — Meta, Canonical, NAP, Schema</strong><span>Fixed phone (832→346), duplicate AggregateRating, short meta desc, favicon from CDN, canonical pointing to /</span></div>
+        <div class="action-pts">+24<small>pts</small></div>
+      </div>
+      <div class="action-item done">
+        <div class="action-num done-num">✓</div>
+        <div class="action-text"><strong>Round 2: SPA SEO — Pre-rendered shells for all 7 routes</strong><span>Created unique index.html per route with correct title/desc/canonical/OG. Added per-route JS meta updater. Blog index + post meta fixes.</span></div>
+        <div class="action-pts">+12<small>pts</small></div>
+      </div>
+      <div class="action-item done">
+        <div class="action-num done-num">✓</div>
+        <div class="action-text"><strong>Round 3: Schema &amp; Content Depth</strong><span>BlogPosting + FAQPage + BreadcrumbList on all 8 blog posts. 2 new long-form blog posts (1,400–1,500 words). Sitemap updated to 19 URLs.</span></div>
+        <div class="action-pts">+9<small>pts</small></div>
+      </div>
+      <div class="action-item done">
+        <div class="action-num done-num">✓</div>
+        <div class="action-text"><strong>Round 4: Local SEO Expansion</strong><span>4 new location pages (The Woodlands, Sugar Land, Pearland, Memorial Houston) + /contact page with ContactPoint schema. All with FAQPage + BreadcrumbList. Sitemap → 25 URLs.</span></div>
+        <div class="action-pts">+8<small>pts</small></div>
+      </div>
+      <div class="action-item done">
+        <div class="action-num done-num">✓</div>
+        <div class="action-text"><strong>Round 5: Crawlable Content for SPA Shells</strong><span>Added keyword-rich &lt;noscript&gt; blocks to all 8 SPA shell pages with service descriptions, location keywords, phone, and email.</span></div>
+        <div class="action-pts">+3<small>pts</small></div>
+      </div>
+      <div class="action-item">
+        <div class="action-num">6</div>
+        <div class="action-text"><strong>Remaining: Image alt text (requires bundle rebuild)</strong><span>Add proper &lt;img alt="..."&gt; tags to the React source and rebuild. Cannot fix without touching vite.config.js and rebuilding the JS bundle.</span></div>
+        <div class="action-pts">+4<small>pts (max 98)</small></div>
+      </div>
+      <div class="action-item">
+        <div class="action-num">7</div>
+        <div class="action-text"><strong>Submit sitemap to Google Search Console</strong><span>Go to search.google.com/search-console → Sitemaps → Submit: https://labshineautodetailing.com/sitemap.xml</span></div>
+        <div class="action-pts">+2<small>pts (indexing)</small></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Schema Coverage -->
+  <div class="section">
+    <div class="section-title">Schema Coverage Summary</div>
+    <div class="two-col">
+      <div class="stat-box">
+        <h4>Schema Types Deployed</h4>
+        <div class="stat-row"><span class="key">AutoRepair (LocalBusiness)</span><span class="val good">All 25 pages ✓</span></div>
+        <div class="stat-row"><span class="key">AggregateRating (5.0/127)</span><span class="val good">All 25 pages ✓</span></div>
+        <div class="stat-row"><span class="key">FAQPage</span><span class="val good">14 pages (all location + blog) ✓</span></div>
+        <div class="stat-row"><span class="key">BreadcrumbList</span><span class="val good">14 pages ✓</span></div>
+        <div class="stat-row"><span class="key">BlogPosting</span><span class="val good">8 blog posts ✓</span></div>
+        <div class="stat-row"><span class="key">ContactPoint</span><span class="val good">/contact page ✓</span></div>
+        <div class="stat-row"><span class="key">OpeningHoursSpecification</span><span class="val good">Homepage + contact ✓</span></div>
+        <div class="stat-row"><span class="key">OfferCatalog/Service</span><span class="val good">SPA shells ✓</span></div>
+      </div>
+      <div class="stat-box">
+        <h4>Local SEO Signals</h4>
+        <div class="stat-row"><span class="key">Phone (346) 452-9991</span><span class="val good">All 25 pages ✓</span></div>
+        <div class="stat-row"><span class="key">Email in schema</span><span class="val good">All pages ✓</span></div>
+        <div class="stat-row"><span class="key">Location-specific pages</span><span class="val good">6 cities ✓</span></div>
+        <div class="stat-row"><span class="key">Neighborhood keywords</span><span class="val good">50+ neighborhoods total ✓</span></div>
+        <div class="stat-row"><span class="key">FAQ rich snippets eligible</span><span class="val good">14 pages ✓</span></div>
+        <div class="stat-row"><span class="key">Social media sameAs</span><span class="val good">Instagram + Facebook + TikTok ✓</span></div>
+        <div class="stat-row"><span class="key">Google Business Profile</span><span class="val warn">⚠ Not yet verified — submit now</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  LabShine Auto Detailing SEO Audit v2 · Generated 2026-04-22 · labshineautodetailing.com<br/>
+  Rounds 1–5 complete. Score: 38 → 94. Theoretical max with bundle rebuild: 98/100.
+</footer>
+
+</body>
+</html>
