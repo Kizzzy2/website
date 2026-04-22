@@ -143,10 +143,20 @@
         var ogUrl = document.querySelector('meta[property="og:url"]');
         if (ogUrl) ogUrl.setAttribute('content', 'https://labshineautodetailing.com' + (path === '/' ? '/' : path));
       }
+      var staticRoutes = ['/pricing', '/pricing/', '/contact', '/contact/', '/blog', '/blog/',
+        '/cypress-tx', '/cypress-tx/', '/katy-tx', '/katy-tx/',
+        '/the-woodlands-tx', '/the-woodlands-tx/', '/sugar-land-tx', '/sugar-land-tx/',
+        '/pearland-tx', '/pearland-tx/', '/memorial-houston', '/memorial-houston/'];
       var origPush = history.pushState;
-      history.pushState = function() { origPush.apply(this, arguments); setMeta(location.pathname); };
+      history.pushState = function(state, title, url) {
+        if (url && staticRoutes.indexOf(url) !== -1) { window.location.href = url; return; }
+        origPush.apply(this, arguments); setMeta(location.pathname);
+      };
       var origReplace = history.replaceState;
-      history.replaceState = function() { origReplace.apply(this, arguments); setMeta(location.pathname); };
+      history.replaceState = function(state, title, url) {
+        if (url && staticRoutes.indexOf(url) !== -1) { window.location.href = url; return; }
+        origReplace.apply(this, arguments); setMeta(location.pathname);
+      };
       window.addEventListener('popstate', function() { setMeta(location.pathname); });
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() { setMeta(location.pathname); });

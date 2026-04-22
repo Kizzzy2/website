@@ -179,14 +179,21 @@
         var canonical = document.querySelector('link[rel="canonical"]');
         if (canonical) canonical.setAttribute('href', 'https://labshineautodetailing.com' + (path === '/' ? '/' : path));
       }
+      // Routes that are full static HTML pages — force real navigation so server serves them
+      var staticRoutes = ['/pricing', '/pricing/', '/contact', '/contact/', '/blog', '/blog/',
+        '/cypress-tx', '/cypress-tx/', '/katy-tx', '/katy-tx/',
+        '/the-woodlands-tx', '/the-woodlands-tx/', '/sugar-land-tx', '/sugar-land-tx/',
+        '/pearland-tx', '/pearland-tx/', '/memorial-houston', '/memorial-houston/'];
       // Intercept history API
       var origPush = history.pushState;
-      history.pushState = function() {
+      history.pushState = function(state, title, url) {
+        if (url && staticRoutes.indexOf(url) !== -1) { window.location.href = url; return; }
         origPush.apply(this, arguments);
         setMeta(location.pathname);
       };
       var origReplace = history.replaceState;
-      history.replaceState = function() {
+      history.replaceState = function(state, title, url) {
+        if (url && staticRoutes.indexOf(url) !== -1) { window.location.href = url; return; }
         origReplace.apply(this, arguments);
         setMeta(location.pathname);
       };
