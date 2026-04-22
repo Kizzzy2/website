@@ -13,6 +13,7 @@ const links = [
   { href: '/areas', label: 'Areas' },
   { href: '/fleet', label: 'Fleet' },
   { href: '/blog', label: 'Blog' },
+  { href: '/testimonials', label: 'Reviews' },
 ]
 
 export default function Navbar() {
