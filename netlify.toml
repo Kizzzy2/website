@@ -43,6 +43,56 @@
   status = 200
 
 [[redirects]]
+  from = "/the-woodlands-tx"
+  to = "/the-woodlands-tx/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/the-woodlands-tx/"
+  to = "/the-woodlands-tx/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/sugar-land-tx"
+  to = "/sugar-land-tx/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/sugar-land-tx/"
+  to = "/sugar-land-tx/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/pearland-tx"
+  to = "/pearland-tx/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/pearland-tx/"
+  to = "/pearland-tx/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/memorial-houston"
+  to = "/memorial-houston/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/memorial-houston/"
+  to = "/memorial-houston/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact/"
+  to = "/contact/index.html"
+  status = 200
+
+[[redirects]]
   from = "/mobile-detailing-cypress-tx"
   to = "/cypress-tx/index.html"
   status = 301
