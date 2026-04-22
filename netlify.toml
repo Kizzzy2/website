@@ -1,9 +1,6 @@
 [build]
-  command = ""
+  command = "echo static"
   publish = "."
-
-[build.environment]
-  NODE_VERSION = "18"
 
 [[redirects]]
   from = "/blog"
