@@ -19,10 +19,19 @@ import SugarLandMobileDetailing from './pages/SugarLandMobileDetailing'
 import WoodlandsMobileDetailing from './pages/WoodlandsMobileDetailing'
 import PearlandMobileDetailing from './pages/PearlandMobileDetailing'
 import FloatingCTA from './components/FloatingCTA'
+import Cursor from './components/Cursor'
+import { useEffect } from 'react'
 
 export default function App() {
+  useEffect(() => {
+    const isTouchDevice = () => 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    if (!isTouchDevice()) document.body.classList.add('has-cursor')
+    return () => document.body.classList.remove('has-cursor')
+  }, [])
+
   return (
     <>
+      <Cursor />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

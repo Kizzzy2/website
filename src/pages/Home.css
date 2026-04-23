@@ -157,7 +157,22 @@
   background: var(--dark-3);
   border: 1px solid rgba(255,255,255,0.06);
   padding: 36px 28px;
-  transition: border-color 0.3s, transform 0.3s;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(0,200,240,0.06) 50%, transparent 70%);
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.service-card:hover::after {
+  opacity: 1;
+  animation: shimmer-sweep 0.8s ease forwards;
 }
 
 .service-card:hover {

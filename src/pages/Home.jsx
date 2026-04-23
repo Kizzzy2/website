@@ -5,6 +5,7 @@ import img from '../lib/images'
 import { useScrollReveal, useCountUp } from '../hooks/useScrollReveal'
 import BeforeAfter from '../components/BeforeAfter'
 import PriceCalculator from '../components/PriceCalculator'
+import MagneticBtn from '../components/MagneticBtn'
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -136,10 +137,12 @@ export default function Home() {
             services delivered across Houston and 24 surrounding cities.
           </p>
           <div className="hero-btns">
-            <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">
+            <MagneticBtn href="/pricing" className="btn-primary" strength={0.4}>
               Book Online
-            </a>
-            <a href="/pricing" className="btn-outline">View Pricing</a>
+            </MagneticBtn>
+            <MagneticBtn href="/pricing" className="btn-outline" strength={0.3}>
+              View Pricing
+            </MagneticBtn>
           </div>
           <div className="hero-stats">
             <span>⭐ 4.9 Stars on Google</span>
