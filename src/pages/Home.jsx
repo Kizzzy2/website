@@ -187,7 +187,7 @@ export default function Home() {
             </div>
             <div className="stat-item">
               <div className={`stat-number reveal reveal-delay-3${statsVisible ? ' visible' : ''}`}>
-                {statsVisible ? <AnimCount target={49} suffix="" prefix="4." /> : '4.9'}
+                {statsVisible ? '4.9' : '4.9'}
               </div>
               <div className="stat-label">Google Rating</div>
             </div>
