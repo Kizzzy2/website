@@ -183,8 +183,6 @@ export default function Pricing() {
                   </ul>
                   <a
                     href="/pricing"
-                    target="_blank"
-                    rel="noopener"
                     className="btn-primary pricing-cta"
                   >
                     Book Now →
@@ -282,7 +280,7 @@ export default function Pricing() {
             <h2>Ready to Book?</h2>
             <p>20% deposit locks in your slot via Square. We confirm within the hour.</p>
             <div className="cta-btns">
-              <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book Online</a>
+              <a href="/pricing" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
             </div>
           </div>

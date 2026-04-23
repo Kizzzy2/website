@@ -64,7 +64,7 @@ export default function Areas() {
               <div key={area.name} className="area-card">
                 <h3>{area.name}</h3>
                 <p>{area.desc}</p>
-                <a href="/pricing" target="_blank" rel="noopener" className="area-book-link">
+                <a href="/pricing" className="area-book-link">
                   Book in {area.name} →
                 </a>
               </div>
@@ -79,7 +79,7 @@ export default function Areas() {
             <h2>Don\'t See Your City?</h2>
             <p>Call us — we may still be able to accommodate your location. We travel across Greater Houston.</p>
             <div className="cta-btns">
-              <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book Online</a>
+              <a href="/pricing" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
             </div>
           </div>

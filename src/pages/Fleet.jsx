@@ -39,7 +39,7 @@ export default function Fleet() {
           <h1>Fleet Detailing<br/><span className="cyan">Houston TX</span></h1>
           <p>Commercial fleet washing and detailing for dealerships, rental companies, and corporate fleets. Volume discounts. On-site mobile service across Greater Houston.</p>
           <div className="hero-btns">
-            <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Get a Fleet Quote</a>
+            <a href="/pricing" className="btn-primary">Get a Fleet Quote</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -93,7 +93,7 @@ export default function Fleet() {
                 <li>Detailed service reports</li>
                 <li>All vehicle sizes accommodated</li>
               </ul>
-              <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Request Fleet Pricing</a>
+              <a href="/pricing" className="btn-primary">Request Fleet Pricing</a>
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function Fleet() {
             <h2>Get a Custom Fleet Quote</h2>
             <p>Call or book online and we will create a custom program for your fleet size and frequency.</p>
             <div className="cta-btns">
-              <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Request a Quote</a>
+              <a href="/pricing" className="btn-primary">Request a Quote</a>
               <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
             </div>
           </div>

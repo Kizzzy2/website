@@ -13,7 +13,7 @@ const services = [
   },
   {
     title: 'Interior Detail',
-    price: 'From $175',
+    price: 'From $200',
     desc: 'Full interior steam clean, carpet and upholstery shampoo, leather conditioning, odor treatment, and complete dash and trim detail.',
     image: img.rrInterior,
     duration: '2–4 hours',
@@ -21,7 +21,7 @@ const services = [
   },
   {
     title: 'Exterior Detail',
-    price: 'From $150',
+    price: 'From $175',
     desc: 'Foam cannon pre-wash, hand wash, clay bar decontamination, iron fallout removal, hand polish, and paint sealant for maximum shine.',
     image: img.blackM3,
     duration: '2–3 hours',
@@ -108,7 +108,7 @@ export default function Services() {
                 <ul className="svc-bullets">
                   {svc.bullets.map(b => <li key={b}><span className="cyan">✓</span> {b}</li>)}
                 </ul>
-                <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book This Service</a>
+                <a href="/pricing" className="btn-primary">Book This Service</a>
               </div>
             </div>
           ))}
@@ -121,7 +121,7 @@ export default function Services() {
             <h2>Ready to Get Started?</h2>
             <p>Book your mobile detailing appointment online. We come to you anywhere in the Houston area.</p>
             <div className="cta-btns">
-              <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book Online</a>
+              <a href="/pricing" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
             </div>
           </div>

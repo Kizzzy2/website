@@ -33,7 +33,7 @@ export default function WoodlandsMobileDetailing() {
           <h1>Mobile Auto Detailing in <span className="cyan">The Woodlands TX</span></h1>
           <p>Premium mobile detailing for The Woodlands' most discerning vehicle owners. Full detail, ceramic coating, and paint correction at your home or office.</p>
           <div className="hero-btns">
-            <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book in The Woodlands</a>
+            <a href="/pricing" className="btn-primary">Book in The Woodlands</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function WoodlandsMobileDetailing() {
           <div className="services-grid location-services">
             {[
               { icon: '🚗', title: 'Full Detail Reset', price: 'From $250', desc: 'Complete interior + exterior detailing at your Woodlands home. Includes clay bar, hand polish, paint sealant, and engine bay. Done in your driveway while you work.' },
-              { icon: '✨', title: 'Interior Detail', price: 'From $175', desc: 'Full steam clean, carpet shampoo, leather conditioning. Essential after Woodlands family life — Country Club drives, school runs, and weekend trips to Lake Conroe.' },
+              { icon: '✨', title: 'Interior Detail', price: 'From $200', desc: 'Full steam clean, carpet shampoo, leather conditioning. Essential after Woodlands family life — Country Club drives, school runs, and weekend trips to Lake Conroe.' },
               { icon: '🛡️', title: 'Ceramic Coating', price: 'From $800', desc: '9H ceramic coating resistant to the sap, pollen, and UV that The Woodlands\' tree canopy produces year-round. 2–5 years of protection.' },
               { icon: '🔧', title: 'Paint Correction', price: 'From $350', desc: 'Remove bird dropping etching, tree sap hazing, and swirl marks. Critical in The Woodlands where organic contamination is constant.' },
             ].map((s, i) => (
@@ -97,7 +97,7 @@ export default function WoodlandsMobileDetailing() {
             <h2>Book Mobile Detailing in <span className="cyan">The Woodlands</span></h2>
             <p>Serving Carlton Woods, Panther Creek, Indian Springs, Grogan's Mill, Cochran's Crossing, Sterling Ridge, Hughes Landing, and all of The Woodlands. Book online today.</p>
             <div className="hero-btns">
-              <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book Online</a>
+              <a href="/pricing" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>

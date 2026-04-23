@@ -33,7 +33,7 @@ export default function PearlandMobileDetailing() {
           <h1>Mobile Auto Detailing in <span className="cyan">Pearland TX</span></h1>
           <p>Professional mobile detailing in Pearland and Brazoria County. Full detail, ceramic coating, and paint correction — we come to Shadow Creek Ranch, Silverlake, and beyond.</p>
           <div className="hero-btns">
-            <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book in Pearland</a>
+            <a href="/pricing" className="btn-primary">Book in Pearland</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function PearlandMobileDetailing() {
           <div className="services-grid location-services">
             {[
               { icon: '🚗', title: 'Full Detail Reset', price: 'From $250', desc: 'Complete interior + exterior detailing done at your Pearland home. Clay bar decontamination, hand polish, paint sealant, and engine bay cleaning included.' },
-              { icon: '✨', title: 'Interior Detail', price: 'From $175', desc: 'Deep steam clean, carpet shampoo, leather conditioning, and odor treatment. Perfect for Pearland families, dog owners, and daily commuters on Hwy 288.' },
+              { icon: '✨', title: 'Interior Detail', price: 'From $200', desc: 'Deep steam clean, carpet shampoo, leather conditioning, and odor treatment. Perfect for Pearland families, dog owners, and daily commuters on Hwy 288.' },
               { icon: '🛡️', title: 'Ceramic Coating', price: 'From $800', desc: '9H ceramic coating ideal for Pearland\'s coastal humidity and UV conditions. 2–5 years of protection against salt air, hard water, and summer heat.' },
               { icon: '🔧', title: 'Paint Correction', price: 'From $350', desc: 'Remove oxidation, swirl marks, and paint defects. Especially important for Pearland vehicles that accumulate salt air and hard water deposits.' },
             ].map((s, i) => (
@@ -97,7 +97,7 @@ export default function PearlandMobileDetailing() {
             <h2>Book Mobile Detailing in <span className="cyan">Pearland TX</span></h2>
             <p>Serving Shadow Creek Ranch, Silverlake, Southwyck, Corrigan, Country Place, Pearland Town Center area, and all of Pearland and Brazoria County. Book in 2 minutes online.</p>
             <div className="hero-btns">
-              <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book Online</a>
+              <a href="/pricing" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>

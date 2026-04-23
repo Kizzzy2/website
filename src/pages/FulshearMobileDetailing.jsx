@@ -39,7 +39,7 @@ export default function FulshearMobileDetailing() {
           <h1>Mobile Detailing in <span className="cyan">Fulshear TX</span></h1>
           <p>Professional auto detailing delivered to your Fulshear driveway. Full detail, ceramic coating, and paint correction — no drop-off, no waiting.</p>
           <div className="hero-btns">
-            <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book in Fulshear</a>
+            <a href="/pricing" className="btn-primary">Book in Fulshear</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function FulshearMobileDetailing() {
           <div className="services-grid location-services">
             {[
               { icon: '🚗', title: 'Full Detail Reset', price: 'From $250', desc: 'Complete interior and exterior detailing. Clay bar, hand polish, paint sealant, engine bay — everything done at your property in Fulshear.' },
-              { icon: '✨', title: 'Interior Detail', price: 'From $175', desc: 'Full interior steam clean, carpet shampoo, leather conditioning, and odor treatment. Perfect for Fulshear families after sports, pets, or road trips.' },
+              { icon: '✨', title: 'Interior Detail', price: 'From $200', desc: 'Full interior steam clean, carpet shampoo, leather conditioning, and odor treatment. Perfect for Fulshear families after sports, pets, or road trips.' },
               { icon: '🛡️', title: 'Ceramic Coating', price: 'From $800', desc: '9H ceramic coating that protects against Fulshear\'s brutal UV exposure, summer heat, and hard water. 2–5 years of protection.' },
               { icon: '🔧', title: 'Paint Correction', price: 'From $350', desc: 'Remove swirl marks, scratches, and oxidation. Restores your paint to a level that turns heads on FM 359 and Cross Creek Ranch Blvd.' },
             ].map((s, i) => (
@@ -103,7 +103,7 @@ export default function FulshearMobileDetailing() {
             <h2>Book Mobile Detailing in <span className="cyan">Fulshear Today</span></h2>
             <p>We serve all of Fulshear including Cross Creek Ranch, Pecan Ridge, Fulshear Lakes, Polo Ranch, and surrounding FM 1093 and FM 359 areas. Book online in under 2 minutes.</p>
             <div className="hero-btns">
-              <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book Online</a>
+              <a href="/pricing" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>

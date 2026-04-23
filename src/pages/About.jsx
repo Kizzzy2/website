@@ -56,7 +56,7 @@ export default function About() {
               <p>LabShine Auto Detailing was founded in Houston, TX by Adrian Cespedes — a car enthusiast who turned his obsession with pristine paint into a professional mobile detailing business.</p>
               <p>After years of detailing high-end vehicles, Adrian built a team that shares the same commitment to quality. Every vehicle we touch receives the same attention to detail, whether it's a daily driver or a six-figure supercar.</p>
               <p>We operate as a fully mobile service — no shop overhead, no waiting rooms, no dropping your car off. We come to your home, your office, or wherever is most convenient for you.</p>
-              <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book with Our Team</a>
+              <a href="/pricing" className="btn-primary">Book with Our Team</a>
             </div>
             <div className="about-images">
               <div className="about-img-main" style={{ backgroundImage: `url(${img.adrianTeam})` }} />
@@ -107,7 +107,7 @@ export default function About() {
             <h2>Experience the LabShine Difference</h2>
             <p>Book your appointment and see why Houston trusts us with their vehicles.</p>
             <div className="cta-btns">
-              <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book Online</a>
+              <a href="/pricing" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
             </div>
           </div>

@@ -33,7 +33,7 @@ export default function SugarLandMobileDetailing() {
           <h1>Mobile Auto Detailing in <span className="cyan">Sugar Land TX</span></h1>
           <p>Professional mobile detailing for Sugar Land's luxury vehicles. Full detail, ceramic coating, and paint correction — delivered to your First Colony home or Riverstone estate.</p>
           <div className="hero-btns">
-            <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book in Sugar Land</a>
+            <a href="/pricing" className="btn-primary">Book in Sugar Land</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function SugarLandMobileDetailing() {
           <div className="services-grid location-services">
             {[
               { icon: '🚗', title: 'Full Detail Reset', price: 'From $250', desc: 'Complete interior and exterior detail at your Sugar Land home. Clay bar, multi-stage polish, paint sealant, and engine bay — all done in your driveway.' },
-              { icon: '✨', title: 'Interior Detail', price: 'From $175', desc: 'Steam clean, carpet shampoo, leather condition, and odor treatment. Popular with Sugar Land families after road trips, school runs, and country club events.' },
+              { icon: '✨', title: 'Interior Detail', price: 'From $200', desc: 'Steam clean, carpet shampoo, leather condition, and odor treatment. Popular with Sugar Land families after road trips, school runs, and country club events.' },
               { icon: '🛡️', title: 'Ceramic Coating', price: 'From $800', desc: '9H ceramic coating for 2–5 years of protection in Sugar Land\'s humid, UV-heavy climate. Hydrophobic effect makes every wash effortless.' },
               { icon: '🔧', title: 'Paint Correction', price: 'From $350', desc: 'Multi-stage paint correction removing swirls, water spot etching, and scratches. Restores the factory finish on any vehicle in Sugar Land\'s garage.' },
             ].map((s, i) => (
@@ -97,7 +97,7 @@ export default function SugarLandMobileDetailing() {
             <h2>Book Mobile Detailing in <span className="cyan">Sugar Land Today</span></h2>
             <p>Serving First Colony, New Territory, Riverstone, Telfair, Sugar Creek, Greatwood, and all of Sugar Land. Most appointments available within 48 hours.</p>
             <div className="hero-btns">
-              <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book Online</a>
+              <a href="/pricing" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>

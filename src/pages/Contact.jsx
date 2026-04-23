@@ -6,7 +6,7 @@ const contactSchema = {
   "@type": ["LocalBusiness", "AutoRepair"],
   "name": "LabShine Auto Detailing",
   "telephone": "+13464529991",
-  "email": "labshinedetailing@icloud.com",
+  "email": "info@labshineauto.com",
   "url": "https://labshineautodetailing.com",
   "address": {
     "@type": "PostalAddress",
@@ -71,7 +71,7 @@ export default function Contact() {
                   <div className="contact-card-icon">✉️</div>
                   <div>
                     <div className="contact-card-label">Email</div>
-                    <a href="mailto:labshinedetailing@icloud.com" className="contact-card-value">labshinedetailing@icloud.com</a>
+                    <a href="mailto:info@labshineauto.com" className="contact-card-value">info@labshineauto.com</a>
                   </div>
                 </div>
 
@@ -97,8 +97,6 @@ export default function Contact() {
                 <p>Skip the back-and-forth — book your appointment directly online. Choose your service, pick a time, and we'll confirm within the hour.</p>
                 <a
                   href="/pricing"
-                  target="_blank"
-                  rel="noopener"
                   className="btn-primary"
                 >
                   Book Online Now

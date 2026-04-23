@@ -33,7 +33,7 @@ export default function KatyMobileDetailing() {
           <h1>Mobile Auto Detailing in <span className="cyan">Katy TX</span></h1>
           <p>Full detail, ceramic coating, and paint correction delivered to your Katy driveway. Serving Cinco Ranch, Grand Lakes, Mason Creek, and all of Katy.</p>
           <div className="hero-btns">
-            <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book in Katy</a>
+            <a href="/pricing" className="btn-primary">Book in Katy</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function KatyMobileDetailing() {
           <div className="services-grid location-services">
             {[
               { icon: '🚗', title: 'Full Detail Reset', price: 'From $250', desc: 'Complete interior and exterior detailing done in your Katy driveway or garage. Clay bar, hand polish, paint sealant, and engine bay cleaning.' },
-              { icon: '✨', title: 'Interior Detail', price: 'From $175', desc: 'Steam cleaning, carpet shampoo, leather conditioning, and odor elimination. Essential for Katy families with kids, pets, and daily commutes on I-10.' },
+              { icon: '✨', title: 'Interior Detail', price: 'From $200', desc: 'Steam cleaning, carpet shampoo, leather conditioning, and odor elimination. Essential for Katy families with kids, pets, and daily commutes on I-10.' },
               { icon: '🛡️', title: 'Ceramic Coating', price: 'From $800', desc: '9H ceramic coating with 2–5 years of protection. Handles Katy\'s summer heat, UV exposure, and hard water like nothing else on the market.' },
               { icon: '🔧', title: 'Paint Correction', price: 'From $350', desc: 'Remove swirl marks, scratches, and water spot etching. Restores the factory paint depth on any vehicle — luxury, exotic, or daily driver.' },
             ].map((s, i) => (
@@ -97,7 +97,7 @@ export default function KatyMobileDetailing() {
             <h2>Book Mobile Detailing in <span className="cyan">Katy TX Today</span></h2>
             <p>Serving all of Katy including Cinco Ranch, Grand Lakes, Mason Creek, Nottingham Country, Firethorne, Cross Creek Ranch, and I-10 corridor businesses. Book in 2 minutes online.</p>
             <div className="hero-btns">
-              <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book Online</a>
+              <a href="/pricing" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>

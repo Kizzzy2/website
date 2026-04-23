@@ -49,7 +49,7 @@ const localBusinessSchema = {
   ],
   "sameAs": [
     "https://www.instagram.com/labshinedetailing",
-    "https://www.facebook.com/labshinedetailing"
+    "https://www.facebook.com/labshineautodetailinghtx"
   ]
 }
 
@@ -237,7 +237,7 @@ export default function Home() {
                 <li>✓ Self-Cleaning Properties</li>
                 <li>✓ Enhanced Gloss</li>
               </ul>
-              <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">
+              <a href="/pricing" className="btn-primary">
                 Get a Quote
               </a>
             </div>
@@ -303,7 +303,7 @@ export default function Home() {
             <h2>Ready to Shine?</h2>
             <p>Book your mobile detailing appointment online. We come to you — home, office, or anywhere in the Houston area.</p>
             <div className="cta-btns">
-              <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">
+              <a href="/pricing" className="btn-primary">
                 Book Online Now
               </a>
               <a href="tel:3464529991" className="btn-outline">
