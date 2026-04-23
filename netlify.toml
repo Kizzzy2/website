@@ -5,9 +5,23 @@
 [functions]
   directory = "netlify/functions"
 
+# Commander heartbeat — every 5 minutes
+[functions."commander"]
+  schedule = "*/5 * * * *"
+
 [[redirects]]
   from = "/api/lead"
   to = "/.netlify/functions/lead"
+  status = 200
+
+[[redirects]]
+  from = "/api/closer"
+  to = "/.netlify/functions/closer"
+  status = 200
+
+[[redirects]]
+  from = "/api/commander"
+  to = "/.netlify/functions/commander"
   status = 200
 
 [[redirects]]

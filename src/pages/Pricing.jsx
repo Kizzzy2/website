@@ -9,6 +9,15 @@ import img from '../lib/images'
 // Exterior Only: $175 all sizes
 // Ceramic Coating: $800 min (scales by vehicle/condition)
 
+// Square deposit payment links (20% of job total)
+const SQUARE = {
+  fullSedan: 'https://square.link/u/LCpvdkjL',   // $50 deposit
+  fullSUV:   'https://square.link/u/QtFCLohH',   // $60 deposit
+  interior:  'https://square.link/u/6AyCpTlm',   // $40 deposit
+  exterior:  'https://square.link/u/PunCOLYk',   // $35 deposit
+  ceramic:   'https://square.link/u/SIgbTkz1',   // $160 deposit
+}
+
 const services = [
   {
     id: 'full-detail',
@@ -30,8 +39,8 @@ const services = [
     ],
     duration: '4–6 hours',
     sizes: [
-      { label: 'Sedan / Coupe', price: '$250' },
-      { label: 'SUV / Truck', price: '$300' },
+      { label: 'Sedan / Coupe', price: '$250', depositLink: SQUARE.fullSedan, deposit: '$50' },
+      { label: 'SUV / Truck',   price: '$300', depositLink: SQUARE.fullSUV,   deposit: '$60' },
     ],
   },
   {
@@ -50,8 +59,7 @@ const services = [
     ],
     duration: '2–4 hours',
     sizes: [
-      { label: 'Sedan / Coupe', price: '$200' },
-      { label: 'SUV / Truck', price: '$200' },
+      { label: 'All Vehicles', price: '$200', depositLink: SQUARE.interior, deposit: '$40' },
     ],
   },
   {
@@ -71,8 +79,7 @@ const services = [
     ],
     duration: '2–3 hours',
     sizes: [
-      { label: 'Sedan / Coupe', price: '$175' },
-      { label: 'SUV / Truck', price: '$175' },
+      { label: 'All Vehicles', price: '$175', depositLink: SQUARE.exterior, deposit: '$35' },
     ],
   },
   {
@@ -91,7 +98,7 @@ const services = [
     ],
     duration: '1–2 days',
     sizes: [
-      { label: 'Starting at', price: '$800' },
+      { label: 'Starting at', price: '$800', depositLink: SQUARE.ceramic, deposit: '$160' },
     ],
     note: 'Final price based on vehicle size and paint condition.',
   },
@@ -181,12 +188,30 @@ export default function Pricing() {
                       <li key={item}><span className="cyan">✓</span> {item}</li>
                     ))}
                   </ul>
-                  <a
-                    href="/pricing"
-                    className="btn-primary pricing-cta"
-                  >
-                    Book Now →
-                  </a>
+                  {svc.sizes.length === 1 ? (
+                    <a
+                      href={svc.sizes[0].depositLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary pricing-cta"
+                    >
+                      Book Now — {svc.sizes[0].deposit} Deposit →
+                    </a>
+                  ) : (
+                    <div className="pricing-deposit-btns">
+                      {svc.sizes.map(sz => (
+                        <a
+                          key={sz.label}
+                          href={sz.depositLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-primary pricing-cta"
+                        >
+                          {sz.label} — {sz.deposit} Deposit →
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -280,7 +305,7 @@ export default function Pricing() {
             <h2>Ready to Book?</h2>
             <p>20% deposit locks in your slot via Square. We confirm within the hour.</p>
             <div className="cta-btns">
-              <a href="/pricing" className="btn-primary">Book Online</a>
+              <a href="#quote" className="btn-primary">Get a Free Quote →</a>
               <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
             </div>
           </div>
