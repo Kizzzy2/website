@@ -1,0 +1,23 @@
+.testimonials-page { min-height: 100vh; background: var(--dark); }
+.testimonials-hero { background: linear-gradient(135deg, #0a0a0a 0%, #0d1a1f 100%); min-height: 360px; display: flex; align-items: center; padding: 100px 0 60px; position: relative; }
+.rating-summary { text-align: center; margin-bottom: 56px; padding: 40px; background: rgba(0,200,240,0.05); border: 1px solid rgba(0,200,240,0.15); }
+.rating-big { font-family: 'Oswald', sans-serif; font-size: 5rem; color: var(--cyan); line-height: 1; }
+.rating-stars { font-size: 2rem; color: #fbbf24; margin: 8px 0; }
+.rating-count { color: var(--gray); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 80px; }
+.review-card { background: var(--dark-2); border: 1px solid rgba(255,255,255,0.06); padding: 28px; transition: border-color 0.3s; }
+.review-card:hover { border-color: rgba(0,200,240,0.3); }
+.review-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.reviewer-info { display: flex; gap: 12px; align-items: center; }
+.reviewer-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--cyan); color: #000; display: flex; align-items: center; justify-content: center; font-family: 'Oswald', sans-serif; font-size: 1.2rem; font-weight: 700; flex-shrink: 0; }
+.reviewer-name { font-weight: 600; font-size: 0.95rem; }
+.reviewer-location { color: var(--gray); font-size: 0.8rem; }
+.review-stars { color: #fbbf24; font-size: 1rem; letter-spacing: 2px; }
+.review-vehicle { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--cyan); margin-bottom: 14px; }
+.review-text { color: var(--gray); font-size: 0.9rem; line-height: 1.75; font-style: italic; margin-bottom: 14px; }
+.review-date { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+.cta-section { text-align: center; padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+.cta-section h2 { font-size: 2.2rem; margin-bottom: 16px; }
+.cta-section p { color: var(--gray); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+@media (max-width: 900px) { .reviews-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .reviews-grid { grid-template-columns: 1fr; } .rating-big { font-size: 3.5rem; } }

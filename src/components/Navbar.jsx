@@ -1,0 +1,66 @@
+import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import './Navbar.css'
+import img from '../lib/images'
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/ceramic-coating', label: 'Ceramic Coating' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/about', label: 'About' },
+  { href: '/areas', label: 'Areas' },
+  { href: '/fleet', label: 'Fleet' },
+  { href: '/testimonials', label: 'Reviews' },
+]
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => { setOpen(false) }, [location])
+
+  return (
+    <header className={`navbar${scrolled ? ' scrolled' : ''}`}>
+      <div className="nav-inner">
+        <Link to="/" className="nav-logo">
+          <img src={img.logo} alt="LabShine Auto Detailing" className="logo-img" />
+        </Link>
+
+        <nav className={`nav-links${open ? ' open' : ''}`}>
+          {links.map(l => (
+            <Link
+              key={l.href}
+              to={l.href}
+              className={`nav-link${location.pathname === l.href ? ' active' : ''}`}
+            >
+              {l.label}
+            </Link>
+          ))}
+          <Link to="/pricing" className="btn-primary nav-book">
+            Book Now
+          </Link>
+          <a href="tel:3464529991" className="nav-phone">
+            📞 (346) 452-9991
+          </a>
+        </nav>
+
+        <button
+          className={`hamburger${open ? ' open' : ''}`}
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          <span /><span /><span />
+        </button>
+      </div>
+    </header>
+  )
+}

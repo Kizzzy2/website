@@ -1,0 +1,21 @@
+.contact-page { min-height: 100vh; background: var(--dark); }
+.contact-hero { background: linear-gradient(135deg, #0a0a0a 0%, #001220 100%); min-height: 340px; display: flex; align-items: center; padding: 100px 0 60px; position: relative; }
+.contact-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; }
+.contact-info h2 { font-size: 2rem; margin-bottom: 20px; }
+.contact-intro { color: var(--gray); line-height: 1.8; margin-bottom: 36px; }
+.contact-cards { display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
+.contact-card { display: flex; gap: 16px; align-items: flex-start; padding: 20px; background: var(--dark-2); border: 1px solid rgba(255,255,255,0.06); }
+.contact-card-icon { font-size: 1.4rem; flex-shrink: 0; }
+.contact-card-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--cyan); margin-bottom: 4px; }
+.contact-card-value { font-size: 1rem; color: var(--white); }
+.contact-card-value[href] { transition: color 0.2s; }
+.contact-card-value[href]:hover { color: var(--cyan); }
+.contact-cta-block { background: rgba(0,200,240,0.05); border: 1px solid rgba(0,200,240,0.2); padding: 32px; }
+.contact-cta-block h3 { font-size: 1.5rem; margin-bottom: 12px; }
+.contact-cta-block p { color: var(--gray); margin-bottom: 24px; line-height: 1.7; }
+.contact-areas h3 { font-size: 1.4rem; margin-bottom: 20px; }
+.city-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.city-list li { padding: 8px 12px; border-left: 2px solid rgba(0,200,240,0.3); color: var(--gray); font-size: 0.9rem; }
+.city-list li:hover { border-color: var(--cyan); color: var(--white); }
+.contact-note { margin-top: 20px; font-size: 0.85rem; color: var(--cyan); font-style: italic; }
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 48px; } }
