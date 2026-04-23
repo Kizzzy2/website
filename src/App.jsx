@@ -18,6 +18,7 @@ import CypressMobileDetailing from './pages/CypressMobileDetailing'
 import SugarLandMobileDetailing from './pages/SugarLandMobileDetailing'
 import WoodlandsMobileDetailing from './pages/WoodlandsMobileDetailing'
 import PearlandMobileDetailing from './pages/PearlandMobileDetailing'
+import FloatingCTA from './components/FloatingCTA'
 
 export default function App() {
   return (
@@ -44,6 +45,7 @@ export default function App() {
         <Route path="/pearland-mobile-detailing" element={<PearlandMobileDetailing />} />
       </Routes>
       <Footer />
+      <FloatingCTA />
     </>
   )
 }

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Auto Detailing Blog | Tips, Guides & Houston Car Care | LabShine</title>
+  <meta name="description" content="Expert auto detailing tips, ceramic coating guides, and car care advice from LabShine — Houston's premier mobile detailing service."/>
+  <link rel="icon" type="image/png" href="/favicon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cyan: #00c8ff;
+      --cyan-dark: #00b0e0;
+      --black: #050a0d;
+      --dark: #0a1a24;
+      --dark2: #001a24;
+      --gray: #858481;
+      --light: #f8f8f7;
+      --white: #ffffff;
+    }
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(5,10,13,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,200,255,0.12);
+      padding: 0 24px;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px; font-weight: 800; letter-spacing: 3px;
+      color: var(--white); text-decoration: none;
+    }
+    .nav-logo span { color: var(--cyan); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px; font-weight: 600; letter-spacing: 2px;
+      color: rgba(255,255,255,0.7); text-decoration: none;
+      text-transform: uppercase; transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--cyan); }
+    .nav-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      background: var(--cyan); color: #000;
+      padding: 8px 20px; text-decoration: none;
+      text-transform: uppercase; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--cyan-dark); }
+
+    /* HERO */
+    .blog-hero {
+      padding: 120px 24px 60px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(0,200,255,0.05) 0%, transparent 100%);
+      border-bottom: 1px solid rgba(0,200,255,0.1);
+    }
+    .blog-hero .label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px; font-weight: 700; letter-spacing: 4px;
+      color: var(--cyan); text-transform: uppercase; margin-bottom: 16px;
+    }
+    .blog-hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(36px, 6vw, 72px); font-weight: 900;
+      letter-spacing: 2px; line-height: 1; margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .blog-hero h1 span { color: var(--cyan); }
+    .blog-hero p {
+      font-size: 16px; color: rgba(255,255,255,0.55);
+      max-width: 540px; margin: 0 auto; line-height: 1.6;
+    }
+
+    /* FILTER TAGS */
+    .filters {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      justify-content: center; padding: 32px 24px 0;
+    }
+    .filter-btn {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; padding: 6px 16px;
+      border: 1px solid rgba(0,200,255,0.25);
+      background: transparent; color: rgba(255,255,255,0.5);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--cyan); color: #000;
+      border-color: var(--cyan);
+    }
+
+    /* GRID */
+    .posts-grid {
+      max-width: 1200px; margin: 48px auto 80px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    /* POST CARD */
+    .post-card {
+      background: var(--dark2);
+      border: 1px solid rgba(0,200,255,0.1);
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+      transition: all 0.25s ease;
+      position: relative; overflow: hidden;
+    }
+    .post-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--cyan);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .post-card:hover { border-color: rgba(0,200,255,0.35); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,200,255,0.1); }
+    .post-card:hover::before { transform: scaleX(1); }
+    .post-card-img {
+      width: 100%; aspect-ratio: 16/9; object-fit: cover;
+      background: linear-gradient(135deg, #001a24, #000c14);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px;
+    }
+    .post-card-img img { width: 100%; height: 100%; object-fit: cover; }
+    .post-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .post-meta {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
+    }
+    .post-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--cyan);
+      background: rgba(0,200,255,0.1);
+      padding: 3px 10px;
+    }
+    .post-date {
+      font-size: 11px; color: var(--gray); letter-spacing: 1px;
+    }
+    .post-card h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px; font-weight: 800; letter-spacing: 1px;
+      text-transform: uppercase; line-height: 1.2;
+      margin-bottom: 10px; color: var(--white);
+    }
+    .post-card p {
+      font-size: 14px; color: rgba(255,255,255,0.5);
+      line-height: 1.6; flex: 1; margin-bottom: 20px;
+    }
+    .post-read-more {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--cyan);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .post-read-more::after { content: '→'; transition: transform 0.2s; }
+    .post-card:hover .post-read-more::after { transform: translateX(4px); }
+
+    /* FEATURED POST */
+    .featured-post {
+      max-width: 1200px; margin: 48px auto 0; padding: 0 24px;
+    }
+    .featured-post .post-card {
+      grid-column: 1/-1;
+      flex-direction: row;
+    }
+    .featured-post .post-card-img {
+      width: 45%; flex-shrink: 0; aspect-ratio: auto; min-height: 300px;
+    }
+    .featured-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: #000;
+      background: var(--cyan); padding: 3px 10px;
+      margin-bottom: 12px; display: inline-block;
+    }
+    .featured-post h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(24px, 3vw, 36px); font-weight: 900;
+      letter-spacing: 1px; text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000; border-top: 1px solid rgba(0,200,255,0.1);
+      padding: 48px 24px; text-align: center;
+    }
+    footer .logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px; font-weight: 800; letter-spacing: 3px;
+      margin-bottom: 16px;
+    }
+    footer .logo span { color: var(--cyan); }
+    footer p { font-size: 13px; color: var(--gray); margin-bottom: 20px; }
+    footer .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+    footer .footer-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gray); text-decoration: none; transition: color 0.2s;
+    }
+    footer .footer-links a:hover { color: var(--cyan); }
+
+    /* EMPTY STATE */
+    .empty-state {
+      text-align: center; padding: 80px 24px;
+      color: rgba(255,255,255,0.3);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px; letter-spacing: 2px; text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .featured-post .post-card { flex-direction: column; }
+      .featured-post .post-card-img { width: 100%; min-height: 200px; }
+      .posts-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">LAB<span>SHINE</span></a>
+  <ul class="nav-links">
+    <li><a href="/services">Services</a></li>
+    <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/gallery">Gallery</a></li>
+    <li><a href="/areas">Areas</a></li>
+    <li><a href="/blog" class="active">Blog</a></li>
+  </ul>
+  <a href="/booking" class="nav-cta">Book Now</a>
+</nav>
+
+<section class="blog-hero">
+  <div class="label">LabShine Knowledge Base</div>
+  <h1>Detail Tips &<br><span>Car Care Guides</span></h1>
+  <p>Expert advice on ceramic coatings, paint protection, interior care, and keeping your vehicle looking showroom-ready in Houston's heat.</p>
+</section>
+
+<div class="filters">
+  <button class="filter-btn active" onclick="filterPosts('all')">All Posts</button>
+  <button class="filter-btn" onclick="filterPosts('ceramic-coating')">Ceramic Coating</button>
+  <button class="filter-btn" onclick="filterPosts('paint-protection')">Paint Protection</button>
+  <button class="filter-btn" onclick="filterPosts('interior')">Interior</button>
+  <button class="filter-btn" onclick="filterPosts('maintenance')">Maintenance</button>
+  <button class="filter-btn" onclick="filterPosts('houston')">Houston Tips</button>
+</div>
+
+<div id="posts-container"></div>
+
+<footer>
+  <div class="logo">LAB<span>SHINE</span></div>
+  <p>Houston's Premier Mobile Auto Detailing Service</p>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/services">Services</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/gallery">Gallery</a>
+    <a href="/areas">Areas</a>
+    <a href="/blog">Blog</a>
+    <a href="/booking">Book Now</a>
+  </div>
+</footer>
+
+<script>
+  // Posts index — MUSE agent auto-appends to this array
+  const POSTS = [
+    {
+      slug: "ceramic-coating-houston-heat",
+      title: "Why Ceramic Coating Is Essential for Houston Cars",
+      excerpt: "Houston's UV index, humidity, and summer heat destroy paint faster than anywhere in Texas. Here's why ceramic coating isn't a luxury — it's protection.",
+      tag: "ceramic-coating",
+      date: "April 14, 2026",
+      emoji: "🛡️",
+      featured: true,
+    },
+    {
+      slug: "how-to-maintain-ceramic-coating",
+      title: "How to Maintain Your Ceramic Coating: The Right Way",
+      excerpt: "You invested in ceramic coating — now keep it performing. The dos and don'ts that 90% of car owners get wrong after their coating is applied.",
+      tag: "ceramic-coating",
+      date: "April 10, 2026",
+      emoji: "✨",
+      featured: false,
+    },
+    {
+      slug: "interior-detailing-houston-guide",
+      title: "Complete Interior Detailing Guide for Houston Drivers",
+      excerpt: "Houston summers bake your interior. Leather cracks, plastics fade, and odors set in. This guide covers everything to keep your cabin fresh year-round.",
+      tag: "interior",
+      date: "April 7, 2026",
+      emoji: "🪟",
+      featured: false,
+    },
+    {
+      slug: "paint-correction-vs-ceramic-coating",
+      title: "Paint Correction vs Ceramic Coating: What's the Difference?",
+      excerpt: "A lot of customers ask if they need paint correction before ceramic coating. The short answer: it depends. Here's the full breakdown.",
+      tag: "paint-protection",
+      date: "April 2, 2026",
+      emoji: "🎨",
+      featured: false,
+    },
+    {
+      slug: "best-time-to-detail-houston",
+      title: "The Best Time of Year to Get Your Car Detailed in Houston",
+      excerpt: "Timing your detail right makes a big difference — especially in Houston where seasons aren't like the rest of the country.",
+      tag: "houston",
+      date: "March 28, 2026",
+      emoji: "📅",
+      featured: false,
+    },
+    {
+      slug: "mobile-detailing-vs-detail-shop",
+      title: "Mobile Detailing vs Detail Shop: Which Is Better in Houston?",
+      excerpt: "Is driving to a shop worth it? We break down the real cost, quality, and convenience difference between mobile and shop detailing.",
+      tag: "maintenance",
+      date: "March 22, 2026",
+      emoji: "🚗",
+      featured: false,
+    },
+  ];
+
+  let activeFilter = 'all';
+
+  function filterPosts(tag) {
+    activeFilter = tag;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    renderPosts();
+  }
+
+  function renderPosts() {
+    const container = document.getElementById('posts-container');
+    const filtered = activeFilter === 'all' ? POSTS : POSTS.filter(p => p.tag === activeFilter);
+
+    if (!filtered.length) {
+      container.innerHTML = '<div class="empty-state">No posts in this category yet.</div>';
+      return;
+    }
+
+    const featured = filtered.find(p => p.featured);
+    const rest = filtered.filter(p => !p.featured || activeFilter !== 'all');
+
+    let html = '';
+
+    if (featured && activeFilter === 'all') {
+      html += `
+        <div class="featured-post">
+          <a href="/blog/posts/${featured.slug}" class="post-card">
+            <div class="post-card-img">${featured.emoji}</div>
+            <div class="post-card-body">
+              <div class="featured-label">Featured</div>
+              <div class="post-meta">
+                <span class="post-tag">${featured.tag.replace(/-/g,' ')}</span>
+                <span class="post-date">${featured.date}</span>
+              </div>
+              <h2>${featured.title}</h2>
+              <p>${featured.excerpt}</p>
+              <span class="post-read-more">Read Article</span>
+            </div>
+          </a>
+        </div>`;
+    }
+
+    const gridPosts = activeFilter === 'all' ? filtered.filter(p => !p.featured) : filtered;
+    html += '<div class="posts-grid">';
+    gridPosts.forEach(post => {
+      html += `
+        <a href="/blog/posts/${post.slug}" class="post-card">
+          <div class="post-card-img">${post.emoji}</div>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="post-tag">${post.tag.replace(/-/g,' ')}</span>
+              <span class="post-date">${post.date}</span>
+            </div>
+            <h2>${post.title}</h2>
+            <p>${post.excerpt}</p>
+            <span class="post-read-more">Read Article</span>
+          </div>
+        </a>`;
+    });
+    html += '</div>';
+
+    container.innerHTML = html;
+  }
+
+  renderPosts();
+</script>
+</body>
+</html>

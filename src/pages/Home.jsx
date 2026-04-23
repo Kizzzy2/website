@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import './Home.css'
 import img from '../lib/images'
+import { useScrollReveal, useCountUp } from '../hooks/useScrollReveal'
+import BeforeAfter from '../components/BeforeAfter'
+import PriceCalculator from '../components/PriceCalculator'
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -75,8 +78,19 @@ const areas = [
   'La Porte','Webster','Clear Lake','Galveston'
 ]
 
+function AnimCount({ target, suffix = '', prefix = '' }) {
+  const [started, setStarted] = useState(false)
+  const count = useCountUp(target, 1600, true)
+  return <>{prefix}{count}{suffix}</>
+}
+
 export default function Home() {
   const [current, setCurrent] = useState(0)
+  const [servicesRef, servicesVisible] = useScrollReveal()
+  const [ceramicRef, ceramicVisible] = useScrollReveal()
+  const [areasRef, areasVisible] = useScrollReveal()
+  const [ctaRef, ctaVisible] = useScrollReveal()
+  const [statsRef, statsVisible] = useScrollReveal()
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -149,21 +163,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services */}
-      <section className="services-section" id="services">
+      {/* Animated Stats Strip */}
+      <div className="stats-strip" ref={statsRef}>
         <div className="container">
-          <div className="section-header">
+          <div className="stats-strip-inner">
+            <div className="stat-item">
+              <div className={`stat-number reveal${statsVisible ? ' visible' : ''}`}>
+                {statsVisible ? <AnimCount target={500} suffix="+" /> : '0+'}
+              </div>
+              <div className="stat-label">Vehicles Detailed</div>
+            </div>
+            <div className="stat-item">
+              <div className={`stat-number reveal reveal-delay-1${statsVisible ? ' visible' : ''}`}>
+                {statsVisible ? <AnimCount target={127} suffix="+" /> : '0+'}
+              </div>
+              <div className="stat-label">5-Star Reviews</div>
+            </div>
+            <div className="stat-item">
+              <div className={`stat-number reveal reveal-delay-2${statsVisible ? ' visible' : ''}`}>
+                {statsVisible ? <AnimCount target={24} suffix="" /> : '0'}
+              </div>
+              <div className="stat-label">Cities Served</div>
+            </div>
+            <div className="stat-item">
+              <div className={`stat-number reveal reveal-delay-3${statsVisible ? ' visible' : ''}`}>
+                {statsVisible ? <AnimCount target={49} suffix="" prefix="4." /> : '4.9'}
+              </div>
+              <div className="stat-label">Google Rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Services */}
+      <section className="services-section" id="services" ref={servicesRef}>
+        <div className="container">
+          <div className={`section-header reveal${servicesVisible ? ' visible' : ''}`}>
             <span className="section-label">What We Offer</span>
             <h2>Our Services</h2>
             <p>Professional detailing services delivered to your location across the Houston metro area.</p>
           </div>
           <div className="services-grid">
-            {services.map(s => (
-              <div key={s.title} className="service-card">
+            {services.map((s, i) => (
+              <div key={s.title} className={`service-card reveal reveal-delay-${i + 1}${servicesVisible ? ' visible' : ''}`}>
                 <span className="service-icon">{s.icon}</span>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
-                <a href="/pricing" target="_blank" rel="noopener" className="service-link">
+                <a href="/pricing" className="service-link">
                   Book This Service →
                 </a>
               </div>
@@ -173,10 +219,10 @@ export default function Home() {
       </section>
 
       {/* Ceramic Coating CTA */}
-      <section className="ceramic-section" id="ceramic">
+      <section className="ceramic-section" id="ceramic" ref={ceramicRef}>
         <div className="container">
           <div className="ceramic-content">
-            <div className="ceramic-text">
+            <div className={`ceramic-text reveal-left${ceramicVisible ? ' visible' : ''}`}>
               <span className="section-label">Ultimate Protection</span>
               <h2>Ceramic Coating</h2>
               <p>Our professional-grade 9H ceramic coating provides years of protection against UV rays, chemical contaminants, and water spotting. Your paint stays looking showroom-fresh longer.</p>
@@ -192,7 +238,7 @@ export default function Home() {
                 Get a Quote
               </a>
             </div>
-            <div className="ceramic-image" style={{ backgroundImage: `url(${img.ceramicVette})` }}>
+            <div className={`ceramic-image reveal-right${ceramicVisible ? ' visible' : ''}`} style={{ backgroundImage: `url(${img.ceramicVette})` }}>
               <div className="ceramic-badge">9H Ceramic</div>
             </div>
           </div>
@@ -208,10 +254,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Areas */}
-      <section className="areas-section" id="areas">
+      {/* Before / After Slider */}
+      <section className="ba-section">
         <div className="container">
           <div className="section-header">
+            <span className="section-label">The LabShine Difference</span>
+            <h2>See the <span className="cyan">Transformation</span></h2>
+            <p>Drag the slider to see the before and after on a real customer vehicle.</p>
+          </div>
+        </div>
+        <BeforeAfter
+          before={img.durangoInteriorBefore}
+          after={img.durangoInteriorAfter}
+          beforeLabel="Before"
+          afterLabel="After"
+        />
+        <div style={{ textAlign: 'center', marginTop: 32, paddingBottom: 8 }}>
+          <a href="/pricing" className="btn-primary">Book My Detail →</a>
+        </div>
+      </section>
+
+      {/* Price Calculator */}
+      <PriceCalculator />
+
+      {/* Areas */}
+      <section className="areas-section" id="areas" ref={areasRef}>
+        <div className="container">
+          <div className={`section-header reveal${areasVisible ? ' visible' : ''}`}>
             <span className="section-label">We Come to You</span>
             <h2>Service Areas</h2>
             <p>Serving Houston and 24 surrounding cities. We bring the detail shop to your door.</p>
@@ -225,9 +294,9 @@ export default function Home() {
       </section>
 
       {/* Booking CTA */}
-      <section className="cta-section">
+      <section className="cta-section" ref={ctaRef}>
         <div className="container">
-          <div className="cta-content">
+          <div className={`cta-content reveal${ctaVisible ? ' visible' : ''}`}>
             <h2>Ready to Shine?</h2>
             <p>Book your mobile detailing appointment online. We come to you — home, office, or anywhere in the Houston area.</p>
             <div className="cta-btns">
