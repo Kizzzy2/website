@@ -7,7 +7,7 @@ const schema = {
   "name": "LabShine Auto Detailing — Katy TX",
   "description": "Mobile auto detailing in Katy TX. Full detail, ceramic coating, and paint correction delivered to your driveway. Serving all of Katy including Cinco Ranch, Grand Lakes, and Mason Creek.",
   "url": "https://labshineautodetailing.com/katy-mobile-detailing",
-  "telephone": "+18322577574",
+  "telephone": "+13464529991",
   "areaServed": "Katy, TX"
 }
 
@@ -34,7 +34,7 @@ export default function KatyMobileDetailing() {
           <p>Full detail, ceramic coating, and paint correction delivered to your Katy driveway. Serving Cinco Ranch, Grand Lakes, Mason Creek, and all of Katy.</p>
           <div className="hero-btns">
             <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book in Katy</a>
-            <a href="tel:8322577574" className="btn-outline">Call (832) 257-7574</a>
+            <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
       </section>
@@ -98,7 +98,7 @@ export default function KatyMobileDetailing() {
             <p>Serving all of Katy including Cinco Ranch, Grand Lakes, Mason Creek, Nottingham Country, Firethorne, Cross Creek Ranch, and I-10 corridor businesses. Book in 2 minutes online.</p>
             <div className="hero-btns">
               <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book Online</a>
-              <a href="tel:8322577574" className="btn-outline">Call or Text</a>
+              <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ const schema = {
   "name": "LabShine Auto Detailing — The Woodlands TX",
   "description": "Mobile auto detailing in The Woodlands TX. Full detail, ceramic coating, and paint correction. Serving Panther Creek, Carlton Woods, Hughes Landing, and all of The Woodlands.",
   "url": "https://labshineautodetailing.com/woodlands-mobile-detailing",
-  "telephone": "+18322577574",
+  "telephone": "+13464529991",
   "areaServed": "The Woodlands, TX"
 }
 
@@ -34,7 +34,7 @@ export default function WoodlandsMobileDetailing() {
           <p>Premium mobile detailing for The Woodlands' most discerning vehicle owners. Full detail, ceramic coating, and paint correction at your home or office.</p>
           <div className="hero-btns">
             <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book in The Woodlands</a>
-            <a href="tel:8322577574" className="btn-outline">Call (832) 257-7574</a>
+            <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
       </section>
@@ -98,7 +98,7 @@ export default function WoodlandsMobileDetailing() {
             <p>Serving Carlton Woods, Panther Creek, Indian Springs, Grogan's Mill, Cochran's Crossing, Sterling Ridge, Hughes Landing, and all of The Woodlands. Book online today.</p>
             <div className="hero-btns">
               <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book Online</a>
-              <a href="tel:8322577574" className="btn-outline">Call or Text</a>
+              <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>
         </div>

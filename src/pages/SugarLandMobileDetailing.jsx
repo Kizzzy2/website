@@ -7,7 +7,7 @@ const schema = {
   "name": "LabShine Auto Detailing — Sugar Land TX",
   "description": "Mobile auto detailing in Sugar Land TX. Full detail, ceramic coating, and paint correction delivered to your home. Serving First Colony, New Territory, Riverstone, and all of Sugar Land.",
   "url": "https://labshineautodetailing.com/sugar-land-mobile-detailing",
-  "telephone": "+18322577574",
+  "telephone": "+13464529991",
   "areaServed": "Sugar Land, TX"
 }
 
@@ -34,7 +34,7 @@ export default function SugarLandMobileDetailing() {
           <p>Professional mobile detailing for Sugar Land's luxury vehicles. Full detail, ceramic coating, and paint correction — delivered to your First Colony home or Riverstone estate.</p>
           <div className="hero-btns">
             <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book in Sugar Land</a>
-            <a href="tel:8322577574" className="btn-outline">Call (832) 257-7574</a>
+            <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
       </section>
@@ -98,7 +98,7 @@ export default function SugarLandMobileDetailing() {
             <p>Serving First Colony, New Territory, Riverstone, Telfair, Sugar Creek, Greatwood, and all of Sugar Land. Most appointments available within 48 hours.</p>
             <div className="hero-btns">
               <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book Online</a>
-              <a href="tel:8322577574" className="btn-outline">Call or Text</a>
+              <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>
         </div>

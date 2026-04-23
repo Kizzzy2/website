@@ -17,20 +17,20 @@ export default function Footer() {
           <p className="footer-tagline">"Your Vehicle. Elevated."</p>
           <div className="footer-contact">
             <a href="tel:3464529991">📞 (346) 452-9991</a>
-            <a href="mailto:info@labshineautodetailing.com">✉ info@labshineautodetailing.com</a>
+            <a href="mailto:info@labshineauto.com">✉ info@labshineauto.com</a>
             <span>📍 Houston, TX (Mobile — We Come to You)</span>
           </div>
         </div>
 
         {/* Services */}
         <div className="footer-col">
-          <h4>Services</h4>
+          <h4>Detailing</h4>
           <ul>
-            <li><Link to="/services">All Services</Link></li>
-            <li><Link to="/ceramic-coating">Ceramic Coating</Link></li>
             <li><Link to="/pricing">Pricing</Link></li>
+            <li><Link to="/ceramic-coating">Ceramic Coating</Link></li>
             <li><Link to="/fleet">Fleet Detailing</Link></li>
-            <li><a href="/pricing" target="_blank" rel="noopener">Book Appointment</a></li>
+            <li><Link to="/blog">Blog</Link></li>
+            <li><Link to="/pricing">Book Appointment</Link></li>
           </ul>
         </div>
 

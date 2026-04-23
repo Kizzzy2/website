@@ -7,7 +7,7 @@ const schema = {
   "name": "LabShine Auto Detailing — Cypress TX",
   "description": "Mobile auto detailing in Cypress TX. Full detail, ceramic coating, and paint correction delivered to your home. Serving Bridgeland, Fairfield, Stone Gate, and all of Cypress.",
   "url": "https://labshineautodetailing.com/cypress-mobile-detailing",
-  "telephone": "+18322577574",
+  "telephone": "+13464529991",
   "areaServed": "Cypress, TX"
 }
 
@@ -34,7 +34,7 @@ export default function CypressMobileDetailing() {
           <p>LabShine's home base. Full detail, ceramic coating, and paint correction brought directly to your Cypress property — no shop, no waiting.</p>
           <div className="hero-btns">
             <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book in Cypress</a>
-            <a href="tel:8322577574" className="btn-outline">Call (832) 257-7574</a>
+            <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
       </section>
@@ -98,7 +98,7 @@ export default function CypressMobileDetailing() {
             <p>Serving Bridgeland, Fairfield, Stone Gate, Copper Lakes, Longwood, Towne Lake, Cypress Creek Lakes, and all Cypress neighborhoods. Same-week appointments usually available.</p>
             <div className="hero-btns">
               <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book Online</a>
-              <a href="tel:8322577574" className="btn-outline">Call or Text</a>
+              <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>
         </div>

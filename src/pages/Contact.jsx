@@ -5,7 +5,7 @@ const contactSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "AutoRepair"],
   "name": "LabShine Auto Detailing",
-  "telephone": "+18322577574",
+  "telephone": "+13464529991",
   "email": "labshinedetailing@icloud.com",
   "url": "https://labshineautodetailing.com",
   "address": {
@@ -29,8 +29,8 @@ export default function Contact() {
   return (
     <>
     <Helmet>
-      <title>Contact LabShine | Houston Mobile Detailing — (832) 257-7574</title>
-      <meta name="description" content="Contact LabShine Auto Detailing for mobile detailing in Houston. Call (832) 257-7574, book online, or send a message. Serving Cypress, Katy, Sugar Land, The Woodlands, and 24+ cities." />
+      <title>Contact LabShine | Houston Mobile Detailing — (346) 452-9991</title>
+      <meta name="description" content="Contact LabShine Auto Detailing for mobile detailing in Houston. Call (346) 452-9991, book online, or send a message. Serving Cypress, Katy, Sugar Land, The Woodlands, and 24+ cities." />
       <link rel="canonical" href="https://labshineautodetailing.com/contact" />
       <meta property="og:title" content="Contact LabShine | Houston Mobile Detailing" />
       <meta property="og:description" content="Get in touch with LabShine Auto Detailing. Call, text, or book online. Houston mobile detailing — we come to you." />
@@ -63,7 +63,7 @@ export default function Contact() {
                   <div className="contact-card-icon">📞</div>
                   <div>
                     <div className="contact-card-label">Phone / Text</div>
-                    <a href="tel:8322577574" className="contact-card-value">(832) 257-7574</a>
+                    <a href="tel:3464529991" className="contact-card-value">(346) 452-9991</a>
                   </div>
                 </div>
 

@@ -7,7 +7,7 @@ const schema = {
   "name": "LabShine Auto Detailing — Fulshear TX",
   "description": "Mobile auto detailing in Fulshear TX. Full detail, ceramic coating, paint correction, and interior detail. We come to your home or driveway in Fulshear and Katy.",
   "url": "https://labshineautodetailing.com/fulshear-mobile-detailing",
-  "telephone": "+18322577574",
+  "telephone": "+13464529991",
   "areaServed": "Fulshear, TX",
   "address": {
     "@type": "PostalAddress",
@@ -40,7 +40,7 @@ export default function FulshearMobileDetailing() {
           <p>Professional auto detailing delivered to your Fulshear driveway. Full detail, ceramic coating, and paint correction — no drop-off, no waiting.</p>
           <div className="hero-btns">
             <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book in Fulshear</a>
-            <a href="tel:8322577574" className="btn-outline">Call (832) 257-7574</a>
+            <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
       </section>
@@ -104,7 +104,7 @@ export default function FulshearMobileDetailing() {
             <p>We serve all of Fulshear including Cross Creek Ranch, Pecan Ridge, Fulshear Lakes, Polo Ranch, and surrounding FM 1093 and FM 359 areas. Book online in under 2 minutes.</p>
             <div className="hero-btns">
               <a href="/pricing" target="_blank" rel="noopener" className="btn-primary">Book Online</a>
-              <a href="tel:8322577574" className="btn-outline">Call or Text</a>
+              <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>
         </div>
