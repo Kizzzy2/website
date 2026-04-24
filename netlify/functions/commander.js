@@ -53,7 +53,7 @@ async function queryActivityDB(since) {
         'Content-Length': Buffer.byteLength(JSON.stringify({
           filter: {
             and: [
-              { property: 'Success', checkbox: { equals: false } },
+              { property: 'Status', select: { equals: 'Failed' } },
               { timestamp: 'created_time', created_time: { after: since } }
             ]
           },
@@ -63,7 +63,7 @@ async function queryActivityDB(since) {
     }, {
       filter: {
         and: [
-          { property: 'Success', checkbox: { equals: false } },
+          { property: 'Status', select: { equals: 'Failed' } },
           { timestamp: 'created_time', created_time: { after: since } }
         ]
       },
@@ -92,11 +92,10 @@ async function writeHeartbeat() {
     }, JSON.stringify({
       parent: { database_id: ACTIVITY_DB },
       properties: {
-        'Name':    { title: [{ text: { content: `commander: heartbeat ${ts}` } }] },
-        'Agent':   { rich_text: [{ text: { content: 'commander' } }] },
-        'Action':  { rich_text: [{ text: { content: 'heartbeat' } }] },
-        'Success': { checkbox: true },
-        'Notes':   { rich_text: [{ text: { content: `Scheduled check at ${ts}` } }] },
+        'Agent':          { title: [{ text: { content: 'commander' } }] },
+        'Action':         { rich_text: [{ text: { content: 'heartbeat' } }] },
+        'Status':         { select: { name: 'Success' } },
+        'Result Summary': { rich_text: [{ text: { content: `Heartbeat at ${ts}` } }] },
       }
     }));
   } catch (_) {}
@@ -107,7 +106,7 @@ async function sendAlert(failures) {
   const names = failures.map(f => {
     const props = f.properties || {};
     const action = props['Action']?.rich_text?.[0]?.plain_text || 'unknown';
-    const agent  = props['Agent']?.rich_text?.[0]?.plain_text  || 'unknown';
+    const agent  = props['Agent']?.title?.[0]?.plain_text      || 'unknown';
     return `${agent}: ${action}`;
   }).join('\n');
 

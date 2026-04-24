@@ -113,12 +113,11 @@ async function logActivity({ agent, action, leadId, success, notes }) {
       {
         parent: { database_id: ACTIVITY_DB },
         properties: {
-          'Name':    { title: [{ text: { content: `${agent}: ${action}` } }] },
-          'Agent':   { rich_text: [{ text: { content: agent } }] },
-          'Action':  { rich_text: [{ text: { content: action } }] },
-          'Lead ID': { rich_text: [{ text: { content: leadId || '' } }] },
-          'Success': { checkbox: !!success },
-          'Notes':   { rich_text: [{ text: { content: notes || '' } }] },
+          'Agent':          { title: [{ text: { content: agent } }] },
+          'Action':         { rich_text: [{ text: { content: action } }] },
+          'Lead ID':        { rich_text: [{ text: { content: leadId || '' } }] },
+          'Status':         { select: { name: success ? 'Success' : 'Failed' } },
+          'Result Summary': { rich_text: [{ text: { content: notes || '' } }] },
         }
       }
     );

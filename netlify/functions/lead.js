@@ -117,7 +117,7 @@ async function pushToNotion(lead) {
 }
 
 // ─── Log to Notion Agent Activity ─────────────────────────────────────────────
-async function logActivity(action, leadId, success) {
+async function logActivity(action, leadId, success, summary) {
   const ACTIVITY_DB = process.env.NOTION_ACTIVITY_DB;
   if (!NOTION_TOKEN || !ACTIVITY_DB) return;
   try {
@@ -126,11 +126,11 @@ async function logActivity(action, leadId, success) {
       {
         parent: { database_id: ACTIVITY_DB },
         properties: {
-          'Name':      { title: [{ text: { content: `lead-webhook: ${action}` } }] },
-          'Agent':     { rich_text: [{ text: { content: 'lead-webhook' } }] },
-          'Action':    { rich_text: [{ text: { content: action } }] },
-          'Lead ID':   { rich_text: [{ text: { content: leadId } }] },
-          'Success':   { checkbox: success },
+          'Agent':          { title: [{ text: { content: 'lead-webhook' } }] },
+          'Action':         { rich_text: [{ text: { content: action } }] },
+          'Lead ID':        { rich_text: [{ text: { content: leadId } }] },
+          'Status':         { select: { name: success ? 'Success' : 'Failed' } },
+          'Result Summary': { rich_text: [{ text: { content: summary || '' } }] },
         }
       }
     );
@@ -218,7 +218,9 @@ exports.handler = async (event) => {
     </div>`
   });
 
-  await logActivity('new_lead_received', leadId, result.notion.success || false);
+  const notionOk = result.notion.success || false;
+  const emailOk  = result.adrianEmail?.success || false;
+  await logActivity('new_lead_received', leadId, notionOk, `notion:${notionOk} adrianEmail:${emailOk} source:${sourceTag}`);
 
   return {
     statusCode: 200,
