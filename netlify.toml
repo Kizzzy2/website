@@ -10,6 +10,11 @@
   schedule = "*/5 * * * *"
 
 [[redirects]]
+  from = "/api/crm-data"
+  to = "/.netlify/functions/crm-data"
+  status = 200
+
+[[redirects]]
   from = "/api/lead"
   to = "/.netlify/functions/lead"
   status = 200
