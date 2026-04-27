@@ -45,7 +45,7 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Link to="/pricing" className="btn-primary nav-book">
+          <Link to="/pricing#book" className="btn-primary nav-book">
             Book Now
           </Link>
           <a href="tel:3464529991" className="nav-phone">

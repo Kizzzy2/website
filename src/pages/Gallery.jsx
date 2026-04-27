@@ -107,7 +107,7 @@ export default function Gallery() {
             <h2>Want Results Like These?</h2>
             <p>Book your mobile detailing appointment today and we'll come to you.</p>
             <div className="cta-btns">
-              <a href="/pricing" className="btn-primary">Book Online</a>
+              <a href="/pricing#book" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
             </div>
           </div>

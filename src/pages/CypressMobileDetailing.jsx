@@ -33,7 +33,7 @@ export default function CypressMobileDetailing() {
           <h1>Mobile Auto Detailing in <span className="cyan">Cypress TX</span></h1>
           <p>LabShine's home base. Full detail, ceramic coating, and paint correction brought directly to your Cypress property — no shop, no waiting.</p>
           <div className="hero-btns">
-            <a href="/pricing" className="btn-primary">Book in Cypress</a>
+            <a href="/pricing#book" className="btn-primary">Book in Cypress</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function CypressMobileDetailing() {
             <h2>Book Mobile Detailing in <span className="cyan">Cypress TX</span></h2>
             <p>Serving Bridgeland, Fairfield, Stone Gate, Copper Lakes, Longwood, Towne Lake, Cypress Creek Lakes, and all Cypress neighborhoods. Same-week appointments usually available.</p>
             <div className="hero-btns">
-              <a href="/pricing" className="btn-primary">Book Online</a>
+              <a href="/pricing#book" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>

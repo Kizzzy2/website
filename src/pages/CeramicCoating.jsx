@@ -38,7 +38,7 @@ export default function CeramicCoating() {
           <h1>9H Ceramic<br/><span className="cyan">Coating</span></h1>
           <p>Professional ceramic coating applied by certified detailers. 2–5 years of paint protection, hydrophobic effect, and showroom gloss.</p>
           <div className="hero-btns">
-            <a href="/pricing" className="btn-primary">Get a Free Quote</a>
+            <a href="/pricing#book" className="btn-primary">Get a Free Quote</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -106,7 +106,7 @@ export default function CeramicCoating() {
                 <li>✓ All painted surfaces</li>
                 <li>✓ Hydrophobic protection</li>
               </ul>
-              <a href="/pricing" className="btn-outline">Get a Quote</a>
+              <a href="/pricing#book" className="btn-outline">Get a Quote</a>
             </div>
             <div className="package-card featured">
               <span className="pkg-tag">Most Popular</span>
@@ -120,7 +120,7 @@ export default function CeramicCoating() {
                 <li>✓ Glass coating</li>
                 <li>✓ 1-year follow-up inspection</li>
               </ul>
-              <a href="/pricing" className="btn-primary">Get a Quote</a>
+              <a href="/pricing#book" className="btn-primary">Get a Quote</a>
             </div>
             <div className="package-card">
               <h3>Elite Ceramic</h3>
@@ -133,7 +133,7 @@ export default function CeramicCoating() {
                 <li>✓ Glass & plastic coating</li>
                 <li>✓ Annual maintenance plan</li>
               </ul>
-              <a href="/pricing" className="btn-outline">Get a Quote</a>
+              <a href="/pricing#book" className="btn-outline">Get a Quote</a>
             </div>
           </div>
         </div>
@@ -163,7 +163,7 @@ export default function CeramicCoating() {
             <h2>Protect Your Investment</h2>
             <p>Get a free ceramic coating quote today. We come to your home or office.</p>
             <div className="cta-btns">
-              <a href="/pricing" className="btn-primary">Get a Free Quote</a>
+              <a href="/pricing#book" className="btn-primary">Get a Free Quote</a>
               <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
             </div>
           </div>

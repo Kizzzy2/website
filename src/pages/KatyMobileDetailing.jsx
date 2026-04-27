@@ -33,7 +33,7 @@ export default function KatyMobileDetailing() {
           <h1>Mobile Auto Detailing in <span className="cyan">Katy TX</span></h1>
           <p>Full detail, ceramic coating, and paint correction delivered to your Katy driveway. Serving Cinco Ranch, Grand Lakes, Mason Creek, and all of Katy.</p>
           <div className="hero-btns">
-            <a href="/pricing" className="btn-primary">Book in Katy</a>
+            <a href="/pricing#book" className="btn-primary">Book in Katy</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function KatyMobileDetailing() {
             <h2>Book Mobile Detailing in <span className="cyan">Katy TX Today</span></h2>
             <p>Serving all of Katy including Cinco Ranch, Grand Lakes, Mason Creek, Nottingham Country, Firethorne, Cross Creek Ranch, and I-10 corridor businesses. Book in 2 minutes online.</p>
             <div className="hero-btns">
-              <a href="/pricing" className="btn-primary">Book Online</a>
+              <a href="/pricing#book" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>

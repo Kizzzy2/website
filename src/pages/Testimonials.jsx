@@ -178,7 +178,7 @@ export default function Testimonials() {
           <div className="cta-section">
             <h2>Ready for <span className="cyan">Results Like These?</span></h2>
             <p>Join 127+ satisfied Houston customers. Book your detail today — we come to you.</p>
-            <a href="/pricing" className="btn-primary">Book Your Detail</a>
+            <a href="/pricing#book" className="btn-primary">Book Your Detail</a>
           </div>
         </div>
       </section>

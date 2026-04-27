@@ -33,7 +33,7 @@ export default function WoodlandsMobileDetailing() {
           <h1>Mobile Auto Detailing in <span className="cyan">The Woodlands TX</span></h1>
           <p>Premium mobile detailing for The Woodlands' most discerning vehicle owners. Full detail, ceramic coating, and paint correction at your home or office.</p>
           <div className="hero-btns">
-            <a href="/pricing" className="btn-primary">Book in The Woodlands</a>
+            <a href="/pricing#book" className="btn-primary">Book in The Woodlands</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function WoodlandsMobileDetailing() {
             <h2>Book Mobile Detailing in <span className="cyan">The Woodlands</span></h2>
             <p>Serving Carlton Woods, Panther Creek, Indian Springs, Grogan's Mill, Cochran's Crossing, Sterling Ridge, Hughes Landing, and all of The Woodlands. Book online today.</p>
             <div className="hero-btns">
-              <a href="/pricing" className="btn-primary">Book Online</a>
+              <a href="/pricing#book" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>

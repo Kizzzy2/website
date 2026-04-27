@@ -269,3 +269,22 @@
   .quote-wrap { grid-template-columns: 1fr; gap: 40px; }
   .form-row { grid-template-columns: 1fr; }
 }
+
+/* ── DetailPilot Booking Widget ─────────────────────────────── */
+.booking-widget-section {
+  padding: 80px 0;
+  background: #0d0d0d;
+}
+
+.booking-widget-section .section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.booking-widget-section h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 8px 0 0;
+}

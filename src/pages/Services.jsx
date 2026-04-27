@@ -108,7 +108,7 @@ export default function Services() {
                 <ul className="svc-bullets">
                   {svc.bullets.map(b => <li key={b}><span className="cyan">✓</span> {b}</li>)}
                 </ul>
-                <a href="/pricing" className="btn-primary">Book This Service</a>
+                <a href="/pricing#book" className="btn-primary">Book This Service</a>
               </div>
             </div>
           ))}
@@ -121,7 +121,7 @@ export default function Services() {
             <h2>Ready to Get Started?</h2>
             <p>Book your mobile detailing appointment online. We come to you anywhere in the Houston area.</p>
             <div className="cta-btns">
-              <a href="/pricing" className="btn-primary">Book Online</a>
+              <a href="/pricing#book" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
             </div>
           </div>

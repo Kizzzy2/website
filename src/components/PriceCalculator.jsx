@@ -132,7 +132,7 @@ export default function PriceCalculator() {
                   <div className="calc-promo-note">🔥 $100 OFF promo active — book now before it ends</div>
                 )}
                 <div className="calc-result-sub">20% deposit to lock in your slot. We confirm within the hour.</div>
-                <a href="/pricing" className="btn-primary calc-result-btn">Book This Now →</a>
+                <a href="/pricing#book" className="btn-primary calc-result-btn">Book This Now →</a>
               </>
             ) : null}
           </div>

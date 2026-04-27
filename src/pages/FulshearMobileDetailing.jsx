@@ -39,7 +39,7 @@ export default function FulshearMobileDetailing() {
           <h1>Mobile Detailing in <span className="cyan">Fulshear TX</span></h1>
           <p>Professional auto detailing delivered to your Fulshear driveway. Full detail, ceramic coating, and paint correction — no drop-off, no waiting.</p>
           <div className="hero-btns">
-            <a href="/pricing" className="btn-primary">Book in Fulshear</a>
+            <a href="/pricing#book" className="btn-primary">Book in Fulshear</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function FulshearMobileDetailing() {
             <h2>Book Mobile Detailing in <span className="cyan">Fulshear Today</span></h2>
             <p>We serve all of Fulshear including Cross Creek Ranch, Pecan Ridge, Fulshear Lakes, Polo Ranch, and surrounding FM 1093 and FM 359 areas. Book online in under 2 minutes.</p>
             <div className="hero-btns">
-              <a href="/pricing" className="btn-primary">Book Online</a>
+              <a href="/pricing#book" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>

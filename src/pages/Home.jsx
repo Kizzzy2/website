@@ -137,10 +137,10 @@ export default function Home() {
             services delivered across Houston and 24 surrounding cities.
           </p>
           <div className="hero-btns">
-            <MagneticBtn href="/pricing" className="btn-primary" strength={0.4}>
+            <MagneticBtn href="/pricing#book" className="btn-primary" strength={0.4}>
               Book Online
             </MagneticBtn>
-            <MagneticBtn href="/pricing" className="btn-outline" strength={0.3}>
+            <MagneticBtn href="/pricing#book" className="btn-outline" strength={0.3}>
               View Pricing
             </MagneticBtn>
           </div>
@@ -212,7 +212,7 @@ export default function Home() {
                 <span className="service-icon">{s.icon}</span>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
-                <a href="/pricing" className="service-link">
+                <a href="/pricing#book" className="service-link">
                   Book This Service →
                 </a>
               </div>
@@ -237,7 +237,7 @@ export default function Home() {
                 <li>✓ Self-Cleaning Properties</li>
                 <li>✓ Enhanced Gloss</li>
               </ul>
-              <a href="/pricing" className="btn-primary">
+              <a href="/pricing#book" className="btn-primary">
                 Get a Quote
               </a>
             </div>
@@ -273,7 +273,7 @@ export default function Home() {
           afterLabel="After"
         />
         <div style={{ textAlign: 'center', marginTop: 32, paddingBottom: 8 }}>
-          <a href="/pricing" className="btn-primary">Book My Detail →</a>
+          <a href="/pricing#book" className="btn-primary">Book My Detail →</a>
         </div>
       </section>
 
@@ -303,7 +303,7 @@ export default function Home() {
             <h2>Ready to Shine?</h2>
             <p>Book your mobile detailing appointment online. We come to you — home, office, or anywhere in the Houston area.</p>
             <div className="cta-btns">
-              <a href="/pricing" className="btn-primary">
+              <a href="/pricing#book" className="btn-primary">
                 Book Online Now
               </a>
               <a href="tel:3464529991" className="btn-outline">

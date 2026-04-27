@@ -33,7 +33,7 @@ export default function SugarLandMobileDetailing() {
           <h1>Mobile Auto Detailing in <span className="cyan">Sugar Land TX</span></h1>
           <p>Professional mobile detailing for Sugar Land's luxury vehicles. Full detail, ceramic coating, and paint correction — delivered to your First Colony home or Riverstone estate.</p>
           <div className="hero-btns">
-            <a href="/pricing" className="btn-primary">Book in Sugar Land</a>
+            <a href="/pricing#book" className="btn-primary">Book in Sugar Land</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function SugarLandMobileDetailing() {
             <h2>Book Mobile Detailing in <span className="cyan">Sugar Land Today</span></h2>
             <p>Serving First Colony, New Territory, Riverstone, Telfair, Sugar Creek, Greatwood, and all of Sugar Land. Most appointments available within 48 hours.</p>
             <div className="hero-btns">
-              <a href="/pricing" className="btn-primary">Book Online</a>
+              <a href="/pricing#book" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>

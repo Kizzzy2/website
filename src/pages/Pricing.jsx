@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import './Pricing.css'
 import img from '../lib/images'
+import BookingWidget from '../components/BookingWidget'
 
 // LOCKED PRICING — do not change without approval
 // Full Detail: Sedan $250 / SUV $300 | $100 OFF promo active
@@ -188,34 +189,24 @@ export default function Pricing() {
                       <li key={item}><span className="cyan">✓</span> {item}</li>
                     ))}
                   </ul>
-                  {svc.sizes.length === 1 ? (
-                    <a
-                      href={svc.sizes[0].depositLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary pricing-cta"
-                    >
-                      Book Now — {svc.sizes[0].deposit} Deposit →
-                    </a>
-                  ) : (
-                    <div className="pricing-deposit-btns">
-                      {svc.sizes.map(sz => (
-                        <a
-                          key={sz.label}
-                          href={sz.depositLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-primary pricing-cta"
-                        >
-                          {sz.label} — {sz.deposit} Deposit →
-                        </a>
-                      ))}
-                    </div>
-                  )}
+                  <a href="#book" className="btn-primary pricing-cta">
+                    Book Now →
+                  </a>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* DetailPilot Booking Widget */}
+      <section className="booking-widget-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-label">Book Online</span>
+            <h2>Schedule Your <span className="cyan">Detail</span></h2>
+          </div>
+          <BookingWidget />
         </div>
       </section>
 

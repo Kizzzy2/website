@@ -96,7 +96,7 @@ export default function BlogPost() {
           <div className="sidebar-card">
             <h4>Book a Detail</h4>
             <p>Ready to get your vehicle looking its best? Book online today.</p>
-            <a href="/pricing" className="btn-primary">
+            <a href="/pricing#book" className="btn-primary">
               Book Now
             </a>
           </div>
