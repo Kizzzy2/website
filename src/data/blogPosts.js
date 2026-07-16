@@ -3,6 +3,252 @@
 
 const BLOG_POSTS = [
   {
+    slug: 'car-detailing-cost-houston',
+    title: 'How Much Does Car Detailing Cost in Houston? (2026 Pricing Guide)',
+    excerpt: "Full breakdown of Houston car detailing prices — from a basic wash to full detail, ceramic coating, and paint correction. No fluff, just real numbers with what you actually get.",
+    category: 'Pricing',
+    date: 'July 16, 2026',
+    emoji: '💲',
+    featured: true,
+    body: `
+<p>One of the most common questions we get: <em>"What's a fair price for car detailing in Houston?"</em> The honest answer is — it depends on the service, your vehicle size, and how long it's been since the last detail. Here's a complete breakdown so you know exactly what to expect before you book.</p>
+
+<h2>Houston Car Detailing Price Ranges (2026)</h2>
+<p>These ranges reflect what legitimate mobile and shop detailers charge in the Houston metro. Prices below this range usually mean shortcuts (no clay bar, no steam, watered-down products). Prices significantly above this range should come with documentation, a warranty, or a premium product explanation.</p>
+
+<h3>Full Detail (Interior + Exterior)</h3>
+<ul>
+  <li><strong>Small car (sedan, coupe):</strong> $250–$350</li>
+  <li><strong>Mid-size (crossover, compact SUV):</strong> $300–$400</li>
+  <li><strong>Large (full-size SUV, truck, van):</strong> $375–$500</li>
+</ul>
+<p>A real full detail includes: hand wash, clay bar decontamination, engine bay, wheel cleaning, iron fallout removal, ceramic spray sealant, steam cleaning the interior, shampooing seats and carpet, leather conditioning, headliner clean, and odor treatment. If your quote doesn't include most of these, it's not a full detail.</p>
+
+<h3>Interior Detail Only</h3>
+<ul>
+  <li><strong>Small:</strong> $150–$200</li>
+  <li><strong>Mid:</strong> $175–$225</li>
+  <li><strong>Large:</strong> $200–$275</li>
+</ul>
+
+<h3>Exterior Detail Only</h3>
+<ul>
+  <li><strong>Small:</strong> $125–$175</li>
+  <li><strong>Mid:</strong> $150–$200</li>
+  <li><strong>Large:</strong> $175–$250</li>
+</ul>
+
+<h3>Basic Wash &amp; Wax (Maintenance)</h3>
+<ul>
+  <li><strong>Small:</strong> $80–$150</li>
+  <li><strong>Mid:</strong> $100–$175</li>
+  <li><strong>Large:</strong> $125–$200</li>
+</ul>
+
+<h2>Ceramic Coating Prices in Houston</h2>
+<p>Ceramic coating is a bigger investment but the math works out if you keep your car 3+ years. Here's what to expect:</p>
+<ul>
+  <li><strong>1–2 year consumer-grade ceramic:</strong> $400–$700</li>
+  <li><strong>3–5 year professional ceramic (Gtechniq, SystemX, etc.):</strong> $800–$1,500</li>
+  <li><strong>7–9 year crystal-tier ceramic:</strong> $1,800–$3,000+</li>
+</ul>
+<p>These prices always include at least one stage of paint correction before coating. Any shop that skips paint correction before ceramic is cutting a major corner — defects get permanently sealed in.</p>
+
+<h2>Paint Correction Prices</h2>
+<ul>
+  <li><strong>Single-stage (light swirls, minor scratches):</strong> $300–$500</li>
+  <li><strong>Multi-stage (deeper correction, oxidation removal):</strong> $600–$1,200</li>
+</ul>
+
+<h2>Add-On Services</h2>
+<ul>
+  <li>Pet hair removal: $50–$100</li>
+  <li>Headlight restoration: $60–$100</li>
+  <li>Odor elimination (ozone): $75–$120</li>
+  <li>Engine bay detail: $50–$100</li>
+  <li>Water spot removal: $75–$150</li>
+</ul>
+
+<h2>Why Houston Prices Are What They Are</h2>
+<p>A few things drive Houston detailing costs specifically:</p>
+<ul>
+  <li><strong>Vehicle size:</strong> Houston is truck country. More surface area = more time = higher price.</li>
+  <li><strong>Condition:</strong> A car that hasn't been detailed in 2+ years takes significantly longer. Don't be surprised if your detailer charges more for a neglected vehicle.</li>
+  <li><strong>Mobile vs shop:</strong> Mobile detailing (we come to you) typically costs the same or slightly more than a shop because you're paying for convenience — but you save the time of dropping off and picking up.</li>
+  <li><strong>Heat damage:</strong> Houston's UV and humidity mean more paint degradation, more interior fading, and more work to restore.</li>
+</ul>
+
+<h2>Red Flags: When a Price Is Too Low</h2>
+<p>If someone quotes you a "full detail" for $80–$100, they're either doing a glorified car wash or they're cutting every corner. Real full details take 4–6 hours minimum. You can't do that properly in under $200.</p>
+<p>Check Google reviews, look at before/after photos, and make sure they actually list what's included in writing before you book.</p>
+
+<h2>LabShine Pricing — Transparent, No Surprises</h2>
+<p>At LabShine, we price by size (S/M/L) with flat rates so you know exactly what you're paying before we show up. No hidden fees, no upsell pressure. See our full <a href="/pricing">pricing page</a> or <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener">get a free custom quote</a> — we'll respond same day.</p>
+    `,
+  },
+  {
+    slug: 'water-spots-car-houston',
+    title: 'Water Spots on Your Car in Houston — What They Are and How to Remove Them',
+    excerpt: "Houston's water leaves white mineral deposits on paint that wash off won't fix. Here's what's actually happening and the right way to remove water spots without damaging your clear coat.",
+    category: 'Paint Care',
+    date: 'July 15, 2026',
+    emoji: '💧',
+    featured: false,
+    body: `
+<p>You wash your car, it dries in Houston's heat — and instead of a clean finish, you get dozens of white, hazy spots all over the hood and roof. Sound familiar? This is one of the most common paint problems in Houston, and it's almost entirely caused by the city's hard water supply.</p>
+
+<h2>Why Houston's Water Causes Spots</h2>
+<p>Houston water comes from the Gulf Coast Aquifer and surface sources, and it's loaded with dissolved minerals — primarily calcium and magnesium. When water droplets dry on your paint in the sun, the water evaporates but the minerals stay behind. They bond to your clear coat and, over time, can etch into it.</p>
+<p>The faster your car dries (hello, 95°F summers), the worse the spotting. What would be a minor issue in a cooler climate becomes a recurring problem in Houston.</p>
+
+<h2>Type 1: Surface Water Spots (Easy to Fix)</h2>
+<p>Fresh mineral deposits that haven't had time to etch into the clear coat. You can feel them as a slightly rough texture, and they look white or hazy in direct sunlight.</p>
+<p><strong>How to remove:</strong></p>
+<ol>
+  <li>Wash the car first with a pH-neutral soap</li>
+  <li>Mix 1 part white distilled vinegar with 3 parts distilled water</li>
+  <li>Apply to the affected areas with a microfiber cloth, let sit 60 seconds</li>
+  <li>Rinse thoroughly and dry immediately with a clean microfiber</li>
+  <li>Apply a spray wax or detailer to protect the area</li>
+</ol>
+<p>This works on light, fresh spots. Do not use vinegar on etched spots — it won't help and can make things worse on bare clear coat.</p>
+
+<h2>Type 2: Etched Water Spots (Require Professional Correction)</h2>
+<p>When mineral deposits sit on paint — especially in direct sun — the acidic compounds in the water chemically etch into the clear coat. You can see this as a circular mark that doesn't come off with washing or vinegar. Running your finger over it, you might feel a slight depression.</p>
+<p><strong>How to remove:</strong> This requires machine polishing (paint correction). A compound or polish + a machine polisher can level the clear coat around the etch and restore a smooth, uniform surface. This is not a DIY job unless you have experience with a DA polisher — wrong technique can burn through the clear coat.</p>
+
+<h2>Type 3: Embedded Mineral Deposits (Require Clay Bar + Correction)</h2>
+<p>Long-term buildup that's bonded to and into the clear coat. Paint will feel rough to the touch even after washing. This needs a full decontamination (clay bar treatment + iron fallout remover) followed by paint correction.</p>
+
+<h2>How to Prevent Water Spots in Houston</h2>
+<ol>
+  <li><strong>Dry your car immediately after washing</strong> — don't let it air dry, especially outside in summer. Use a clean microfiber drying towel and go over it immediately after rinsing.</li>
+  <li><strong>Use a ceramic coating or paint sealant</strong> — coated surfaces are hydrophobic. Water beads and rolls off instead of sitting and drying flat. This is the single biggest prevention tool for Houston water spots.</li>
+  <li><strong>Use distilled water for the final rinse</strong> — especially if you wash at home. Regular tap water is the enemy. A gallon of distilled from the grocery store for your final rinse costs $1 and prevents hours of correction work.</li>
+  <li><strong>Park covered whenever possible</strong> — rain in Houston doesn't clean your car. It deposits minerals and road grime then dries in the sun.</li>
+  <li><strong>Spot-dry after rain</strong> — if your car gets rained on and you can't wash it right away, at least dry the hood and roof to prevent the worst buildup.</li>
+</ol>
+
+<h2>When to Call a Detailer</h2>
+<p>If your paint has visible etching that you can feel with your fingernail, water spots that don't respond to vinegar treatment, or widespread hazy patches in direct sunlight — it's time for professional paint correction. Depending on severity, this ranges from a single-stage polish to a full multi-stage correction process.</p>
+<p>LabShine handles water spot removal and paint correction across Houston, Katy, The Woodlands, Sugar Land, Pearland, Cypress, and Memorial. <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener">Get a free quote</a> and we'll assess your paint and tell you exactly what level of correction it needs.</p>
+    `,
+  },
+  {
+    slug: 'new-car-detailing-houston',
+    title: 'Just Got a New Car? Here\'s Why You Should Detail It Before Anything Else',
+    excerpt: "New cars aren't as protected as you think. Here's what the dealership doesn't tell you about new car paint — and why ceramic coating on day one is the smartest money you'll spend.",
+    category: 'Paint Care',
+    date: 'July 14, 2026',
+    emoji: '🚗',
+    featured: false,
+    body: `
+<p>You just drove off the lot in a new car. It looks perfect — glossy, flawless, like it'll stay that way forever. But here's what the dealership doesn't tell you: that paint is completely unprotected the moment you leave the lot, and Houston's environment will start working on it immediately.</p>
+
+<h2>The Dealership Prep Is Not Protection</h2>
+<p>Most dealers apply a basic spray wax or surface dressing before delivery. It looks good for photos and the test drive, but it's not real paint protection. It'll last 2–4 weeks in Houston's heat before washing off completely.</p>
+<p>Some dealers try to sell you their own "paint protection package" — often a dealer-applied coating that costs $500–$1,500 and is not the same as a professional ceramic coating. These products are typically applied by untrained staff, over paint that hasn't been properly decontaminated or polished, and they carry warranties that are hard to claim.</p>
+
+<h2>What Happens to New Car Paint in Houston</h2>
+<p>Within the first 6 months on a new car with no paint protection:</p>
+<ul>
+  <li><strong>Week 1–2:</strong> Dealership spray wax begins washing off</li>
+  <li><strong>Month 1:</strong> Bird droppings, tree sap, and road tar start making contact with bare clear coat</li>
+  <li><strong>Month 2–3:</strong> Microscopic swirl marks begin forming from car washes, parking lot brushes against other cars, and improper drying technique</li>
+  <li><strong>Month 6:</strong> In Houston UV, clear coat oxidation begins on areas with consistent sun exposure</li>
+  <li><strong>Year 1–2:</strong> Paint that started flawless now shows swirls visible in direct sunlight, possible water spot etching, and dulling of gloss</li>
+</ul>
+<p>This happens to every unprotected car in Houston. It's not a question of if, it's a question of how fast.</p>
+
+<h2>Why New Car + Ceramic Coating Is the Best Combo</h2>
+<p>When you apply ceramic coating to a brand-new car, you start with perfect paint. No swirls to correct, no oxidation to remove. You lock in that factory finish under a semi-permanent protective layer that:</p>
+<ul>
+  <li>Blocks UV from degrading the clear coat</li>
+  <li>Repels water, bird droppings, and tree sap so they don't sit and etch</li>
+  <li>Creates a surface harder than the paint itself (9H hardness on professional coatings)</li>
+  <li>Makes washing take half the time because contaminants don't bond to the surface</li>
+  <li>Preserves resale value — paint condition is the #1 visible factor in used car pricing</li>
+</ul>
+
+<h2>What About PPF (Paint Protection Film)?</h2>
+<p>PPF (also called clear bra) is a thick transparent film applied over the paint — most commonly on the front bumper, hood, mirrors, and rocker panels, which are the highest-impact areas for rock chips and road debris. PPF is the only product that physically blocks paint chips.</p>
+<p>For maximum protection: PPF on impact zones + ceramic coating over everything else. This is the setup we recommend for trucks, luxury cars, or anyone who drives frequently on Houston highways where rock chips are common.</p>
+
+<h2>What New Car Detailing Includes</h2>
+<p>A proper new car detail before ceramic coating involves:</p>
+<ol>
+  <li><strong>Full decontamination wash</strong> — remove any transport wax, lot dust, rail dust, and fallout from the dealership</li>
+  <li><strong>Clay bar treatment</strong> — pull any embedded contamination out of the paint before sealing it in</li>
+  <li><strong>Light paint correction (if needed)</strong> — new cars can have buffer marks or light swirls from dealer prep. We remove these before coating so you start with a truly perfect surface</li>
+  <li><strong>Ceramic coating application</strong> — panel by panel, in a shaded environment, with a proper cure time (24–48 hours)</li>
+</ol>
+
+<h2>Timing Matters</h2>
+<p>The sooner after purchase, the better. Every day your new car sits unprotected in Houston's sun and humidity is a day the paint is taking damage. The ideal window is within the first 2 weeks of ownership — before anything has a chance to bond to the paint and require more correction work before coating.</p>
+
+<h2>LabShine New Car Protection in Houston</h2>
+<p>We specialize in new car ceramic coating installs across the Houston metro. We come to you — your driveway, your office, wherever is convenient. Package pricing starts at <a href="/ceramic-coating">$599 for a 2-year professional ceramic</a> and goes up to $2,499 for a 9-year crystal-tier coating.</p>
+<p>Most new car owners we talk to wish they had done it sooner. <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener">Get a free quote</a> and we'll walk you through exactly what's right for your car.</p>
+    `,
+  },
+  {
+    slug: 'how-long-does-ceramic-coating-last',
+    title: 'How Long Does Ceramic Coating Last? (Honest Answer)',
+    excerpt: "You'll see everything from '2 years' to '10 years permanent' online. Here's what ceramic coating lifespan actually looks like in the real world — especially in Houston's heat and humidity.",
+    category: 'Ceramic Coating',
+    date: 'July 13, 2026',
+    emoji: '🛡️',
+    featured: false,
+    body: `
+<p>Ceramic coating lifespan is one of the most misrepresented topics in the detailing industry. You'll find products claiming to be "permanent," "10-year protection," and "lifetime coating" all over the internet. Here's the honest breakdown of what those claims actually mean and what you can realistically expect — especially in Houston.</p>
+
+<h2>What Ceramic Coating Lifespan Actually Means</h2>
+<p>Ceramic coating doesn't disappear overnight. It degrades gradually over time — the hydrophobic properties weaken, the gloss enhancement diminishes, and UV resistance decreases. When a coating is rated for "5 years," it means the coating should provide meaningful protection for approximately 5 years under normal conditions before requiring reapplication.</p>
+<p>Two things determine actual lifespan: <strong>coating quality</strong> and <strong>maintenance</strong>.</p>
+
+<h2>Tier-by-Tier Breakdown</h2>
+
+<h3>Consumer Spray Ceramics ($20–$80 DIY)</h3>
+<p><strong>Real-world lifespan: 3–6 months</strong></p>
+<p>Products like Turtle Wax Hybrid Ceramic, Chemical Guys HydroCharge, and similar spray-ons contain ceramic particles but in concentrations far below professional coatings. They provide a temporary hydrophobic boost but are not a substitute for a proper ceramic coating. Fine as a maintenance spray between professional applications — not as a standalone protection strategy.</p>
+
+<h3>Professional 2-Year Coatings ($400–$700 installed)</h3>
+<p><strong>Real-world lifespan: 18 months–3 years</strong></p>
+<p>Entry-level professional coatings like IGL Kenzo, Carpro Cquartz, and similar. Significantly more durable than spray ceramics, with real UV protection and hydrophobic properties. With proper maintenance, can exceed the rated 2-year window. Good option for daily drivers or people who want professional protection without the premium price.</p>
+
+<h3>Professional 5-Year Coatings ($800–$1,500 installed)</h3>
+<p><strong>Real-world lifespan: 3–6 years</strong></p>
+<p>Mid-tier professional coatings from Gtechniq, SystemX, Feynlab, and similar brands. This is where you start getting real SiO2 concentration and meaningful warranty backing. These are the coatings we most commonly recommend for daily drivers in Houston — the balance of cost and protection is excellent. Requires annual inspections and maintenance washes with pH-neutral soap.</p>
+
+<h3>Professional 7–9 Year Crystal-Tier Coatings ($1,800–$3,000+ installed)</h3>
+<p><strong>Real-world lifespan: 5–9 years</strong></p>
+<p>Products like Gtechniq Crystal Serum Ultra, SystemX Diamond, and similar. These are the hardest, most durable coatings available for passenger vehicles. The 9H hardness rating is real — these coatings resist light scratches and marring that would affect lesser coatings. Backed by manufacturer warranties when applied by certified installers. For luxury vehicles, daily drivers that will be kept long-term, or anyone who wants to set it and forget it for years.</p>
+
+<h2>How Houston's Climate Affects Coating Life</h2>
+<p>Houston is harder on ceramic coatings than most US cities. Here's why:</p>
+<ul>
+  <li><strong>UV intensity:</strong> Houston's latitude and long sunny seasons mean more UV exposure than northern cities. UV degrades ceramic coatings over time — a coating rated for 5 years in Seattle might last 4 in Houston.</li>
+  <li><strong>Temperature cycling:</strong> Extreme heat in summer and rapid temperature swings in winter cause paint and coating to expand and contract. Better coatings handle this better than cheaper ones.</li>
+  <li><strong>Humidity:</strong> Houston's persistent humidity means constant moisture contact. High-end coatings bead water effectively; degrading coatings let moisture sit flat and cause water spot etching.</li>
+  <li><strong>Industrial fallout:</strong> If you live or work near the Ship Channel or industrial areas, chemical fallout is a real issue. Ceramic coating adds chemical resistance that bare paint doesn't have.</li>
+</ul>
+<p>For Houston specifically, we recommend stepping up at least one tier from what you'd otherwise consider — a 5-year coating in Houston is really a 4-year coating, and so on.</p>
+
+<h2>What You Need to Do to Hit the Rated Lifespan</h2>
+<p>Ceramic coating is not zero-maintenance. To hit or exceed the rated lifespan:</p>
+<ol>
+  <li><strong>Wash with pH-neutral soap only</strong> — acidic or alkaline soaps (most car wash soaps) degrade the coating faster. Use a dedicated coating-safe soap.</li>
+  <li><strong>No automatic car washes with brushes</strong> — the brushes introduce swirl marks that damage the coating and the paint beneath. Touchless is acceptable; hand washing is always best.</li>
+  <li><strong>Annual maintenance detail</strong> — a light decontamination wash, clay bar if needed, and a booster spray applied annually will significantly extend coating life.</li>
+  <li><strong>Address contamination quickly</strong> — bird droppings, tree sap, and bug splatter should be removed within 48 hours, even on a coated car. The coating protects the paint, but harsh contaminants will still degrade the coating over time if left on.</li>
+</ol>
+
+<h2>The Bottom Line</h2>
+<p>For most Houston drivers, a professional 3–5 year coating installed correctly gives you 3–5 years of real protection with proper maintenance. "Permanent" and "lifetime" coatings exist in marketing — not in reality. What's real is that a quality ceramic coating will dramatically reduce how much work your paint needs over years of daily driving, and it will look noticeably better doing it.</p>
+<p>LabShine is a certified ceramic coating installer serving Houston and the surrounding metro. We offer 2-year, 5-year, and 9-year crystal-tier options. <a href="/ceramic-coating">See our ceramic coating packages</a> or <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener">get a free quote</a> and we'll recommend exactly what makes sense for your vehicle and your goals.</p>
+    `,
+  },
+  {
     slug: 'summer-car-care-houston-july-2026',
     title: "Summer Car Care in Houston — What to Do Right Now",
     excerpt: "July in Houston is brutal on your car. UV at its peak, surfaces baking past 160°F, and humidity trapping everything. Here's exactly what to do this month to protect your paint and interior.",
