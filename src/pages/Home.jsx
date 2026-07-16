@@ -5,7 +5,6 @@ import './Home.css'
 import img from '../lib/images'
 import { useScrollReveal, useCountUp } from '../hooks/useScrollReveal'
 import BeforeAfter from '../components/BeforeAfter'
-import PriceCalculator from '../components/PriceCalculator'
 import MagneticBtn from '../components/MagneticBtn'
 import BookingWidget from '../components/BookingWidget'
 
@@ -74,12 +73,12 @@ const localBusinessSchema = {
 const heroBg = '/images/the-woodlands/IMG_5481.JPG'
 
 const services = [
-  { title: 'Full Detail', desc: 'Complete interior and exterior for a showroom finish. Our most popular package.', link: '/pricing', img: '/images/the-woodlands/IMG_5416.JPG' },
-  { title: 'Interior Detail', desc: 'Deep clean of every surface — seats, carpet, dash, panels, and trim.', link: '/interior-detailing', img: '/images/katy/IMG_5337.JPG' },
-  { title: 'Ceramic Coating', desc: '9H ceramic coating for years of paint protection and hydrophobic effect.', link: '/ceramic-coating', img: '/images/sugar-land/IMG_4403.JPG' },
-  { title: 'Paint Correction', desc: 'Remove swirl marks, scratches, and oxidation. Restore paint to new condition.', link: '/paint-correction', img: '/images/cypress/IMG_4133.JPG' },
-  { title: 'Exterior Detail', desc: 'Hand wash, clay bar, wax or sealant — exterior protection done right.', link: '/pricing', img: '/images/memorial/IMG_5217.JPG' },
-  { title: 'Fleet Services', desc: 'Recurring detailing programs for commercial fleets of any size in Houston.', link: '/fleet', img: '/images/houston/IMG_3345.JPG' },
+  { title: 'Full Detail', desc: 'Complete interior and exterior for a showroom finish. Our most popular package.', link: '/pricing', img: '/images/the-woodlands/IMG_5416.JPG', price: 'From $300', pos: 'center 35%' },
+  { title: 'Interior Detail', desc: 'Deep clean of every surface — seats, carpet, dash, panels, and trim.', link: '/interior-detailing', img: '/images/katy/IMG_5337.JPG', price: 'From $250', pos: 'center 20%' },
+  { title: 'Ceramic Coating', desc: '9H ceramic coating for years of paint protection and hydrophobic effect.', link: '/ceramic-coating', img: '/images/sugar-land/IMG_4403.JPG', price: 'From $599', pos: 'center 30%' },
+  { title: 'Paint Correction', desc: 'Remove swirl marks, scratches, and oxidation. Restore paint to new condition.', link: '/paint-correction', img: '/images/cypress/IMG_4133.JPG', price: 'From $350', pos: 'center 25%' },
+  { title: 'Exterior Detail', desc: 'Hand wash, clay bar, wax or sealant — exterior protection done right.', link: '/pricing', img: '/images/memorial/IMG_5217.JPG', price: 'From $150', pos: 'center 40%' },
+  { title: 'Fleet Services', desc: 'Recurring detailing programs for commercial fleets of any size in Houston.', link: '/fleet', img: '/images/houston/IMG_3345.JPG', price: 'Custom Quote', pos: 'center 35%' },
 ]
 
 const areas = [
@@ -195,14 +194,15 @@ export default function Home() {
               <div
                 key={s.title}
                 className={`service-img-card reveal reveal-delay-${i + 1}${servicesVisible ? ' visible' : ''}`}
-                style={{ backgroundImage: `url(${s.img})` }}
               >
+                <div className="service-img-bg" style={{ backgroundImage: `url(${s.img})`, backgroundPosition: s.pos }} />
                 <div className="service-img-overlay" />
                 <div className="service-img-accent" />
                 <div className="service-img-content">
+                  <span className="service-price">{s.price}</span>
                   <h3>{s.title}</h3>
                   <p>{s.desc}</p>
-                  <Link to={s.link} className="service-link">Learn More →</Link>
+                  <Link to={s.link} className="service-link">Book Now →</Link>
                 </div>
               </div>
             ))}
@@ -336,8 +336,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Price Calculator */}
-      <PriceCalculator />
 
       {/* Areas */}
       <section className="areas-section" id="areas" ref={areasRef}>
