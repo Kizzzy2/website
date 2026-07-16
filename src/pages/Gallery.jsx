@@ -28,6 +28,50 @@ const galleryItems = [
   { src: img.bmwX5Before, caption: 'BMW X5 — Paint Correction Before/After', cat: 'Paint Correction' },
   { src: img.truckInteriorBefore, caption: 'Truck Interior — Deep Clean Before/After', cat: 'Interior' },
   { src: img.interiorDetail, caption: 'Interior Steam Detail Close-up', cat: 'Interior' },
+  // Real customer photos — Houston area
+  { src: '/images/the-woodlands/IMG_5481.JPG', caption: 'LabShine Team with Exotic Lineup — The Woodlands, TX', cat: 'Full Detail' },
+  { src: '/images/the-woodlands/IMG_5483.JPG', caption: 'On the Job — The Woodlands, TX', cat: 'Full Detail' },
+  { src: '/images/the-woodlands/IMG_5479.JPG', caption: 'Owner Adrian Medina — The Woodlands, TX', cat: 'Full Detail' },
+  { src: '/images/the-woodlands/IMG_5416.JPG', caption: 'Full Detail — The Woodlands, TX', cat: 'Full Detail' },
+  { src: '/images/the-woodlands/IMG_5413.JPG', caption: 'Exterior Detail — The Woodlands, TX', cat: 'Exterior' },
+  { src: '/images/the-woodlands/IMG_5458.JPG', caption: 'Detail Service — The Woodlands, TX', cat: 'Full Detail' },
+  { src: '/images/the-woodlands/IMG_4273.JPG', caption: 'Full Detail — The Woodlands, TX', cat: 'Full Detail' },
+  { src: '/images/katy/IMG_5337.JPG', caption: 'Exterior Detail — Katy, TX', cat: 'Exterior' },
+  { src: '/images/katy/IMG_5346.JPG', caption: 'Full Detail — Katy, TX', cat: 'Full Detail' },
+  { src: '/images/katy/IMG_5207.JPG', caption: 'Detail Service — Katy, TX', cat: 'Full Detail' },
+  { src: '/images/katy/IMG_2782.JPG', caption: 'Full Detail — Katy, TX', cat: 'Full Detail' },
+  { src: '/images/katy/IMG_2785.JPG', caption: 'Exterior Detail — Katy, TX', cat: 'Exterior' },
+  { src: '/images/katy/IMG_2788.JPG', caption: 'Full Detail — Katy, TX', cat: 'Full Detail' },
+  { src: '/images/cypress/IMG_4133.JPG', caption: 'Paint Correction — Cypress, TX', cat: 'Paint Correction' },
+  { src: '/images/cypress/IMG_4290.JPG', caption: 'Full Detail — Cypress, TX', cat: 'Full Detail' },
+  { src: '/images/cypress/IMG_4306.JPG', caption: 'Exterior Detail — Cypress, TX', cat: 'Exterior' },
+  { src: '/images/cypress/IMG_5356.JPG', caption: 'Detail Service — Cypress, TX', cat: 'Full Detail' },
+  { src: '/images/cypress/IMG_2728.JPG', caption: 'Full Detail — Cypress, TX', cat: 'Full Detail' },
+  { src: '/images/cypress/IMG_4117.jpeg', caption: 'Exterior Detail — Cypress, TX', cat: 'Exterior' },
+  { src: '/images/sugar-land/IMG_4403.JPG', caption: 'Exterior Detail — Sugar Land, TX', cat: 'Exterior' },
+  { src: '/images/sugar-land/IMG_4406.JPG', caption: 'Full Detail — Sugar Land, TX', cat: 'Full Detail' },
+  { src: '/images/sugar-land/IMG_4471.JPG', caption: 'Detail Service — Sugar Land, TX', cat: 'Full Detail' },
+  { src: '/images/sugar-land/IMG_4474.JPG', caption: 'Exterior Detail — Sugar Land, TX', cat: 'Exterior' },
+  { src: '/images/sugar-land/IMG_5121.JPG', caption: 'Full Detail — Sugar Land, TX', cat: 'Full Detail' },
+  { src: '/images/sugar-land/IMG_4276.JPG', caption: 'Full Detail — Sugar Land, TX', cat: 'Full Detail' },
+  { src: '/images/memorial/IMG_5217.JPG', caption: 'Full Detail — Memorial, Houston TX', cat: 'Full Detail' },
+  { src: '/images/memorial/IMG_5307.JPG', caption: 'Ceramic Coating — Memorial, Houston TX', cat: 'Ceramic Coating' },
+  { src: '/images/memorial/IMG_5313.JPG', caption: 'Exterior Detail — Memorial, Houston TX', cat: 'Exterior' },
+  { src: '/images/memorial/IMG_5202.JPG', caption: 'Detail Service — Memorial, Houston TX', cat: 'Full Detail' },
+  { src: '/images/memorial/IMG_3388.JPG', caption: 'Full Detail — Memorial, Houston TX', cat: 'Full Detail' },
+  { src: '/images/memorial/IMG_5010.JPG', caption: 'Exterior Detail — Memorial, Houston TX', cat: 'Exterior' },
+  { src: '/images/pearland/IMG_4247.JPG', caption: 'Exterior Detail — Pearland, TX', cat: 'Exterior' },
+  { src: '/images/pearland/IMG_4238.JPG', caption: 'Full Detail — Pearland, TX', cat: 'Full Detail' },
+  { src: '/images/pearland/IMG_4249.JPG', caption: 'Full Detail — Pearland, TX', cat: 'Full Detail' },
+  { src: '/images/pearland/IMG_4301.jpeg', caption: 'Detail Service — Pearland, TX', cat: 'Full Detail' },
+  { src: '/images/pearland/IMG_4934.JPG', caption: 'Exterior Detail — Pearland, TX', cat: 'Exterior' },
+  { src: '/images/houston/IMG_3345.JPG', caption: 'Exterior Detail — Houston, TX', cat: 'Exterior' },
+  { src: '/images/houston/IMG_3352.JPG', caption: 'Full Detail — Houston, TX', cat: 'Full Detail' },
+  { src: '/images/houston/IMG_3440.JPG', caption: 'Detail Service — Houston, TX', cat: 'Full Detail' },
+  { src: '/images/houston/IMG_4084.jpeg', caption: 'Interior Detail — Houston, TX', cat: 'Interior' },
+  { src: '/images/houston/IMG_4200.jpeg', caption: 'Detail Service — Houston, TX', cat: 'Full Detail' },
+  { src: '/images/houston/IMG_4989.JPG', caption: 'Full Detail — Houston, TX', cat: 'Full Detail' },
+  { src: '/images/houston/IMG_2355.JPG', caption: 'Full Detail — Houston, TX', cat: 'Full Detail' },
 ]
 
 const cats = ['All', 'Full Detail', 'Ceramic Coating', 'Interior', 'Exterior', 'Paint Correction']
@@ -42,7 +86,10 @@ export default function Gallery() {
     <>
     <Helmet>
       <title>Before & After Detailing Gallery | Houston Cars | LabShine</title>
-      <meta name="description" content="See LabShine's before and after detailing results — Ferraris, Lamborghinis, Rolls Royces, BMW M cars, and more. Houston's finest mobile auto detailing gallery." />
+      <meta name="description" content="Before & after detailing results — Ferraris, Lamborghinis, Rolls Royces & BMWs. Houston's finest mobile auto detailing gallery. Book your detail today." />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Before & After Detailing Gallery | LabShine Houston" />
+      <meta name="twitter:description" content="Before & after detailing results — Ferraris, Lamborghinis, Rolls Royces & BMWs. Houston's finest mobile auto detailing gallery." />
       <link rel="canonical" href="https://labshineautodetailing.com/gallery" />
       <meta property="og:title" content="Before & After Detailing Gallery | LabShine Houston" />
       <meta property="og:description" content="Real results from real Houston cars. Before and after photos of full details, ceramic coatings, and paint correction." />
@@ -55,7 +102,7 @@ export default function Gallery() {
         <div className="page-hero-overlay" />
         <div className="container">
           <span className="hero-badge">Our Work</span>
-          <h1>The <span className="cyan">Gallery</span></h1>
+          <h1>Before & After <span className="cyan">Detailing Gallery</span></h1>
           <p>Real results from real vehicles we've detailed across Houston and surrounding cities.</p>
         </div>
       </section>
@@ -107,7 +154,7 @@ export default function Gallery() {
             <h2>Want Results Like These?</h2>
             <p>Book your mobile detailing appointment today and we'll come to you.</p>
             <div className="cta-btns">
-              <a href="/pricing#book" className="btn-primary">Book Online</a>
+              <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
             </div>
           </div>

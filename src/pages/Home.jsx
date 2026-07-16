@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
 import './Home.css'
 import img from '../lib/images'
 import { useScrollReveal, useCountUp } from '../hooks/useScrollReveal'
 import BeforeAfter from '../components/BeforeAfter'
 import PriceCalculator from '../components/PriceCalculator'
 import MagneticBtn from '../components/MagneticBtn'
+import BookingWidget from '../components/BookingWidget'
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -28,10 +30,26 @@ const localBusinessSchema = {
     "longitude": -95.3698
   },
   "areaServed": [
-    "Houston TX", "Cypress TX", "Katy TX", "Sugar Land TX",
-    "The Woodlands TX", "Pearland TX", "Spring TX", "Friendswood TX",
-    "Missouri City TX", "League City TX", "Conroe TX", "Humble TX"
+    "Houston TX", "River Oaks TX", "Memorial Houston TX", "Bellaire TX",
+    "West University Place TX", "Tanglewood Houston TX", "Heights Houston TX",
+    "Cypress TX", "Katy TX", "Sugar Land TX", "The Woodlands TX", "Pearland TX",
+    "Fulshear TX", "Spring TX", "Tomball TX", "Kingwood TX", "Atascocita TX",
+    "Conroe TX", "Magnolia TX", "Friendswood TX", "League City TX",
+    "Clear Lake TX", "Missouri City TX", "Richmond TX", "Humble TX"
   ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "LabShine Mobile Detailing Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Exterior Detail" }, "price": "150", "priceCurrency": "USD" },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interior Detail" }, "price": "250", "priceCurrency": "USD" },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Detail" }, "price": "350", "priceCurrency": "USD" },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ceramic Coating" }, "price": "750", "priceCurrency": "USD" },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ceramic Coating + Paint Correction" }, "price": "1000", "priceCurrency": "USD" },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Headlight Restoration" }, "price": "120", "priceCurrency": "USD" },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Engine Bay Detail" }, "price": "120", "priceCurrency": "USD" }
+    ]
+  },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
@@ -53,23 +71,15 @@ const localBusinessSchema = {
   ]
 }
 
-const heroSlides = [
-  { src: img.lamboUrus, alt: 'White Lamborghini Urus mobile detailing in Cypress TX', caption: 'Lamborghini Urus — Full Detail Reset, Cypress, TX' },
-  { src: img.ceramicVette, alt: 'Orange Corvette ZR1 ceramic coated by LabShine Houston TX', caption: 'Corvette ZR1 — Ceramic Coating, Houston, TX' },
-  { src: img.rollsGhost, alt: 'White Rolls Royce Ghost full detail with LabShine mobile unit Sugar Land TX', caption: 'Rolls Royce Ghost — Full Detail, Sugar Land, TX' },
-  { src: img.blackM3, alt: 'Black BMW M3 Competition exterior detail Cypress TX', caption: 'BMW M3 Competition — Exterior Detail, Cypress, TX' },
-  { src: img.ferrariFront, alt: 'White Ferrari California T full detail Katy TX', caption: 'Ferrari California T — Full Detail, Katy, TX' },
-  { src: img.rangeRoverSV, alt: 'Matte blue Range Rover SV ceramic coating The Woodlands TX', caption: 'Range Rover SV — Ceramic Coating, The Woodlands, TX' },
-  { src: img.escaladeRed, alt: 'Cadillac Escalade Sport matte red full detail Houston TX', caption: 'Cadillac Escalade Sport — Full Detail, Houston, TX' },
-]
+const heroBg = '/images/the-woodlands/IMG_5481.JPG'
 
 const services = [
-  { icon: '🚗', title: 'Full Detail', desc: 'Complete interior and exterior detailing for a showroom-worthy finish.' },
-  { icon: '✨', title: 'Interior Detail', desc: 'Deep clean of every surface — seats, carpet, dash, and trim.' },
-  { icon: '🛡️', title: 'Ceramic Coating', desc: '9H ceramic coating for long-lasting paint protection and hydrophobic effect.' },
-  { icon: '🔧', title: 'Paint Correction', desc: 'Remove swirl marks, scratches, and oxidation to restore your paint.' },
-  { icon: '🏢', title: 'Fleet Services', desc: 'Recurring detailing programs for commercial fleets of any size.' },
-  { icon: '🚌', title: 'RV & Truck Detail', desc: 'Specialized detailing for large vehicles, RVs, boats, and trailers.' },
+  { title: 'Full Detail', desc: 'Complete interior and exterior for a showroom finish. Our most popular package.', link: '/pricing', img: '/images/the-woodlands/IMG_5416.JPG' },
+  { title: 'Interior Detail', desc: 'Deep clean of every surface — seats, carpet, dash, panels, and trim.', link: '/interior-detailing', img: '/images/katy/IMG_5337.JPG' },
+  { title: 'Ceramic Coating', desc: '9H ceramic coating for years of paint protection and hydrophobic effect.', link: '/ceramic-coating', img: '/images/sugar-land/IMG_4403.JPG' },
+  { title: 'Paint Correction', desc: 'Remove swirl marks, scratches, and oxidation. Restore paint to new condition.', link: '/paint-correction', img: '/images/cypress/IMG_4133.JPG' },
+  { title: 'Exterior Detail', desc: 'Hand wash, clay bar, wax or sealant — exterior protection done right.', link: '/pricing', img: '/images/memorial/IMG_5217.JPG' },
+  { title: 'Fleet Services', desc: 'Recurring detailing programs for commercial fleets of any size in Houston.', link: '/fleet', img: '/images/houston/IMG_3345.JPG' },
 ]
 
 const areas = [
@@ -86,84 +96,58 @@ function AnimCount({ target, suffix = '', prefix = '' }) {
 }
 
 export default function Home() {
-  const [current, setCurrent] = useState(0)
   const [servicesRef, servicesVisible] = useScrollReveal()
   const [ceramicRef, ceramicVisible] = useScrollReveal()
   const [areasRef, areasVisible] = useScrollReveal()
   const [ctaRef, ctaVisible] = useScrollReveal()
   const [statsRef, statsVisible] = useScrollReveal()
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent(c => (c + 1) % heroSlides.length)
-    }, 4500)
-    return () => clearInterval(timer)
-  }, [])
-
   return (
     <>
     <Helmet>
-      <title>LabShine Auto Detailing | Houston Mobile Detailing & Ceramic Coating</title>
-      <meta name="description" content="Houston's #1 mobile auto detailing. Full detail from $250, ceramic coating from $800, paint correction. We come to your home, office, or garage. 24+ cities served." />
+      <title>Mobile Auto Detailing Houston TX | LabShine Auto Detailing</title>
+      <meta name="description" content="Houston's premium mobile auto detailing — River Oaks, Memorial, The Woodlands & 24+ areas. Full detail from $185, ceramic from $599. Book online today." />
       <link rel="canonical" href="https://labshineautodetailing.com/" />
-      <meta property="og:title" content="LabShine Auto Detailing | Houston Mobile Detailing & Ceramic Coating" />
-      <meta property="og:description" content="Houston's premier mobile auto detailing. Full detail from $250, ceramic coating from $800. We come to you — driveway, garage, or office. 24+ cities served." />
+      <meta property="og:title" content="Mobile Auto Detailing Houston TX | LabShine Auto Detailing" />
+      <meta property="og:description" content="Houston's premium mobile auto detailing — River Oaks, Memorial, The Woodlands & 24+ areas. Full detail from $185, ceramic from $599. Book online today." />
       <meta property="og:url" content="https://labshineautodetailing.com/" />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="LabShine Auto Detailing | Houston Mobile Detailing" />
-      <meta name="twitter:description" content="Houston's premier mobile detailing. Full detail from $250. We come to you. 24+ cities." />
+      <meta name="twitter:title" content="Mobile Auto Detailing Houston TX | LabShine" />
+      <meta name="twitter:description" content="Houston's premium mobile detailing — River Oaks, Memorial, The Woodlands & 24+ areas. Full detail from $185, ceramic from $599. Book today." />
       <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
     </Helmet>
     <main>
-      {/* Hero with slideshow */}
-      <section className="hero" id="home">
-        {heroSlides.map((slide, i) => (
-          <div
-            key={i}
-            className="hero-slide"
-            style={{ backgroundImage: `url(${slide.src})`, opacity: i === current ? 1 : 0 }}
-          />
-        ))}
+      {/* Hero */}
+      <section className="hero" id="home" style={{ backgroundImage: `url(${heroBg})` }}>
         <div className="hero-overlay-l" />
         <div className="hero-overlay-b" />
         <div className="hero-content container">
           <span className="hero-badge">Houston Mobile Detailing</span>
-          <h1 className="hero-title">Your Vehicle,<br/>Our Obsession.</h1>
+          <h1 className="hero-title">Houston's Premium<br/><span className="cyan">Mobile Auto Detailing</span></h1>
           <p className="hero-sub">
-            Professional mobile auto detailing at your driveway, garage, or office.
-            Ceramic coating, paint correction, interior detailing, and full detail
-            services delivered across Houston and 24 surrounding cities.
+            Professional mobile detailing at your driveway, garage, or office.
+            Ceramic coating, paint correction, interior detail, and full packages
+            across Houston and 24 surrounding cities.
           </p>
           <div className="hero-btns">
-            <MagneticBtn href="/pricing#book" className="btn-primary" strength={0.4}>
+            <MagneticBtn href="https://labshine-ops.vercel.app/book" className="btn-primary" strength={0.4}>
               Book Online
             </MagneticBtn>
-            <MagneticBtn href="/pricing#book" className="btn-outline" strength={0.3}>
+            <MagneticBtn href="/pricing" className="btn-outline" strength={0.3}>
               View Pricing
             </MagneticBtn>
           </div>
           <div className="hero-stats">
             <span>⭐ 4.9 Stars on Google</span>
-            <span>•</span>
+            <span className="sep">|</span>
             <span>500+ Vehicles Detailed</span>
-            <span>•</span>
+            <span className="sep">|</span>
             <span>24 Cities Served</span>
           </div>
-          <div className="hero-caption">{heroSlides[current].caption}</div>
         </div>
-        {/* Slide dots */}
-        <div className="hero-dots">
-          {heroSlides.map((_, i) => (
-            <button
-              key={i}
-              className={`hero-dot${i === current ? ' active' : ''}`}
-              onClick={() => setCurrent(i)}
-              aria-label={`Slide ${i + 1}`}
-            />
-          ))}
-        </div>
+        <div className="hero-clip-bottom" />
       </section>
 
       {/* Animated Stats Strip */}
@@ -208,13 +192,18 @@ export default function Home() {
           </div>
           <div className="services-grid">
             {services.map((s, i) => (
-              <div key={s.title} className={`service-card reveal reveal-delay-${i + 1}${servicesVisible ? ' visible' : ''}`}>
-                <span className="service-icon">{s.icon}</span>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-                <a href="/pricing#book" className="service-link">
-                  Book This Service →
-                </a>
+              <div
+                key={s.title}
+                className={`service-img-card reveal reveal-delay-${i + 1}${servicesVisible ? ' visible' : ''}`}
+                style={{ backgroundImage: `url(${s.img})` }}
+              >
+                <div className="service-img-overlay" />
+                <div className="service-img-accent" />
+                <div className="service-img-content">
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                  <Link to={s.link} className="service-link">Learn More →</Link>
+                </div>
               </div>
             ))}
           </div>
@@ -237,7 +226,7 @@ export default function Home() {
                 <li>✓ Self-Cleaning Properties</li>
                 <li>✓ Enhanced Gloss</li>
               </ul>
-              <a href="/pricing#book" className="btn-primary">
+              <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">
                 Get a Quote
               </a>
             </div>
@@ -248,12 +237,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gallery Strip */}
+      {/* Gallery Strip — real customer photos */}
       <section className="gallery-strip">
         <div className="gallery-strip-grid">
-          {[img.bmwX6M, img.challengerPink, img.raptorWhite, img.bmwM4Carbon, img.vetteZR1Porsche, img.porsche911Rear].map((src, i) => (
+          {[
+            '/images/the-woodlands/IMG_5416.JPG',
+            '/images/katy/IMG_5337.JPG',
+            '/images/sugar-land/IMG_4403.JPG',
+            '/images/cypress/IMG_4133.JPG',
+            '/images/memorial/IMG_5217.JPG',
+            '/images/houston/IMG_3345.JPG',
+          ].map((src, i) => (
             <div key={i} className="gallery-strip-item" style={{ backgroundImage: `url(${src})` }} />
           ))}
+        </div>
+      </section>
+
+      {/* Photo Mosaic — real work across Houston */}
+      <section className="photo-mosaic-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-label">Real Work. Real Results.</span>
+            <h2>Across <span className="cyan">Houston</span></h2>
+          </div>
+          <div className="photo-mosaic">
+            <div className="mosaic-large">
+              <img src="/images/the-woodlands/IMG_5483.JPG" alt="LabShine mobile detailing on location — The Woodlands TX" loading="lazy" />
+            </div>
+            <div className="mosaic-small-grid">
+              <img src="/images/katy/IMG_5346.JPG" alt="Full detail — Katy TX" loading="lazy" />
+              <img src="/images/sugar-land/IMG_4406.JPG" alt="Exterior detail — Sugar Land TX" loading="lazy" />
+              <img src="/images/cypress/IMG_4290.JPG" alt="Full detail — Cypress TX" loading="lazy" />
+              <img src="/images/memorial/IMG_5313.JPG" alt="Exterior detail — Memorial Houston TX" loading="lazy" />
+            </div>
+            <div className="mosaic-tall">
+              <img src="/images/the-woodlands/IMG_5479.JPG" alt="Adrian Medina — LabShine owner and operator, The Woodlands TX" loading="lazy" />
+            </div>
+            <div className="mosaic-wide">
+              <img src="/images/pearland/IMG_4247.JPG" alt="Exterior detail — Pearland TX" loading="lazy" />
+            </div>
+            <div className="mosaic-small-grid">
+              <img src="/images/houston/IMG_3352.JPG" alt="Full detail — Houston TX" loading="lazy" />
+              <img src="/images/sugar-land/IMG_5121.JPG" alt="Detail service — Sugar Land TX" loading="lazy" />
+              <img src="/images/katy/IMG_2785.JPG" alt="Exterior detail — Katy TX" loading="lazy" />
+              <img src="/images/memorial/IMG_5010.JPG" alt="Exterior detail — Memorial Houston TX" loading="lazy" />
+            </div>
+          </div>
+          <div style={{ textAlign: 'center', marginTop: 40 }}>
+            <a href="/gallery" className="btn-outline">See Full Gallery →</a>
+          </div>
         </div>
       </section>
 
@@ -273,7 +305,34 @@ export default function Home() {
           afterLabel="After"
         />
         <div style={{ textAlign: 'center', marginTop: 32, paddingBottom: 8 }}>
-          <a href="/pricing#book" className="btn-primary">Book My Detail →</a>
+          <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book My Detail →</a>
+        </div>
+      </section>
+
+      {/* Owner-Operated Team Feature */}
+      <section className="home-team-section">
+        <div className="container">
+          <div className="home-team-grid">
+            <div className="home-team-photo">
+              <img
+                src="/images/the-woodlands/IMG_5481.JPG"
+                alt="LabShine Auto Detailing team — Adrian Medina and technician with exotic cars, The Woodlands TX"
+                loading="lazy"
+              />
+            </div>
+            <div className="home-team-text">
+              <span className="section-label">Owner-Operated</span>
+              <h2>Real People.<br/>Real <span className="cyan">Results.</span></h2>
+              <p>LabShine is owner-operated by Adrian Medina — a Houston car enthusiast who turned his obsession into a business. Every job is personal. Every vehicle gets the same attention to detail, whether it's a daily driver or a six-figure supercar.</p>
+              <p>Adrian is on-site for every job or personally trains every technician he sends out. When you book LabShine, you get the owner's standards every single time.</p>
+              <div className="home-team-stats">
+                <div><strong>500+</strong><span>Vehicles Detailed</span></div>
+                <div><strong>4.9★</strong><span>Google Rating</span></div>
+                <div><strong>5+</strong><span>Years Experience</span></div>
+              </div>
+              <a href="/about" className="btn-outline" style={{ marginTop: '24px', display: 'inline-block' }}>Meet the Team →</a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -296,22 +355,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Booking CTA */}
-      <section className="cta-section" ref={ctaRef}>
+      {/* Booking Widget */}
+      <section className="booking-section">
         <div className="container">
-          <div className={`cta-content reveal${ctaVisible ? ' visible' : ''}`}>
-            <h2>Ready to Shine?</h2>
-            <p>Book your mobile detailing appointment online. We come to you — home, office, or anywhere in the Houston area.</p>
-            <div className="cta-btns">
-              <a href="/pricing#book" className="btn-primary">
-                Book Online Now
-              </a>
-              <a href="tel:3464529991" className="btn-outline">
-                Call (346) 452-9991
-              </a>
-            </div>
+          <div className="section-header" style={{ textAlign: 'center', marginBottom: 32 }}>
+            <span className="section-label">Get Started</span>
+            <h2>Book Your Detail</h2>
+            <p>Fill out the form below — quotes, bookings, and service details all in one place.</p>
           </div>
         </div>
+        <BookingWidget />
       </section>
     </main>
     </>

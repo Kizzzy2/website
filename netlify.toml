@@ -5,6 +5,10 @@
 [functions]
   directory = "netlify/functions"
 
+[[edge_functions]]
+  function = "prerender"
+  path = "/*"
+
 # Commander heartbeat — every 5 minutes
 [functions."commander"]
   schedule = "*/5 * * * *"
@@ -27,26 +31,6 @@
 [[redirects]]
   from = "/api/commander"
   to = "/.netlify/functions/commander"
-  status = 200
-
-[[redirects]]
-  from = "/blog"
-  to = "/blog/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/blog/"
-  to = "/blog/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/blog/posts/:slug"
-  to = "/blog/posts/:slug/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/blog/posts/:slug/"
-  to = "/blog/posts/:slug/index.html"
   status = 200
 
 [[redirects]]

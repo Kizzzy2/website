@@ -8,13 +8,12 @@ const schema = {
   "description": "Mobile auto detailing in Fulshear TX. Full detail, ceramic coating, paint correction, and interior detail. We come to your home or driveway in Fulshear and Katy.",
   "url": "https://labshineautodetailing.com/fulshear-mobile-detailing",
   "telephone": "+13464529991",
+  "priceRange": "$$",
   "areaServed": "Fulshear, TX",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Fulshear",
-    "addressRegion": "TX",
-    "addressCountry": "US"
-  }
+  "address": { "@type": "PostalAddress", "addressLocality": "Fulshear", "addressRegion": "TX", "addressCountry": "US" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 29.6897, "longitude": -95.8827 },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "127", "bestRating": "5", "worstRating": "1" },
+  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "07:00", "closes": "19:00" }]
 }
 
 export default function FulshearMobileDetailing() {
@@ -22,7 +21,10 @@ export default function FulshearMobileDetailing() {
     <>
     <Helmet>
       <title>Mobile Auto Detailing Fulshear TX | Ceramic Coating | LabShine</title>
-      <meta name="description" content="Professional mobile auto detailing in Fulshear TX. Full detail from $250, ceramic coating from $800, interior detail from $175. LabShine comes to your driveway — no drop-off needed." />
+      <meta name="description" content="Mobile auto detailing in Fulshear TX. Full detail from $185, ceramic from $599. LabShine comes to your driveway — no drop-off needed." />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Mobile Auto Detailing Fulshear TX | LabShine" />
+      <meta name="twitter:description" content="Mobile auto detailing in Fulshear TX. Full detail from $185, ceramic from $599. LabShine comes to your driveway — no drop-off needed." />
       <link rel="canonical" href="https://labshineautodetailing.com/fulshear-mobile-detailing" />
       <meta property="og:title" content="Mobile Auto Detailing Fulshear TX | LabShine" />
       <meta property="og:description" content="Mobile detailing in Fulshear TX — full detail, ceramic coating, paint correction. We come to you. Book online today." />
@@ -33,13 +35,14 @@ export default function FulshearMobileDetailing() {
     </Helmet>
     <main className="location-page">
       <section className="location-hero">
+        <img src="/images/katy/IMG_5346.JPG" alt="Mobile auto detailing in Fulshear TX — LabShine" className="location-hero-img" loading="eager" />
         <div className="page-hero-overlay" />
         <div className="container">
           <span className="hero-badge">Serving Fulshear, TX</span>
           <h1>Mobile Detailing in <span className="cyan">Fulshear TX</span></h1>
           <p>Professional auto detailing delivered to your Fulshear driveway. Full detail, ceramic coating, and paint correction — no drop-off, no waiting.</p>
           <div className="hero-btns">
-            <a href="/pricing#book" className="btn-primary">Book in Fulshear</a>
+            <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book in Fulshear</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -59,9 +62,9 @@ export default function FulshearMobileDetailing() {
 
           <div className="services-grid location-services">
             {[
-              { icon: '🚗', title: 'Full Detail Reset', price: 'From $250', desc: 'Complete interior and exterior detailing. Clay bar, hand polish, paint sealant, engine bay — everything done at your property in Fulshear.' },
+              { icon: '🚗', title: 'Full Detail Reset', price: 'From $185', desc: 'Complete interior and exterior detailing. Clay bar, hand polish, paint sealant, engine bay — everything done at your property in Fulshear.' },
               { icon: '✨', title: 'Interior Detail', price: 'From $200', desc: 'Full interior steam clean, carpet shampoo, leather conditioning, and odor treatment. Perfect for Fulshear families after sports, pets, or road trips.' },
-              { icon: '🛡️', title: 'Ceramic Coating', price: 'From $800', desc: '9H ceramic coating that protects against Fulshear\'s brutal UV exposure, summer heat, and hard water. 2–5 years of protection.' },
+              { icon: '🛡️', title: 'Ceramic Coating', price: 'From $599', desc: '9H ceramic coating that protects against Fulshear\'s brutal UV exposure, summer heat, and hard water. 2–5 years of protection.' },
               { icon: '🔧', title: 'Paint Correction', price: 'From $350', desc: 'Remove swirl marks, scratches, and oxidation. Restores your paint to a level that turns heads on FM 359 and Cross Creek Ranch Blvd.' },
             ].map((s, i) => (
               <div key={i} className="service-card">
@@ -103,7 +106,7 @@ export default function FulshearMobileDetailing() {
             <h2>Book Mobile Detailing in <span className="cyan">Fulshear Today</span></h2>
             <p>We serve all of Fulshear including Cross Creek Ranch, Pecan Ridge, Fulshear Lakes, Polo Ranch, and surrounding FM 1093 and FM 359 areas. Book online in under 2 minutes.</p>
             <div className="hero-btns">
-              <a href="/pricing#book" className="btn-primary">Book Online</a>
+              <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>

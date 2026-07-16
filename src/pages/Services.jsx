@@ -73,14 +73,39 @@ export default function Services() {
   return (
     <>
     <Helmet>
-      <title>Mobile Detailing Services Houston | Full Detail, Paint Correction | LabShine</title>
-      <meta name="description" content="Full detail from $250, interior detail from $175, paint correction, ceramic coating, and fleet services. Professional mobile auto detailing in Houston — we come to you." />
+      <title>Auto Detailing Services Houston TX | Full Detail, Ceramic Coating | LabShine</title>
+      <meta name="description" content="Full menu of mobile detailing services in Houston: full detail reset, interior detail, ceramic coating, paint correction & fleet. Mobile to your driveway — no drop-off needed." />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Auto Detailing Services Houston TX | LabShine" />
+      <meta name="twitter:description" content="Full menu of mobile detailing services in Houston: full detail, interior, ceramic coating, paint correction & fleet. Mobile to your driveway — no drop-off needed." />
       <link rel="canonical" href="https://labshineautodetailing.com/services" />
-      <meta property="og:title" content="Mobile Detailing Services Houston | LabShine" />
-      <meta property="og:description" content="Full detail from $250, paint correction, ceramic coating & fleet services. Houston mobile auto detailing — we come to you." />
+      <meta property="og:title" content="Auto Detailing Services Houston TX | LabShine" />
+      <meta property="og:description" content="Full menu of mobile detailing services in Houston: full detail, interior, ceramic coating, paint correction & fleet. We come to your driveway — no drop-off needed." />
       <meta property="og:url" content="https://labshineautodetailing.com/services" />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
+      <script type="application/ld+json">{JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": ["LocalBusiness", "AutoRepair"],
+        "name": "LabShine Auto Detailing",
+        "description": "Full menu of mobile auto detailing services in Houston TX. Full detail, interior detail, ceramic coating, paint correction, fleet, and RV services.",
+        "url": "https://labshineautodetailing.com/services",
+        "telephone": "+13464529991",
+        "priceRange": "$$",
+        "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX", "addressCountry": "US" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127", "bestRating": "5" },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "LabShine Mobile Detailing Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Detail Reset" }, "price": "250", "priceCurrency": "USD" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interior Detail" }, "price": "200", "priceCurrency": "USD" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Exterior Detail" }, "price": "175", "priceCurrency": "USD" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ceramic Coating" }, "price": "800", "priceCurrency": "USD" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paint Correction" }, "price": "350", "priceCurrency": "USD" }
+          ]
+        }
+      })}</script>
     </Helmet>
     <main className="services-page">
       <section className="page-hero" style={{ backgroundImage: `url(${img.lamboUrus})` }}>
@@ -108,7 +133,7 @@ export default function Services() {
                 <ul className="svc-bullets">
                   {svc.bullets.map(b => <li key={b}><span className="cyan">✓</span> {b}</li>)}
                 </ul>
-                <a href="/pricing#book" className="btn-primary">Book This Service</a>
+                <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book This Service</a>
               </div>
             </div>
           ))}
@@ -121,7 +146,7 @@ export default function Services() {
             <h2>Ready to Get Started?</h2>
             <p>Book your mobile detailing appointment online. We come to you anywhere in the Houston area.</p>
             <div className="cta-btns">
-              <a href="/pricing#book" className="btn-primary">Book Online</a>
+              <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
             </div>
           </div>

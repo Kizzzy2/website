@@ -45,9 +45,9 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Link to="/pricing#book" className="btn-primary nav-book">
+          <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary nav-book">
             Book Now
-          </Link>
+          </a>
           <a href="tel:3464529991" className="nav-phone">
             📞 (346) 452-9991
           </a>

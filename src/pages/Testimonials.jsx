@@ -128,7 +128,10 @@ export default function Testimonials() {
     <>
     <Helmet>
       <title>Customer Reviews | 5-Star Houston Mobile Detailing | LabShine</title>
-      <meta name="description" content="Read LabShine's 127+ five-star reviews from Houston customers. Real reviews from Cypress, Katy, The Woodlands, Sugar Land, River Oaks, and more. See why Houston trusts us with their luxury vehicles." />
+      <meta name="description" content="LabShine's 127+ five-star reviews from Houston customers — Cypress, Katy, The Woodlands, Sugar Land & more. See why Houston trusts us with their vehicles." />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Customer Reviews | 5-Star Houston Detailing | LabShine" />
+      <meta name="twitter:description" content="LabShine's 127+ five-star reviews from Houston customers — Cypress, Katy, The Woodlands, Sugar Land & more. See why Houston trusts us." />
       <link rel="canonical" href="https://labshineautodetailing.com/testimonials" />
       <meta property="og:title" content="Customer Reviews | 5-Star Houston Detailing | LabShine" />
       <meta property="og:description" content="127+ five-star reviews. See what Houston customers say about LabShine's mobile detailing, ceramic coating, and paint correction services." />
@@ -178,7 +181,7 @@ export default function Testimonials() {
           <div className="cta-section">
             <h2>Ready for <span className="cyan">Results Like These?</span></h2>
             <p>Join 127+ satisfied Houston customers. Book your detail today — we come to you.</p>
-            <a href="/pricing#book" className="btn-primary">Book Your Detail</a>
+            <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book Your Detail</a>
           </div>
         </div>
       </section>

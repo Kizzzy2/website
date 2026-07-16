@@ -6,7 +6,7 @@ const contactSchema = {
   "@type": ["LocalBusiness", "AutoRepair"],
   "name": "LabShine Auto Detailing",
   "telephone": "+13464529991",
-  "email": "info@labshineauto.com",
+  "email": "info@labshineautodetailing.com",
   "url": "https://labshineautodetailing.com",
   "address": {
     "@type": "PostalAddress",
@@ -29,8 +29,11 @@ export default function Contact() {
   return (
     <>
     <Helmet>
-      <title>Contact LabShine | Houston Mobile Detailing — (346) 452-9991</title>
-      <meta name="description" content="Contact LabShine Auto Detailing for mobile detailing in Houston. Call (346) 452-9991, book online, or send a message. Serving Cypress, Katy, Sugar Land, The Woodlands, and 24+ cities." />
+      <title>Contact LabShine Detailing Houston | (346) 452-9991</title>
+      <meta name="description" content="Contact LabShine Auto Detailing. Call (346) 452-9991 or book online. Mobile detailing in Houston, Cypress, Katy, Sugar Land & The Woodlands." />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Contact LabShine | Houston Mobile Detailing" />
+      <meta name="twitter:description" content="Contact LabShine Auto Detailing. Call (346) 452-9991 or book online. Mobile detailing in Houston, Cypress, Katy, Sugar Land & The Woodlands." />
       <link rel="canonical" href="https://labshineautodetailing.com/contact" />
       <meta property="og:title" content="Contact LabShine | Houston Mobile Detailing" />
       <meta property="og:description" content="Get in touch with LabShine Auto Detailing. Call, text, or book online. Houston mobile detailing — we come to you." />
@@ -71,7 +74,7 @@ export default function Contact() {
                   <div className="contact-card-icon">✉️</div>
                   <div>
                     <div className="contact-card-label">Email</div>
-                    <a href="mailto:info@labshineauto.com" className="contact-card-value">info@labshineauto.com</a>
+                    <a href="mailto:info@labshineautodetailing.com" className="contact-card-value">info@labshineautodetailing.com</a>
                   </div>
                 </div>
 
@@ -96,7 +99,7 @@ export default function Contact() {
                 <h3>Ready to Book?</h3>
                 <p>Skip the back-and-forth — book your appointment directly online. Choose your service, pick a time, and we'll confirm within the hour.</p>
                 <a
-                  href="/pricing"
+                  href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer"
                   className="btn-primary"
                 >
                   Book Online Now

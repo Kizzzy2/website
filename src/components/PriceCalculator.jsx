@@ -3,55 +3,49 @@ import { useScrollReveal } from '../hooks/useScrollReveal'
 import './PriceCalculator.css'
 
 const vehicles = [
-  { id: 'sedan',   label: 'Sedan / Coupe',  icon: '🚗', mult: 1 },
-  { id: 'suv',     label: 'SUV / Truck',    icon: '🚙', mult: 1.2 },
-  { id: 'luxury',  label: 'Luxury / Exotic',icon: '🏎️', mult: 1.5 },
-  { id: 'fleet',   label: 'Fleet Vehicle',  icon: '🚌', mult: 'quote' },
+  { id: 'sedan',   label: 'Sedan / Coupe',   icon: '🚗', mult: 1 },
+  { id: 'suv',     label: 'SUV / Truck',      icon: '🚙', mult: 1 },
+  { id: 'luxury',  label: 'Luxury / Exotic',  icon: '🏎️', mult: 1 },
+  { id: 'fleet',   label: 'Fleet Vehicle',    icon: '🚌', mult: 'quote' },
 ]
 
 const services = [
   {
+    id: 'wash',
+    name: 'Maintenance Wash & Wax',
+    desc: 'Foam cannon wash, hand wax, iron removal, tire dressing',
+    prices: { sedan: 125, suv: 145, luxury: 165 },
+    duration: '1–2 hrs',
+  },
+  {
     id: 'full',
-    name: 'Full Detail',
-    desc: 'Interior + Exterior, clay bar, polish, sealant',
-    base: 250,
-    suv: 300,
-    promo: true,
+    name: 'Full Detail Reset',
+    desc: 'Interior + exterior, clay bar, machine polish, sealant',
+    prices: { sedan: 185, suv: 225, luxury: 265 },
     duration: '4–6 hrs',
+    popular: true,
   },
   {
-    id: 'interior',
-    name: 'Interior Only',
-    desc: 'Steam clean, shampoo, leather condition, odor treatment',
-    base: 200,
-    suv: 200,
-    duration: '2–4 hrs',
-  },
-  {
-    id: 'exterior',
-    name: 'Exterior Only',
-    desc: 'Foam cannon, hand wash, clay, polish, sealant',
-    base: 175,
-    suv: 175,
-    duration: '2–3 hrs',
+    id: 'show',
+    name: 'Premium Show Detail',
+    desc: 'Multi-stage correction, competition interior, machine wax',
+    prices: { sedan: 325, suv: 395, luxury: 495 },
+    duration: '8–12 hrs',
+    premium: true,
   },
   {
     id: 'ceramic',
     name: 'Ceramic Coating',
-    desc: '9H coating, 2–5 year protection, UV shield',
-    base: 800,
-    suv: 1000,
-    luxury: 1200,
-    duration: '1–2 days',
+    desc: '2yr Pro ($599), 5yr Premium ($1,099), 9yr Crystal ($2,499)',
+    prices: null,
+    duration: '1–3 days',
     premium: true,
   },
 ]
 
-function getPrice(service, vehicle) {
-  if (vehicle.mult === 'quote') return null
-  if (vehicle.id === 'luxury' && service.luxury) return service.luxury
-  if (vehicle.id === 'suv') return service.suv
-  return service.base
+function getPrice(service, vehicleId) {
+  if (!service.prices) return null
+  return service.prices[vehicleId] ?? service.prices.sedan
 }
 
 export default function PriceCalculator() {
@@ -61,7 +55,8 @@ export default function PriceCalculator() {
 
   const vehicle = vehicles.find(v => v.id === vehicleId)
   const service = services.find(s => s.id === serviceId)
-  const price = vehicle && service ? getPrice(service, vehicle) : null
+  const price = vehicle && service ? getPrice(service, vehicleId) : null
+  const showQuote = vehicle?.mult === 'quote' || (service?.id === 'ceramic' && vehicleId)
 
   return (
     <section className="calc-section" ref={ref}>
@@ -103,8 +98,8 @@ export default function PriceCalculator() {
                 >
                   <div className="calc-service-top">
                     <span className="calc-service-name">{s.name}</span>
-                    {s.promo && <span className="calc-promo-badge">$100 OFF</span>}
-                    {s.premium && <span className="calc-premium-badge">Premium</span>}
+                    {s.popular && <span className="calc-promo-badge">Most Popular</span>}
+                    {s.premium && !s.popular && <span className="calc-premium-badge">Premium</span>}
                   </div>
                   <div className="calc-service-desc">{s.desc}</div>
                   <div className="calc-service-duration">⏱ {s.duration}</div>
@@ -114,12 +109,12 @@ export default function PriceCalculator() {
           </div>
 
           {/* Result */}
-          <div className={`calc-result${price !== null || (vehicle?.mult === 'quote' && serviceId) ? ' calc-result-show' : ''}`}>
-            {vehicle?.mult === 'quote' ? (
+          <div className={`calc-result${price !== null || showQuote ? ' calc-result-show' : ''}`}>
+            {showQuote ? (
               <>
-                <div className="calc-result-label">Fleet pricing is custom</div>
-                <div className="calc-result-sub">We'll build a recurring program for your fleet.</div>
-                <a href="/pricing#quote" className="btn-primary calc-result-btn">Get Fleet Quote →</a>
+                <div className="calc-result-label">{vehicle?.mult === 'quote' ? 'Fleet pricing is custom' : 'Ceramic Coating — Custom Quote'}</div>
+                <div className="calc-result-sub">{vehicle?.mult === 'quote' ? "We'll build a recurring program for your fleet." : 'Pricing starts at $599. We\'ll give you an exact quote based on your vehicle and paint condition.'}</div>
+                <a href="/pricing#quote" className="btn-primary calc-result-btn">Get a Free Quote →</a>
               </>
             ) : price !== null ? (
               <>
@@ -128,11 +123,8 @@ export default function PriceCalculator() {
                   <span className="calc-price-from">from</span>
                   <span className="calc-price-num">${price}</span>
                 </div>
-                {service?.promo && (
-                  <div className="calc-promo-note">🔥 $100 OFF promo active — book now before it ends</div>
-                )}
-                <div className="calc-result-sub">20% deposit to lock in your slot. We confirm within the hour.</div>
-                <a href="/pricing#book" className="btn-primary calc-result-btn">Book This Now →</a>
+                <div className="calc-result-sub">Book online — we confirm within the hour.</div>
+                <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary calc-result-btn">Book This Now →</a>
               </>
             ) : null}
           </div>

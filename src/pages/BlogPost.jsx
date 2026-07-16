@@ -1,72 +1,60 @@
-import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { BLOCKS, INLINES } from '@contentful/rich-text-types'
-import { getBlogPost } from '../lib/contentful'
+import { Helmet } from 'react-helmet-async'
+import BLOG_POSTS from '../data/blogPosts'
 import './BlogPost.css'
-
-const richTextOptions = {
-  renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
-    [BLOCKS.HEADING_1]: (node, children) => <h1>{children}</h1>,
-    [BLOCKS.HEADING_2]: (node, children) => <h2>{children}</h2>,
-    [BLOCKS.HEADING_3]: (node, children) => <h3>{children}</h3>,
-    [BLOCKS.UL_LIST]: (node, children) => <ul>{children}</ul>,
-    [BLOCKS.OL_LIST]: (node, children) => <ol>{children}</ol>,
-    [BLOCKS.LIST_ITEM]: (node, children) => <li>{children}</li>,
-    [BLOCKS.QUOTE]: (node, children) => <blockquote>{children}</blockquote>,
-    [BLOCKS.EMBEDDED_ASSET]: (node) => {
-      const { file, title } = node.data.target.fields
-      if (file?.contentType?.startsWith('image/')) {
-        return <img src={`https:${file.url}`} alt={title || ''} className="post-content-img" loading="lazy" />
-      }
-      return null
-    },
-    [INLINES.HYPERLINK]: (node, children) => (
-      <a href={node.data.uri} target="_blank" rel="noopener noreferrer">{children}</a>
-    ),
-  }
-}
 
 export default function BlogPost() {
   const { slug } = useParams()
-  const [post, setPost] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const post = BLOG_POSTS.find(p => p.slug === slug)
 
-  useEffect(() => {
-    getBlogPost(slug)
-      .then(p => {
-        if (!p) { setError('Post not found.'); return; }
-        setPost(p)
-        document.title = `${p.fields.title} | LabShine Blog`
-      })
-      .catch(() => setError('Could not load this post.'))
-      .finally(() => setLoading(false))
-  }, [slug])
-
-  if (loading) return (
-    <main className="post-page">
-      <div className="post-loading"><div className="spinner" /><p>Loading...</p></div>
-    </main>
-  )
-
-  if (error) return (
+  if (!post) return (
     <main className="post-page">
       <div className="post-error">
-        <h2>{error}</h2>
+        <h2>Post not found.</h2>
         <Link to="/blog" className="btn-primary">← Back to Blog</Link>
       </div>
     </main>
   )
 
-  const { title, featuredImage, publishedDate, category, body, excerpt } = post.fields
-  const imgUrl = featuredImage?.fields?.file?.url
-  const date = publishedDate
-    ? new Date(publishedDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-    : new Date(post.sys.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  const { title, category, date, excerpt, body } = post
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "description": excerpt || title,
+    "datePublished": date,
+    "dateModified": date,
+    "author": { "@type": "Organization", "name": "LabShine Auto Detailing", "url": "https://labshineautodetailing.com" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LabShine Auto Detailing",
+      "url": "https://labshineautodetailing.com",
+      "logo": { "@type": "ImageObject", "url": "https://labshineautodetailing.com/logo.png" }
+    },
+    "url": `https://labshineautodetailing.com/blog/${slug}`,
+    "mainEntityOfPage": { "@type": "WebPage", "@id": `https://labshineautodetailing.com/blog/${slug}` },
+    "image": "https://labshineautodetailing.com/og-image.webp",
+    "articleSection": category || "Auto Detailing",
+    "keywords": `auto detailing Houston, car detailing, ${category || 'detailing tips'}`
+  }
 
   return (
+    <>
+    <Helmet>
+      <title>{title} | LabShine Auto Detailing Blog</title>
+      <meta name="description" content={excerpt ? excerpt.substring(0, 155) : `${title} — Expert auto detailing insights from LabShine, Houston's premier mobile detailing service.`} />
+      <link rel="canonical" href={`https://labshineautodetailing.com/blog/${slug}`} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={excerpt || title} />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content={`https://labshineautodetailing.com/blog/${slug}`} />
+      <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={excerpt ? excerpt.substring(0, 155) : title} />
+      <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+    </Helmet>
     <main className="post-page">
       <div className="post-header">
         <div className="container">
@@ -81,23 +69,15 @@ export default function BlogPost() {
         </div>
       </div>
 
-      {imgUrl && (
-        <div className="post-featured-img">
-          <img src={`https:${imgUrl}`} alt={title} />
-        </div>
-      )}
-
       <div className="container post-content-wrap">
-        <div className="post-content">
-          {body ? documentToReactComponents(body, richTextOptions) : <p>No content available.</p>}
-        </div>
+        <div className="post-content" dangerouslySetInnerHTML={{ __html: body }} />
 
         <div className="post-sidebar">
           <div className="sidebar-card">
             <h4>Book a Detail</h4>
             <p>Ready to get your vehicle looking its best? Book online today.</p>
-            <a href="/pricing#book" className="btn-primary">
-              Book Now
+            <a href="tel:3464529991" className="btn-primary">
+              (346) 452-9991
             </a>
           </div>
           <div className="sidebar-card">
@@ -110,5 +90,6 @@ export default function BlogPost() {
         </div>
       </div>
     </main>
+    </>
   )
 }

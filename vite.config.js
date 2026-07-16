@@ -4,6 +4,15 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: 'dist'
-  }
+    outDir: 'dist',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'helmet': ['react-helmet-async'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 600,
+  },
 })

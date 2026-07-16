@@ -1,77 +1,11 @@
 import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
+import BLOG_POSTS from '../data/blogPosts'
 import './Blog.css'
 
-// Static blog posts — these live in /public/blog/posts/[slug]/index.html
-// Add new entries here whenever MUSE publishes a new post
-const STATIC_POSTS = [
-  {
-    slug: 'ceramic-coating-vs-wax-houston',
-    title: "What You Need to Know",
-    excerpt: "Expert auto detailing tips for Houston drivers. LabShine mobile detailing — we come to you. Full detail from $250.",
-    category: 'Detailing',
-    date: 'April 22, 2026',
-    emoji: '📝',
-    featured: false,
-  },
-  {
-    slug: 'ceramic-coating-houston-heat',
-    title: "Why Houston's Heat Makes Ceramic Coating a Must",
-    excerpt: "Houston summers hit 100°F+ for weeks. UV radiation and humidity destroy unprotected paint fast. Here's why ceramic coating isn't a luxury in Houston — it's maintenance.",
-    category: 'Ceramic Coating',
-    date: 'January 15, 2026',
-    emoji: '🛡️',
-    featured: true,
-  },
-  {
-    slug: 'how-to-maintain-ceramic-coating',
-    title: 'How to Maintain Your Ceramic Coating (And Make It Last)',
-    excerpt: "A ceramic coating is an investment. Here's exactly how to wash, decontaminate, and maintain it to get the full 2–5 years of protection.",
-    category: 'Ceramic Coating',
-    date: 'January 28, 2026',
-    emoji: '✨',
-    featured: false,
-  },
-  {
-    slug: 'interior-detailing-houston-guide',
-    title: 'Interior Detailing in Houston — What a Real Deep Clean Looks Like',
-    excerpt: "Houston heat bakes everything into your interior. Here's what a professional interior detail actually covers and why DIY often falls short.",
-    category: 'Interior',
-    date: 'February 10, 2026',
-    emoji: '🚗',
-    featured: false,
-  },
-  {
-    slug: 'paint-correction-vs-ceramic-coating',
-    title: 'Paint Correction vs Ceramic Coating — Do You Need Both?',
-    excerpt: "Most cars need paint correction before ceramic coating. Here's the difference, why order matters, and how to tell if your paint needs correction first.",
-    category: 'Paint Protection',
-    date: 'February 22, 2026',
-    emoji: '🔧',
-    featured: false,
-  },
-  {
-    slug: 'best-time-to-detail-houston',
-    title: 'The Best Time of Year to Get Your Car Detailed in Houston',
-    excerpt: "Timing matters in Houston's climate. Spring before pollen season and fall before humidity drops are peak windows. Here's the full seasonal breakdown.",
-    category: 'Maintenance',
-    date: 'March 8, 2026',
-    emoji: '📅',
-    featured: false,
-  },
-  {
-    slug: 'mobile-detailing-vs-detail-shop',
-    title: 'Mobile Detailing vs Detail Shop — The Honest Comparison',
-    excerpt: "We're biased but we'll be straight with you. Mobile vs shop detailing each has real trade-offs. Here's the full breakdown so you can decide.",
-    category: 'Maintenance',
-    date: 'March 22, 2026',
-    emoji: '🏆',
-    featured: false,
-  },
-]
-
 export default function Blog() {
-  const featured = STATIC_POSTS.find(p => p.featured)
-  const rest = STATIC_POSTS.filter(p => !p.featured)
+  const featured = BLOG_POSTS.find(p => p.featured)
+  const rest = BLOG_POSTS.filter(p => !p.featured)
 
   return (
     <>
@@ -84,6 +18,18 @@ export default function Blog() {
       <meta property="og:url" content="https://labshineautodetailing.com/blog" />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Auto Detailing Blog | Houston Car Care Tips | LabShine" />
+      <meta name="twitter:description" content="Expert auto detailing tips, ceramic coating guides, paint correction advice, and Houston car care news from LabShine's mobile detailing team." />
+      <script type="application/ld+json">{JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "LabShine Auto Detailing Blog",
+        "description": "Expert auto detailing tips, ceramic coating guides, paint correction advice, and Houston car care news.",
+        "url": "https://labshineautodetailing.com/blog",
+        "publisher": { "@type": "Organization", "name": "LabShine Auto Detailing", "url": "https://labshineautodetailing.com" },
+        "inLanguage": "en-US"
+      })}</script>
     </Helmet>
     <main className="blog-page">
       <div className="blog-hero">
@@ -96,7 +42,7 @@ export default function Blog() {
 
       <div className="container blog-container">
         {featured && (
-          <a href={`/blog/posts/${featured.slug}/`} className="featured-post">
+          <Link to={`/blog/${featured.slug}`} className="featured-post">
             <div className="featured-badge">Featured</div>
             <div className="featured-emoji">{featured.emoji}</div>
             <div className="featured-cat">{featured.category}</div>
@@ -106,12 +52,12 @@ export default function Blog() {
               <time>{featured.date}</time>
               <span className="read-more">Read Article →</span>
             </div>
-          </a>
+          </Link>
         )}
 
         <div className="posts-grid">
           {rest.map(post => (
-            <a key={post.slug} href={`/blog/posts/${post.slug}/`} className="post-card">
+            <Link key={post.slug} to={`/blog/${post.slug}`} className="post-card">
               <div className="post-emoji">{post.emoji}</div>
               <div className="post-body">
                 <span className="post-category">{post.category}</span>
@@ -122,7 +68,7 @@ export default function Blog() {
                   <span className="read-more">Read More →</span>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

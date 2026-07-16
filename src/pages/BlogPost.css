@@ -11,13 +11,13 @@
 .post-header {
   padding: 140px 0 60px;
   background: linear-gradient(180deg, #001a2e 0%, var(--dark) 100%);
-  border-bottom: 1px solid rgba(0,200,240,0.15);
+  border-bottom: 1px solid rgba(37,99,235,0.15);
 }
 
 .back-link {
   display: inline-block;
   color: var(--cyan);
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.05em;
   margin-bottom: 20px;
@@ -28,9 +28,9 @@
 
 .post-category {
   display: inline-block;
-  background: rgba(0,200,240,0.1);
+  background: rgba(37,99,235,0.1);
   color: var(--cyan);
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -135,7 +135,7 @@
 
 .sidebar-card {
   background: var(--dark-3);
-  border: 1px solid rgba(0,200,240,0.2);
+  border: 1px solid rgba(37,99,235,0.2);
   padding: 28px;
 }
 

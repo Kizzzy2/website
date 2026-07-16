@@ -1,197 +1,311 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import './Pricing.css'
 import img from '../lib/images'
 import BookingWidget from '../components/BookingWidget'
 
-// LOCKED PRICING — do not change without approval
-// Full Detail: Sedan $250 / SUV $300 | $100 OFF promo active
-// Interior Only: $200 all sizes
-// Exterior Only: $175 all sizes
-// Ceramic Coating: $800 min (scales by vehicle/condition)
-
-// Square deposit payment links (20% of job total)
-const SQUARE = {
-  fullSedan: 'https://square.link/u/LCpvdkjL',   // $50 deposit
-  fullSUV:   'https://square.link/u/QtFCLohH',   // $60 deposit
-  interior:  'https://square.link/u/6AyCpTlm',   // $40 deposit
-  exterior:  'https://square.link/u/PunCOLYk',   // $35 deposit
-  ceramic:   'https://square.link/u/SIgbTkz1',   // $160 deposit
-}
-
-const services = [
+const packages = [
   {
-    id: 'full-detail',
-    name: 'Full Detail',
-    tag: 'Most Popular',
-    promo: '$100 OFF',
+    id: 'full-synthesis',
+    name: 'Stage 2 — Full Detail',
+    tag: 'Best Value',
     featured: true,
-    description: 'Complete interior and exterior detailing with paint decontamination and protection.',
+    type: 'Full Detail',
+    description: 'Designed to restore interior/exterior condition & protect against future contamination. Recommended for new clients.',
     image: img.rangeRoverSV,
     included: [
-      'Complete interior detail',
-      'Full exterior wash & dry',
-      'Clay bar decontamination',
-      'Hand polish',
-      'Paint sealant',
-      'Engine bay clean',
-      'Door jambs & trim dressing',
-      'Final walkthrough',
+      '— EXTERIOR —',
+      '2 Bucket Hand Wash',
+      'Deep Wheel Cleaning',
+      'Bug Removal',
+      'Iron Fall Out Removal',
+      'Clay Bar Treatment',
+      'Engine Bay Wash',
+      'Ceramic Spray Sealant',
+      'Trim Restoration',
+      'Ceramic Tire Dressing',
+      '— INTERIOR —',
+      'Vacuum',
+      'Plastic Wipe Down',
+      'Steam Clean',
+      'Interior Conditioner',
+      'Shampoo Seats & Carpet',
+      'Headliner Clean',
+      'Germ/Odor Elimination',
+    ],
+    sizes: [
+      { label: 'Small', price: '$300' },
+      { label: 'Medium', price: '$350' },
+      { label: 'Large', price: '$400' },
     ],
     duration: '4–6 hours',
-    sizes: [
-      { label: 'Sedan / Coupe', price: '$250', depositLink: SQUARE.fullSedan, deposit: '$50' },
-      { label: 'SUV / Truck',   price: '$300', depositLink: SQUARE.fullSUV,   deposit: '$60' },
-    ],
   },
   {
-    id: 'interior',
-    name: 'Interior Only',
-    tag: 'Interior',
-    description: 'Steam clean, carpet shampoo, leather conditioning, and odor treatment.',
-    image: img.rrInterior,
-    included: [
-      'Full steam cleaning',
-      'Carpet & upholstery shampoo',
-      'Leather clean & condition',
-      'Dashboard & trim detail',
-      'Air vent cleaning',
-      'Odor treatment',
-    ],
-    duration: '2–4 hours',
-    sizes: [
-      { label: 'All Vehicles', price: '$200', depositLink: SQUARE.interior, deposit: '$40' },
-    ],
-  },
-  {
-    id: 'exterior',
-    name: 'Exterior Only',
-    tag: 'Exterior',
-    description: 'Foam cannon pre-wash, hand wash, clay bar, polish, and paint sealant for maximum shine.',
+    id: 'catalyst',
+    name: 'Stage 1 — Wash & Wax',
+    tag: 'Maintenance',
+    type: 'Wash & Wax',
+    description: 'Designed for repeat clients and/or properly maintained vehicles.',
     image: img.blackM3,
     included: [
-      'Foam cannon pre-wash',
-      'Hand wash & dry',
-      'Clay bar decontamination',
-      'Iron fallout removal',
-      'Hand polish',
-      'Paint sealant',
-      'Wheel & tire detail',
+      '— EXTERIOR —',
+      '2 Bucket Wash',
+      'Wheel Cleaning',
+      'Bug Removal',
+      'Spray Wax',
+      'Windows',
+      'Tire Dressing',
+      '— INTERIOR —',
+      'Interior Wipe Down',
+      'Dust & Vacuum',
     ],
-    duration: '2–3 hours',
     sizes: [
-      { label: 'All Vehicles', price: '$175', depositLink: SQUARE.exterior, deposit: '$35' },
+      { label: 'Small', price: '$150' },
+      { label: 'Medium', price: '$225' },
+      { label: 'Large', price: '$250' },
     ],
+    duration: '1.5–2.5 hours',
   },
   {
-    id: 'ceramic',
-    name: 'Ceramic Coating',
-    tag: 'Premium',
-    description: 'Professional 9H ceramic coating. Pricing scales by vehicle size and paint condition — contact us for an exact quote.',
+    id: 'exterior-synthesis',
+    name: 'Exterior Only — Full',
+    tag: 'Exterior Full',
+    type: 'Full Exterior Detail',
+    description: 'Our most thorough exterior-only service. Full decontamination, hand wash, paint prep, and protection from bumper to bumper.',
     image: img.ceramicVette,
     included: [
-      '9H hardness coating',
-      '2–5 year protection',
-      'Hydrophobic effect',
-      'UV protection',
-      'Enhanced gloss',
-      'Pre-coating paint prep included',
+      'Deep Hand Wash',
+      'Deep Wheel Cleaning',
+      'Bugs Removal',
+      'Iron Decon Removal',
+      'Clay Bar Treatment',
+      'Engine Bay Detail',
+      'Sealant Wax (3 mo)',
+      'Trim Restoration',
+      'Tire Shine',
+      'Cleaning Windows',
     ],
-    duration: '1–2 days',
     sizes: [
-      { label: 'Starting at', price: '$800', depositLink: SQUARE.ceramic, deposit: '$160' },
+      { label: 'Small', price: '$150' },
+      { label: 'Medium', price: '$175' },
+      { label: 'Large', price: '$200' },
     ],
-    note: 'Final price based on vehicle size and paint condition.',
+    duration: '2–3 hours',
+  },
+  {
+    id: 'exterior-catalyst',
+    name: 'Exterior Only — Standard',
+    tag: 'Exterior Standard',
+    type: 'Standard Exterior',
+    description: 'A clean, professional exterior wash at a sharp price. Great for regular upkeep on vehicles that stay clean.',
+    image: img.escaladeRed,
+    included: [
+      'Hand Wash',
+      'Wheel Cleaning',
+      'Bugs Removal',
+      'Spray Wax',
+      'Cleaning Windows',
+      'Tire Shine',
+    ],
+    sizes: [
+      { label: 'Small', price: '$70' },
+      { label: 'Medium', price: '$85' },
+      { label: 'Large', price: '$100' },
+    ],
+    duration: '1–1.5 hours',
+  },
+  {
+    id: 'cabin-synthesis',
+    name: 'Interior Only — Full',
+    tag: 'Interior Full',
+    type: 'Full Interior Detail',
+    description: 'A deep interior restoration — steam sanitized, shampooed, conditioned, and inspected to make your cabin feel and smell brand new.',
+    image: img.rrInterior,
+    included: [
+      'Deep Plastic Steam Clean',
+      'Leather, Plastic, Vinyl Protection',
+      'Shampoo Seats & Carpet',
+      'Headliner Gentle Clean',
+      'Germ/Odor Elimination',
+      'Clean Windows',
+    ],
+    sizes: [
+      { label: 'Small', price: '$175' },
+      { label: 'Medium', price: '$200' },
+      { label: 'Large', price: '$225' },
+    ],
+    duration: '2.5–4 hours',
+  },
+  {
+    id: 'cabin-catalyst',
+    name: 'Interior Only — Standard',
+    tag: 'Interior Standard',
+    type: 'Standard Interior',
+    description: 'A solid interior refresh. Vacuumed, wiped down, and cleaned — ideal for regular maintenance between deep cleans.',
+    image: img.rrInterior,
+    included: [
+      'Clean/Wipe Down All Surfaces',
+      'Dust & Vacuum',
+      'Clean Windows',
+    ],
+    sizes: [
+      { label: 'Small', price: '$100' },
+      { label: 'Medium', price: '$120' },
+      { label: 'Large', price: '$150' },
+    ],
+    duration: '1–2 hours',
   },
 ]
 
-const WEBHOOK = '/api/lead'
+const maintenancePlans = [
+  {
+    id: 'reaction',
+    name: 'The Reaction',
+    interval: 'Weekly',
+    discount: '20% off',
+    description: 'Stay ahead of dirt, water spots, and buildup. Weekly service keeps your vehicle in peak condition year-round.',
+    sizes: [
+      { label: 'Small', price: '$120' },
+      { label: 'Medium', price: '$180' },
+      { label: 'Large', price: '$200' },
+    ],
+  },
+  {
+    id: 'cycle',
+    name: 'The Cycle',
+    interval: 'Bi-Weekly',
+    discount: '15% off',
+    description: 'The sweet spot for most clients. Every two weeks keeps your vehicle looking fresh without the weekly commitment.',
+    sizes: [
+      { label: 'Small', price: '$130' },
+      { label: 'Medium', price: '$190' },
+      { label: 'Large', price: '$215' },
+    ],
+  },
+  {
+    id: 'routine',
+    name: 'The Routine',
+    interval: 'Monthly',
+    discount: '10% off',
+    description: 'A monthly reset to keep your vehicle clean and maintained. Perfect if you take good care of it day-to-day.',
+    sizes: [
+      { label: 'Small', price: '$135' },
+      { label: 'Medium', price: '$200' },
+      { label: 'Large', price: '$225' },
+    ],
+  },
+]
+
+const addonsStandard = [
+  { name: 'Fur Extraction', sub: 'Pet hair removal', price: '$50 / $75 / $100' },
+  { name: 'Headlight Clarity', sub: 'Per pair', price: '$80' },
+  { name: 'Engine Bay Detail', sub: 'Full clean & dress', price: '$60' },
+  { name: 'Odor Neutralization', sub: 'Ozone treatment', price: '$90' },
+  { name: 'Clay Bar Add-On', sub: 'Paint decontamination', price: '$50' },
+  { name: 'Water Spot Removal', sub: 'Paint-safe process', price: '$75' },
+  { name: 'Spot Treatment', sub: 'Per stain', price: '$25' },
+  { name: 'Trim Restoration', sub: 'Faded trim renewed', price: '$40' },
+  { name: 'Leather Conditioning Plus', sub: 'Deep feed & protect', price: '$50' },
+  { name: 'Convertible Top Treatment', sub: 'Clean & protect', price: '$100' },
+]
+
+const addonsPremium = [
+  { name: 'Ceramic Shield 1', sub: '1-Year protection', price: '$500' },
+  { name: 'Ceramic Shield 2', sub: '2-Year protection', price: '$800' },
+  { name: 'Ceramic Shield 5', sub: '5-Year protection', price: '$1,800' },
+  { name: 'Paint Correction — Single Stage', sub: 'Light scratch & swirl removal', price: '$400' },
+  { name: 'Paint Correction — Multi-Stage', sub: 'Deep correction + polish', price: '$800' },
+]
 
 export default function Pricing() {
-  const [form, setForm] = useState({ name: '', phone: '', email: '', vehicle: '', service: '', zip: '' })
-  const [status, setStatus] = useState(null)
-
-  async function handleQuote(e) {
-    e.preventDefault()
-    setStatus('sending')
-    try {
-      const res = await fetch(WEBHOOK, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, source: 'website' }),
-      })
-      if (res.ok) {
-        setStatus('sent')
-        setForm({ name: '', phone: '', email: '', vehicle: '', service: '', zip: '' })
-      } else {
-        setStatus('error')
-      }
-    } catch {
-      setStatus('error')
+  useEffect(() => {
+    if (window.location.hash === '#quote') {
+      setTimeout(() => {
+        document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' })
+      }, 300)
     }
-  }
+  }, [])
 
   return (
     <>
     <Helmet>
-      <title>Auto Detailing Prices Houston | Full Detail $250 | LabShine</title>
-      <meta name="description" content="Transparent auto detailing pricing in Houston. Full detail from $250, interior $200, exterior $175, ceramic coating from $800. No hidden fees. 20% deposit to book." />
+      <title>Mobile Auto Detailing Prices Houston | LabShine Pricing</title>
+      <meta name="description" content="LabShine mobile detailing prices in Houston. Full Synthesis from $300, Exterior from $70, Interior from $100, ceramic coating from $500. Transparent S/M/L pricing." />
       <link rel="canonical" href="https://labshineautodetailing.com/pricing" />
-      <meta property="og:title" content="Auto Detailing Prices Houston | LabShine" />
-      <meta property="og:description" content="Transparent detailing prices. Full detail $250, interior $200, ceramic coating from $800. No hidden fees. Houston mobile detailing." />
+      <meta property="og:title" content="Mobile Auto Detailing Prices Houston | LabShine" />
+      <meta property="og:description" content="Transparent S/M/L pricing. Full detail from $300, exterior from $70, interior from $100, ceramic from $500. Houston's premium mobile detailing." />
       <meta property="og:url" content="https://labshineautodetailing.com/pricing" />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
+      <script type="application/ld+json">{JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": ["LocalBusiness", "AutoRepair"],
+        "name": "LabShine Auto Detailing",
+        "url": "https://labshineautodetailing.com/pricing",
+        "telephone": "+13464529991",
+        "email": "info@labshineauto.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX", "addressCountry": "US" },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Mobile Auto Detailing Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "The Full Synthesis" }, "price": "300", "priceCurrency": "USD" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "The Catalyst" }, "price": "150", "priceCurrency": "USD" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "The Exterior Synthesis" }, "price": "150", "priceCurrency": "USD" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "The Exterior Catalyst" }, "price": "70", "priceCurrency": "USD" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "The Cabin Synthesis" }, "price": "175", "priceCurrency": "USD" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "The Cabin Catalyst" }, "price": "100", "priceCurrency": "USD" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ceramic Shield 1" }, "price": "500", "priceCurrency": "USD" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ceramic Shield 5" }, "price": "1800", "priceCurrency": "USD" }
+          ]
+        }
+      })}</script>
     </Helmet>
     <main className="pricing-page">
+
+      {/* Hero */}
       <section className="page-hero" style={{ backgroundImage: `url(${img.escaladeRed})` }}>
         <div className="page-hero-overlay" />
         <div className="container">
           <span className="hero-badge">Transparent Pricing</span>
-          <h1>What It<br /><span className="cyan">Costs</span></h1>
-          <p>No hidden fees. No surprises. 20% deposit to lock in your appointment.</p>
+          <h1>Detailing Packages<br /><span className="cyan">Built for Houston</span></h1>
+          <p>S / M / L pricing. No hidden fees. No surprises.</p>
         </div>
       </section>
 
-      <div className="pricing-note">
-        <div className="container">
-          <span>🔥</span>
-          <span><strong>Limited Promo — $100 OFF Full Detail.</strong> Book now before it ends.</span>
-        </div>
-      </div>
-
+      {/* Packages */}
       <section className="pricing-section">
         <div className="container">
+          <div className="section-header">
+            <span className="section-label">Our Packages</span>
+            <h2>Choose Your <span className="cyan">Service</span></h2>
+            <p className="section-sub">S = sedans & coupes &nbsp;·&nbsp; M = SUVs & trucks &nbsp;·&nbsp; L = large trucks, vans & XL SUVs</p>
+          </div>
           <div className="pricing-grid">
-            {services.map(svc => (
+            {packages.map(svc => (
               <div key={svc.id} className={`pricing-card${svc.featured ? ' featured' : ''}`}>
                 <div className="pricing-card-img" style={{ backgroundImage: `url(${svc.image})` }}>
                   {svc.tag && <span className="pricing-tag">{svc.tag}</span>}
-                  {svc.promo && <span className="pricing-promo">{svc.promo}</span>}
                 </div>
                 <div className="pricing-card-body">
+                  <p className="pricing-type">{svc.type}</p>
                   <h3>{svc.name}</h3>
                   <p className="pricing-desc">{svc.description}</p>
                   {svc.duration && <div className="pricing-duration">⏱ {svc.duration}</div>}
-                  {svc.sizes && (
-                    <div className="pricing-sizes">
-                      {svc.sizes.map(sz => (
-                        <div key={sz.label} className="pricing-size-row">
-                          <span>{sz.label}</span>
-                          <span className="cyan">{sz.price}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  {svc.note && <p className="pricing-note-inline">{svc.note}</p>}
+                  <div className="pricing-sizes">
+                    {svc.sizes.map(sz => (
+                      <div key={sz.label} className="pricing-size-row">
+                        <span>{sz.label}</span>
+                        <span className="cyan">{sz.price}</span>
+                      </div>
+                    ))}
+                  </div>
                   <ul className="pricing-includes">
                     {svc.included.map(item => (
                       <li key={item}><span className="cyan">✓</span> {item}</li>
                     ))}
                   </ul>
-                  <a href="#book" className="btn-primary pricing-cta">
-                    Book Now →
-                  </a>
+                  <a href="https://labshine-ops.vercel.app/book" className="btn-primary pricing-cta">Get a Quote →</a>
                 </div>
               </div>
             ))}
@@ -199,109 +313,90 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* DetailPilot Booking Widget */}
-      <section className="booking-widget-section">
+      {/* Maintenance Plans */}
+      <section className="maintenance-section">
         <div className="container">
           <div className="section-header">
-            <span className="section-label">Book Online</span>
-            <h2>Schedule Your <span className="cyan">Detail</span></h2>
+            <span className="section-label">Recurring Plans</span>
+            <h2>Maintenance <span className="cyan">Plans</span></h2>
+            <p className="section-sub">Lock in your schedule and save. The more often we come, the less you pay.</p>
           </div>
-          <BookingWidget />
+          <div className="plans-grid">
+            {maintenancePlans.map(plan => (
+              <div key={plan.id} className="plan-card">
+                <div className="plan-header">
+                  <h3>{plan.name}</h3>
+                  <span className="plan-interval">{plan.interval}</span>
+                  <span className="plan-discount cyan">{plan.discount}</span>
+                </div>
+                <p className="plan-desc">{plan.description}</p>
+                <div className="pricing-sizes">
+                  {plan.sizes.map(sz => (
+                    <div key={sz.label} className="pricing-size-row">
+                      <span>{sz.label}</span>
+                      <span className="cyan">{sz.price}</span>
+                    </div>
+                  ))}
+                </div>
+                <a href="https://labshine-ops.vercel.app/book" className="btn-outline plan-cta">Start a Plan →</a>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Lead capture — get a quote */}
-      <section className="quote-section" id="quote">
+      {/* Add-Ons */}
+      <section className="addons-section">
         <div className="container">
-          <div className="quote-wrap">
-            <div className="quote-text">
-              <span className="section-label">Free Quote</span>
-              <h2>Get a Custom <span className="cyan">Quote</span></h2>
-              <p>Not sure which service fits? Tell us about your vehicle and we'll send you an exact price within minutes.</p>
-              <ul className="quote-promise">
-                <li>✓ Response within minutes</li>
-                <li>✓ No obligation</li>
-                <li>✓ Exact price — no surprises</li>
+          <div className="section-header">
+            <span className="section-label">Customize Your Service</span>
+            <h2>Add-Ons & <span className="cyan">Upgrades</span></h2>
+          </div>
+          <div className="addons-wrap">
+            <div className="addons-col">
+              <h4 className="addons-col-title">Standard Add-Ons</h4>
+              <ul className="addons-list">
+                {addonsStandard.map(a => (
+                  <li key={a.name} className="addon-item">
+                    <div>
+                      <span className="addon-name">{a.name}</span>
+                      <span className="addon-sub">{a.sub}</span>
+                    </div>
+                    <span className="addon-price cyan">{a.price}</span>
+                  </li>
+                ))}
               </ul>
             </div>
-            <form className="quote-form" onSubmit={handleQuote}>
-              <div className="form-row">
-                <input
-                  type="text"
-                  placeholder="Your Name *"
-                  value={form.name}
-                  onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                  required
-                />
-                <input
-                  type="tel"
-                  placeholder="Phone Number *"
-                  value={form.phone}
-                  onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
-                  required
-                />
-              </div>
-              <input
-                type="email"
-                placeholder="Email (optional)"
-                value={form.email}
-                onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-              />
-              <input
-                type="text"
-                placeholder="Vehicle (Year, Make, Model) *"
-                value={form.vehicle}
-                onChange={e => setForm(f => ({ ...f, vehicle: e.target.value }))}
-                required
-              />
-              <div className="form-row">
-                <select
-                  value={form.service}
-                  onChange={e => setForm(f => ({ ...f, service: e.target.value }))}
-                  required
-                >
-                  <option value="">Service Interested In *</option>
-                  <option>Full Detail</option>
-                  <option>Interior Only</option>
-                  <option>Exterior Only</option>
-                  <option>Ceramic Coating</option>
-                  <option>Paint Correction</option>
-                  <option>Not Sure — Need Advice</option>
-                </select>
-                <input
-                  type="text"
-                  placeholder="Your ZIP Code"
-                  value={form.zip}
-                  onChange={e => setForm(f => ({ ...f, zip: e.target.value }))}
-                />
-              </div>
-              {status === 'sent' ? (
-                <div className="form-success">✅ Got it! We'll send your quote within minutes.</div>
-              ) : (
-                <button type="submit" className="btn-primary" disabled={status === 'sending'}>
-                  {status === 'sending' ? 'Sending...' : 'Get My Free Quote →'}
-                </button>
-              )}
-              {status === 'error' && (
-                <p className="form-error">Something went wrong. Call us at (346) 452-9991.</p>
-              )}
-            </form>
-          </div>
-        </div>
-      </section>
-
-      <section className="cta-section">
-        <div className="container">
-          <div className="cta-content">
-            <h2>Ready to Book?</h2>
-            <p>20% deposit locks in your slot via Square. We confirm within the hour.</p>
-            <div className="cta-btns">
-              <a href="#quote" className="btn-primary">Get a Free Quote →</a>
-              <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
+            <div className="addons-col">
+              <h4 className="addons-col-title">Premium Add-Ons</h4>
+              <ul className="addons-list">
+                {addonsPremium.map(a => (
+                  <li key={a.name} className="addon-item">
+                    <div>
+                      <span className="addon-name">{a.name}</span>
+                      <span className="addon-sub">{a.sub}</span>
+                    </div>
+                    <span className="addon-price cyan">{a.price}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Booking Widget */}
+      <section className="quote-section" id="quote" style={{ padding: '60px 0 0' }}>
+        <div className="container">
+          <div className="section-header" style={{ textAlign: 'center', marginBottom: 32 }}>
+            <span className="section-label">Free Quote</span>
+            <h2>Get a Custom <span className="cyan">Quote</span></h2>
+            <p>Fill out the form below — quotes, bookings, and service details all in one place.</p>
+          </div>
+        </div>
+        <BookingWidget />
+      </section>
+
     </main>
     </>
   )

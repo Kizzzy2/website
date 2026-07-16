@@ -1,0 +1,212 @@
+functionsDirectory = "/Users/adriancespedes/Downloads/labshine_netlify_drop_v3/netlify/functions"
+functionsDirectoryOrigin = "config"
+redirectsOrigin = "config"
+plugins = []
+
+[build]
+edge_functions = "/Users/adriancespedes/Downloads/labshine_netlify_drop_v3/netlify/edge-functions"
+publish = "/Users/adriancespedes/Downloads/labshine_netlify_drop_v3/dist"
+publishOrigin = "config"
+commandOrigin = "config"
+command = "npx vite build"
+functions = "/Users/adriancespedes/Downloads/labshine_netlify_drop_v3/netlify/functions"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[[edge_functions]]
+function = "prerender"
+path = "/*"
+
+[functions]
+
+[functions.commander]
+schedule = "*/5 * * * *"
+
+[functions."*"]
+
+[[headers]]
+for = "/images/*"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/assets/*"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*.html"
+
+[headers.values]
+Cache-Control = "no-cache, public, max-age=31536000"
+https = "//fonts.googleapis.com/*"
+
+[[redirects]]
+from = "/services"
+to = "/pricing"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/blog/posts/ceramic-coating-houston-heat"
+to = "/blog/ceramic-coating-houston-heat"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/blog/posts/how-to-maintain-ceramic-coating"
+to = "/blog/how-to-maintain-ceramic-coating"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/blog/posts/interior-detailing-houston-guide"
+to = "/blog/interior-detailing-houston-guide"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/blog/posts/paint-correction-vs-ceramic-coating"
+to = "/blog/paint-correction-vs-ceramic-coating"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/blog/posts/best-time-to-detail-houston"
+to = "/blog/best-time-to-detail-houston"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/blog/posts/mobile-detailing-vs-detail-shop"
+to = "/blog/mobile-detailing-vs-detail-shop"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/blog/posts/ceramic-coating-vs-wax-houston"
+to = "/blog/ceramic-coating-vs-wax-houston"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/api/crm-data"
+to = "/.netlify/functions/crm-data"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/api/lead"
+to = "/.netlify/functions/lead"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/api/closer"
+to = "/.netlify/functions/closer"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/api/commander"
+to = "/.netlify/functions/commander"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]

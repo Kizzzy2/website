@@ -1,6 +1,6 @@
 .footer {
   background: #050505;
-  border-top: 1px solid rgba(0,200,240,0.15);
+  border-top: 1px solid rgba(37,99,235,0.15);
 }
 
 .footer-inner {
@@ -19,7 +19,7 @@
 }
 
 .footer-tagline {
-  color: rgba(0,200,240,0.5);
+  color: rgba(37,99,235,0.5);
   font-size: 0.8rem;
   font-style: italic;
   letter-spacing: 0.1em;
@@ -42,7 +42,7 @@
 .footer-contact a:hover { color: var(--cyan); }
 
 .footer-col h4 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.78rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;

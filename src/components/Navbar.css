@@ -9,9 +9,11 @@
 }
 
 .navbar.scrolled {
-  background: rgba(10,10,10,0.97);
-  box-shadow: 0 1px 0 rgba(0,200,240,0.15);
-  backdrop-filter: blur(12px);
+  background: rgba(7,7,15,0.75);
+  box-shadow: 0 1px 0 rgba(37,99,235,0.2), 0 8px 32px rgba(0,0,0,0.4);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .nav-inner {
@@ -45,7 +47,7 @@
 
 .nav-link {
   color: rgba(255,255,255,0.75);
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.78rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;

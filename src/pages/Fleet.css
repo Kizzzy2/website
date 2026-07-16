@@ -1,9 +1,9 @@
 .fleet-page { min-height: 100vh; background: var(--dark); }
-.fleet-benefits-banner { background: rgba(0,200,240,0.06); border-bottom: 1px solid rgba(0,200,240,0.2); }
+.fleet-benefits-banner { background: rgba(37,99,235,0.06); border-bottom: 1px solid rgba(37,99,235,0.2); }
 .fleet-benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
 .fleet-benefit-item { text-align: center; padding: 28px; border-right: 1px solid rgba(255,255,255,0.06); }
 .fleet-benefit-item:last-child { border-right: none; }
-.fleet-benefit-val { display: block; font-family: 'Oswald', sans-serif; font-size: 1.6rem; color: var(--cyan); margin-bottom: 4px; }
+.fleet-benefit-val { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; color: var(--cyan); margin-bottom: 4px; }
 .fleet-benefit-label { color: rgba(255,255,255,0.6); font-size: 0.84rem; }
 .fleet-types-section { background: var(--dark-2); }
 .fleet-types-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }

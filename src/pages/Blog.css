@@ -6,7 +6,7 @@
   padding: 160px 0 80px;
   background: linear-gradient(180deg, #001a2e 0%, var(--dark) 100%);
   text-align: center;
-  border-bottom: 1px solid rgba(0,200,240,0.15);
+  border-bottom: 1px solid rgba(37,99,235,0.15);
 }
 
 .blog-hero h1 {
@@ -36,7 +36,7 @@
 .spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid rgba(0,200,240,0.2);
+  border: 3px solid rgba(37,99,235,0.2);
   border-top-color: var(--cyan);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
@@ -48,16 +48,16 @@
 .featured-post {
   display: block;
   background: var(--dark-2);
-  border: 1px solid rgba(0,200,240,0.25);
+  border: 1px solid rgba(37,99,235,0.25);
   padding: 48px;
   margin-bottom: 48px;
   transition: border-color 0.3s;
   text-decoration: none;
 }
 .featured-post:hover { border-color: var(--cyan); }
-.featured-badge { display: inline-block; background: var(--cyan); color: #000; font-family: 'Oswald', sans-serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 12px; margin-bottom: 16px; }
+.featured-badge { display: inline-block; background: var(--cyan); color: #000; font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 12px; margin-bottom: 16px; }
 .featured-emoji { font-size: 2.5rem; margin-bottom: 12px; }
-.featured-cat { font-family: 'Oswald', sans-serif; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px; }
+.featured-cat { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px; }
 .featured-post h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); color: var(--white); margin-bottom: 16px; }
 .featured-post p { color: var(--gray); line-height: 1.75; max-width: 640px; margin-bottom: 24px; }
 .featured-meta { display: flex; gap: 24px; align-items: center; }
@@ -108,9 +108,9 @@
 
 .post-category {
   display: inline-block;
-  background: rgba(0,200,240,0.1);
+  background: rgba(37,99,235,0.1);
   color: var(--cyan);
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -154,7 +154,7 @@
 
 .read-more {
   color: var(--cyan);
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.05em;
   transition: letter-spacing 0.2s;

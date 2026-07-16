@@ -8,7 +8,12 @@ const schema = {
   "description": "Mobile auto detailing in Katy TX. Full detail, ceramic coating, and paint correction delivered to your driveway. Serving all of Katy including Cinco Ranch, Grand Lakes, and Mason Creek.",
   "url": "https://labshineautodetailing.com/katy-mobile-detailing",
   "telephone": "+13464529991",
-  "areaServed": "Katy, TX"
+  "priceRange": "$$",
+  "areaServed": "Katy, TX",
+  "address": { "@type": "PostalAddress", "addressLocality": "Katy", "addressRegion": "TX", "addressCountry": "US" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 29.7858, "longitude": -95.8244 },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "127", "bestRating": "5", "worstRating": "1" },
+  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "07:00", "closes": "19:00" }]
 }
 
 export default function KatyMobileDetailing() {
@@ -16,7 +21,10 @@ export default function KatyMobileDetailing() {
     <>
     <Helmet>
       <title>Mobile Auto Detailing Katy TX | Ceramic Coating | LabShine</title>
-      <meta name="description" content="Professional mobile auto detailing in Katy TX. Full detail from $250, ceramic coating from $800, interior detail from $175. LabShine comes to your Katy driveway — serving Cinco Ranch, Grand Lakes & all of Katy." />
+      <meta name="description" content="Mobile auto detailing in Katy TX. Full detail from $185, ceramic from $599. Serving Cinco Ranch, Grand Lakes & all of Katy — we come to you." />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Mobile Auto Detailing Katy TX | LabShine" />
+      <meta name="twitter:description" content="Mobile auto detailing in Katy TX. Full detail from $185, ceramic from $599. Serving Cinco Ranch, Grand Lakes & all of Katy — we come to you." />
       <link rel="canonical" href="https://labshineautodetailing.com/katy-mobile-detailing" />
       <meta property="og:title" content="Mobile Auto Detailing Katy TX | LabShine" />
       <meta property="og:description" content="Mobile detailing in Katy TX — full detail, ceramic coating, paint correction. Serving Cinco Ranch, Grand Lakes, and all of Katy. Book today." />
@@ -27,13 +35,14 @@ export default function KatyMobileDetailing() {
     </Helmet>
     <main className="location-page">
       <section className="location-hero">
+        <img src="/images/katy/IMG_5337.JPG" alt="Mobile auto detailing in Katy TX — LabShine" className="location-hero-img" loading="eager" />
         <div className="page-hero-overlay" />
         <div className="container">
           <span className="hero-badge">Serving Katy, TX</span>
           <h1>Mobile Auto Detailing in <span className="cyan">Katy TX</span></h1>
           <p>Full detail, ceramic coating, and paint correction delivered to your Katy driveway. Serving Cinco Ranch, Grand Lakes, Mason Creek, and all of Katy.</p>
           <div className="hero-btns">
-            <a href="/pricing#book" className="btn-primary">Book in Katy</a>
+            <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book in Katy</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -53,9 +62,9 @@ export default function KatyMobileDetailing() {
 
           <div className="services-grid location-services">
             {[
-              { icon: '🚗', title: 'Full Detail Reset', price: 'From $250', desc: 'Complete interior and exterior detailing done in your Katy driveway or garage. Clay bar, hand polish, paint sealant, and engine bay cleaning.' },
+              { icon: '🚗', title: 'Full Detail Reset', price: 'From $185', desc: 'Complete interior and exterior detailing done in your Katy driveway or garage. Clay bar, hand polish, paint sealant, and engine bay cleaning.' },
               { icon: '✨', title: 'Interior Detail', price: 'From $200', desc: 'Steam cleaning, carpet shampoo, leather conditioning, and odor elimination. Essential for Katy families with kids, pets, and daily commutes on I-10.' },
-              { icon: '🛡️', title: 'Ceramic Coating', price: 'From $800', desc: '9H ceramic coating with 2–5 years of protection. Handles Katy\'s summer heat, UV exposure, and hard water like nothing else on the market.' },
+              { icon: '🛡️', title: 'Ceramic Coating', price: 'From $599', desc: '9H ceramic coating with 2–5 years of protection. Handles Katy\'s summer heat, UV exposure, and hard water like nothing else on the market.' },
               { icon: '🔧', title: 'Paint Correction', price: 'From $350', desc: 'Remove swirl marks, scratches, and water spot etching. Restores the factory paint depth on any vehicle — luxury, exotic, or daily driver.' },
             ].map((s, i) => (
               <div key={i} className="service-card">
@@ -97,7 +106,7 @@ export default function KatyMobileDetailing() {
             <h2>Book Mobile Detailing in <span className="cyan">Katy TX Today</span></h2>
             <p>Serving all of Katy including Cinco Ranch, Grand Lakes, Mason Creek, Nottingham Country, Firethorne, Cross Creek Ranch, and I-10 corridor businesses. Book in 2 minutes online.</p>
             <div className="hero-btns">
-              <a href="/pricing#book" className="btn-primary">Book Online</a>
+              <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>

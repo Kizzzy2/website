@@ -33,21 +33,36 @@ export default function Areas() {
   return (
     <>
     <Helmet>
-      <title>Mobile Detailing Service Areas | 24+ Houston Cities | LabShine</title>
-      <meta name="description" content="LabShine mobile auto detailing serves 24+ cities across Greater Houston including Cypress, Katy, Sugar Land, The Woodlands, Pearland, Spring, League City, and more." />
+      <title>Houston Mobile Detailing Service Areas | LabShine</title>
+      <meta name="description" content="LabShine serves 24+ Houston neighborhoods: River Oaks, Memorial, The Woodlands, Katy, Sugar Land, Bellaire, Cypress, Pearland, Spring & more. Mobile to your driveway." />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Houston Mobile Detailing Service Areas | LabShine" />
+      <meta name="twitter:description" content="LabShine serves 24+ Houston neighborhoods: River Oaks, Memorial, The Woodlands, Katy, Sugar Land, Bellaire, Cypress, Pearland, Spring & more. Mobile to your driveway." />
       <link rel="canonical" href="https://labshineautodetailing.com/areas" />
-      <meta property="og:title" content="Service Areas | 24+ Houston Cities | LabShine" />
-      <meta property="og:description" content="Mobile detailing across Greater Houston — Cypress, Katy, Sugar Land, The Woodlands, Pearland, Spring, and 18 more cities." />
+      <meta property="og:title" content="Houston Mobile Detailing Service Areas | LabShine" />
+      <meta property="og:description" content="LabShine serves 24+ Houston neighborhoods: River Oaks, Memorial, Woodlands, Katy, Sugar Land, Bellaire, Cypress, Pearland, Spring & more. Mobile to your driveway." />
       <meta property="og:url" content="https://labshineautodetailing.com/areas" />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
+      <script type="application/ld+json">{JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "LabShine Auto Detailing",
+        "description": "Mobile auto detailing serving 24+ Houston TX cities. Full detail, ceramic coating, paint correction — we come to your home or office.",
+        "url": "https://labshineautodetailing.com/areas",
+        "telephone": "+13464529991",
+        "priceRange": "$$",
+        "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX", "addressCountry": "US" },
+        "areaServed": ["Houston TX","Cypress TX","Katy TX","Sugar Land TX","The Woodlands TX","Pearland TX","Spring TX","Friendswood TX","Missouri City TX","Richmond TX","Rosenberg TX","Stafford TX","League City TX","Pasadena TX","Baytown TX","Humble TX","Tomball TX","Conroe TX","Kingwood TX","Deer Park TX","La Porte TX","Webster TX","Clear Lake TX","Galveston TX"],
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127", "bestRating": "5" }
+      })}</script>
     </Helmet>
     <main className="areas-page">
       <section className="page-hero" style={{ backgroundImage: `url(${img.raptorWhite})` }}>
         <div className="page-hero-overlay" />
         <div className="container">
           <span className="hero-badge">We Come to You</span>
-          <h1>Service <span className="cyan">Areas</span></h1>
+          <h1>Houston Mobile Detailing <span className="cyan">Service Areas</span></h1>
           <p>Serving Houston and 24 surrounding cities. We bring the detail shop to your door — home, office, or anywhere in Greater Houston.</p>
         </div>
       </section>
@@ -64,7 +79,7 @@ export default function Areas() {
               <div key={area.name} className="area-card">
                 <h3>{area.name}</h3>
                 <p>{area.desc}</p>
-                <a href="/pricing" className="area-book-link">
+                <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="area-book-link">
                   Book in {area.name} →
                 </a>
               </div>
@@ -79,7 +94,7 @@ export default function Areas() {
             <h2>Don\'t See Your City?</h2>
             <p>Call us — we may still be able to accommodate your location. We travel across Greater Houston.</p>
             <div className="cta-btns">
-              <a href="/pricing" className="btn-primary">Book Online</a>
+              <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
             </div>
           </div>

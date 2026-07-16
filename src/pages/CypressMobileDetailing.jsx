@@ -8,7 +8,12 @@ const schema = {
   "description": "Mobile auto detailing in Cypress TX. Full detail, ceramic coating, and paint correction delivered to your home. Serving Bridgeland, Fairfield, Stone Gate, and all of Cypress.",
   "url": "https://labshineautodetailing.com/cypress-mobile-detailing",
   "telephone": "+13464529991",
-  "areaServed": "Cypress, TX"
+  "priceRange": "$$",
+  "areaServed": "Cypress, TX",
+  "address": { "@type": "PostalAddress", "addressLocality": "Cypress", "addressRegion": "TX", "addressCountry": "US" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 29.9691, "longitude": -95.6972 },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "127", "bestRating": "5", "worstRating": "1" },
+  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "07:00", "closes": "19:00" }]
 }
 
 export default function CypressMobileDetailing() {
@@ -16,7 +21,10 @@ export default function CypressMobileDetailing() {
     <>
     <Helmet>
       <title>Mobile Auto Detailing Cypress TX | Ceramic Coating | LabShine</title>
-      <meta name="description" content="Professional mobile auto detailing in Cypress TX. Full detail from $250, ceramic coating from $800. LabShine serves Bridgeland, Fairfield, Stone Gate, and all of Cypress — we come to you." />
+      <meta name="description" content="Mobile auto detailing in Cypress TX. Full detail from $185, ceramic from $599. Serving Bridgeland, Fairfield, Stone Gate & all of Cypress — we come to you." />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Mobile Auto Detailing Cypress TX | LabShine" />
+      <meta name="twitter:description" content="Mobile auto detailing in Cypress TX. Full detail from $185, ceramic from $599. Serving Bridgeland, Fairfield, Stone Gate & all of Cypress — we come to you." />
       <link rel="canonical" href="https://labshineautodetailing.com/cypress-mobile-detailing" />
       <meta property="og:title" content="Mobile Auto Detailing Cypress TX | LabShine" />
       <meta property="og:description" content="Mobile detailing in Cypress TX. Full detail, ceramic coating, paint correction. Serving Bridgeland, Fairfield, and all of Cypress. Book today." />
@@ -27,13 +35,14 @@ export default function CypressMobileDetailing() {
     </Helmet>
     <main className="location-page">
       <section className="location-hero">
+        <img src="/images/cypress/IMG_4290.JPG" alt="Mobile auto detailing in Cypress TX — LabShine" className="location-hero-img" loading="eager" />
         <div className="page-hero-overlay" />
         <div className="container">
           <span className="hero-badge">Serving Cypress, TX</span>
           <h1>Mobile Auto Detailing in <span className="cyan">Cypress TX</span></h1>
           <p>LabShine's home base. Full detail, ceramic coating, and paint correction brought directly to your Cypress property — no shop, no waiting.</p>
           <div className="hero-btns">
-            <a href="/pricing#book" className="btn-primary">Book in Cypress</a>
+            <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book in Cypress</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -53,9 +62,9 @@ export default function CypressMobileDetailing() {
 
           <div className="services-grid location-services">
             {[
-              { icon: '🚗', title: 'Full Detail Reset', price: 'From $250', desc: 'Complete interior + exterior detail done at your Cypress home or driveway. Clay bar decontamination, hand polish, paint sealant, and engine bay clean.' },
+              { icon: '🚗', title: 'Full Detail Reset', price: 'From $185', desc: 'Complete interior + exterior detail done at your Cypress home or driveway. Clay bar decontamination, hand polish, paint sealant, and engine bay clean.' },
               { icon: '✨', title: 'Interior Detail', price: 'From $200', desc: 'Deep interior clean with steam, carpet shampooing, leather conditioning, and odor treatment. Cypress families love this for school run and sports vehicles.' },
-              { icon: '🛡️', title: 'Ceramic Coating', price: 'From $800', desc: '9H ceramic coating built for Cypress\'s climate. Protects against UV fading, summer heat, hard water, and the daily grind of commuting on 290.' },
+              { icon: '🛡️', title: 'Ceramic Coating', price: 'From $599', desc: '9H ceramic coating built for Cypress\'s climate. Protects against UV fading, summer heat, hard water, and the daily grind of commuting on 290.' },
               { icon: '🔧', title: 'Paint Correction', price: 'From $350', desc: 'Multi-stage machine polishing to eliminate swirls, water spot etching, and light scratches. Restores a factory-new depth of gloss.' },
             ].map((s, i) => (
               <div key={i} className="service-card">
@@ -97,7 +106,7 @@ export default function CypressMobileDetailing() {
             <h2>Book Mobile Detailing in <span className="cyan">Cypress TX</span></h2>
             <p>Serving Bridgeland, Fairfield, Stone Gate, Copper Lakes, Longwood, Towne Lake, Cypress Creek Lakes, and all Cypress neighborhoods. Same-week appointments usually available.</p>
             <div className="hero-btns">
-              <a href="/pricing#book" className="btn-primary">Book Online</a>
+              <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>

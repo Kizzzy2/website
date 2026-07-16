@@ -17,7 +17,7 @@ export default function Footer() {
           <p className="footer-tagline">"Your Vehicle. Elevated."</p>
           <div className="footer-contact">
             <a href="tel:3464529991">📞 (346) 452-9991</a>
-            <a href="mailto:info@labshineauto.com">✉ info@labshineauto.com</a>
+            <a href="mailto:info@labshineautodetailing.com">✉ info@labshineautodetailing.com</a>
             <span>📍 Houston, TX (Mobile — We Come to You)</span>
           </div>
         </div>
@@ -28,9 +28,11 @@ export default function Footer() {
           <ul>
             <li><Link to="/pricing">Pricing</Link></li>
             <li><Link to="/ceramic-coating">Ceramic Coating</Link></li>
+            <li><Link to="/paint-correction">Paint Correction</Link></li>
+            <li><Link to="/interior-detailing">Interior Detailing</Link></li>
             <li><Link to="/fleet">Fleet Detailing</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
-            <li><Link to="/pricing">Book Appointment</Link></li>
+            <li><Link to="/faqs">FAQs</Link></li>
+            <li><a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer">Book Appointment</a></li>
           </ul>
         </div>
 

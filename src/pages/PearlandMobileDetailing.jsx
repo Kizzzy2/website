@@ -8,7 +8,12 @@ const schema = {
   "description": "Mobile auto detailing in Pearland TX. Full detail, ceramic coating, and paint correction delivered to your home. Serving Shadow Creek Ranch, Silverlake, Southwyck, and all of Pearland.",
   "url": "https://labshineautodetailing.com/pearland-mobile-detailing",
   "telephone": "+13464529991",
-  "areaServed": "Pearland, TX"
+  "priceRange": "$$",
+  "areaServed": "Pearland, TX",
+  "address": { "@type": "PostalAddress", "addressLocality": "Pearland", "addressRegion": "TX", "addressCountry": "US" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 29.5635, "longitude": -95.2860 },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "127", "bestRating": "5", "worstRating": "1" },
+  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "07:00", "closes": "19:00" }]
 }
 
 export default function PearlandMobileDetailing() {
@@ -16,7 +21,10 @@ export default function PearlandMobileDetailing() {
     <>
     <Helmet>
       <title>Mobile Auto Detailing Pearland TX | Ceramic Coating | LabShine</title>
-      <meta name="description" content="Professional mobile auto detailing in Pearland TX. Full detail from $250, ceramic coating from $800. Serving Shadow Creek Ranch, Silverlake, and all of Pearland — we come to your home." />
+      <meta name="description" content="Mobile auto detailing in Pearland TX. Full detail from $185, ceramic from $599. Serving Shadow Creek Ranch, Silverlake & all of Pearland — we come to you." />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Mobile Auto Detailing Pearland TX | LabShine" />
+      <meta name="twitter:description" content="Mobile auto detailing in Pearland TX. Full detail from $185, ceramic from $599. Serving Shadow Creek Ranch, Silverlake & all of Pearland — we come to you." />
       <link rel="canonical" href="https://labshineautodetailing.com/pearland-mobile-detailing" />
       <meta property="og:title" content="Mobile Auto Detailing Pearland TX | LabShine" />
       <meta property="og:description" content="Mobile detailing in Pearland TX. Full detail, ceramic coating, paint correction. Serving Shadow Creek Ranch, Silverlake, and all of Pearland." />
@@ -27,13 +35,14 @@ export default function PearlandMobileDetailing() {
     </Helmet>
     <main className="location-page">
       <section className="location-hero">
+        <img src="/images/pearland/IMG_4247.JPG" alt="Mobile auto detailing in Pearland TX — LabShine" className="location-hero-img" loading="eager" />
         <div className="page-hero-overlay" />
         <div className="container">
           <span className="hero-badge">Serving Pearland, TX</span>
           <h1>Mobile Auto Detailing in <span className="cyan">Pearland TX</span></h1>
           <p>Professional mobile detailing in Pearland and Brazoria County. Full detail, ceramic coating, and paint correction — we come to Shadow Creek Ranch, Silverlake, and beyond.</p>
           <div className="hero-btns">
-            <a href="/pricing#book" className="btn-primary">Book in Pearland</a>
+            <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book in Pearland</a>
             <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
           </div>
         </div>
@@ -53,9 +62,9 @@ export default function PearlandMobileDetailing() {
 
           <div className="services-grid location-services">
             {[
-              { icon: '🚗', title: 'Full Detail Reset', price: 'From $250', desc: 'Complete interior + exterior detailing done at your Pearland home. Clay bar decontamination, hand polish, paint sealant, and engine bay cleaning included.' },
+              { icon: '🚗', title: 'Full Detail Reset', price: 'From $185', desc: 'Complete interior + exterior detailing done at your Pearland home. Clay bar decontamination, hand polish, paint sealant, and engine bay cleaning included.' },
               { icon: '✨', title: 'Interior Detail', price: 'From $200', desc: 'Deep steam clean, carpet shampoo, leather conditioning, and odor treatment. Perfect for Pearland families, dog owners, and daily commuters on Hwy 288.' },
-              { icon: '🛡️', title: 'Ceramic Coating', price: 'From $800', desc: '9H ceramic coating ideal for Pearland\'s coastal humidity and UV conditions. 2–5 years of protection against salt air, hard water, and summer heat.' },
+              { icon: '🛡️', title: 'Ceramic Coating', price: 'From $599', desc: '9H ceramic coating ideal for Pearland\'s coastal humidity and UV conditions. 2–5 years of protection against salt air, hard water, and summer heat.' },
               { icon: '🔧', title: 'Paint Correction', price: 'From $350', desc: 'Remove oxidation, swirl marks, and paint defects. Especially important for Pearland vehicles that accumulate salt air and hard water deposits.' },
             ].map((s, i) => (
               <div key={i} className="service-card">
@@ -97,7 +106,7 @@ export default function PearlandMobileDetailing() {
             <h2>Book Mobile Detailing in <span className="cyan">Pearland TX</span></h2>
             <p>Serving Shadow Creek Ranch, Silverlake, Southwyck, Corrigan, Country Place, Pearland Town Center area, and all of Pearland and Brazoria County. Book in 2 minutes online.</p>
             <div className="hero-btns">
-              <a href="/pricing#book" className="btn-primary">Book Online</a>
+              <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call or Text</a>
             </div>
           </div>

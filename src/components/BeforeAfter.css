@@ -23,7 +23,7 @@
 .ba-label {
   position: absolute;
   top: 20px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -41,7 +41,7 @@
 
 .ba-label-after {
   right: 16px;
-  background: #00c8f0;
+  background: #2563EB;
 }
 
 .ba-divider {
@@ -53,7 +53,7 @@
   transform: translateX(-50%);
   pointer-events: none;
   z-index: 3;
-  box-shadow: 0 0 12px rgba(0,200,240,0.6);
+  box-shadow: 0 0 12px rgba(37,99,235,0.6);
 }
 
 .ba-handle {
@@ -63,12 +63,12 @@
   transform: translate(-50%, -50%);
   width: 48px;
   height: 48px;
-  background: #00c8f0;
+  background: #2563EB;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 4px rgba(0,200,240,0.25), 0 4px 16px rgba(0,0,0,0.5);
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.25), 0 4px 16px rgba(0,0,0,0.5);
   pointer-events: none;
 }
 
@@ -79,7 +79,7 @@
   transform: translateX(-50%);
   color: rgba(255,255,255,0.55);
   font-size: 0.72rem;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   pointer-events: none;

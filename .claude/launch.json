@@ -2,10 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "command-center",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "7823"],
-      "port": 7823
+      "name": "labshine-dev",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["vite", "--port", "5174"],
+      "port": 5174
     }
   ]
 }

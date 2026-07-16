@@ -1,0 +1,15 @@
+# Cache images aggressively at the edge
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache JS/CSS assets (hashed filenames)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML — no cache so updates deploy instantly
+/*.html
+  Cache-Control: no-cache
+
+# Fonts
+https://fonts.googleapis.com/*
+  Cache-Control: public, max-age=31536000

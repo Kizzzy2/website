@@ -14,12 +14,29 @@ export default function About() {
     <>
     <Helmet>
       <title>About LabShine | Houston's Mobile Auto Detailing Experts</title>
-      <meta name="description" content="LabShine Auto Detailing — Houston's premier mobile detailing team. 500+ vehicles detailed, 5-star rated, serving Cypress, Katy, Sugar Land, The Woodlands, and 24+ Houston cities." />
+      <meta name="description" content="LabShine Auto Detailing — Houston's premier mobile team. 500+ vehicles detailed, 5-star rated. Serving Cypress, Katy & 24+ Houston cities." />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="About LabShine | Houston's Mobile Detailing Experts" />
+      <meta name="twitter:description" content="LabShine Auto Detailing — Houston's premier mobile team. 500+ vehicles detailed, 5-star rated. Serving Cypress, Katy & 24+ Houston cities." />
       <link rel="canonical" href="https://labshineautodetailing.com/about" />
       <meta property="og:title" content="About LabShine | Houston's Mobile Detailing Experts" />
       <meta property="og:description" content="500+ vehicles detailed. 5-star rated. Serving 24+ Houston cities with professional mobile auto detailing." />
       <meta property="og:url" content="https://labshineautodetailing.com/about" />
       <meta property="og:type" content="website" />
+      <script type="application/ld+json">{JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "LabShine Auto Detailing",
+        "url": "https://labshineautodetailing.com",
+        "logo": "https://labshineautodetailing.com/logo.png",
+        "description": "Houston's premier owner-operated mobile auto detailing service. 500+ vehicles detailed, 4.9 stars, serving 24+ cities.",
+        "telephone": "+13464529991",
+        "email": "labshinedetailingtx@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX", "addressCountry": "US" },
+        "founder": { "@type": "Person", "name": "Adrian Medina", "jobTitle": "Owner & Lead Detailer" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127", "bestRating": "5" },
+        "sameAs": ["https://www.instagram.com/labshinedetailing", "https://www.facebook.com/labshineautodetailinghtx"]
+      })}</script>
       <meta property="og:image" content="https://labshineautodetailing.com/og-image.webp" />
     </Helmet>
     <main className="about-page">
@@ -53,14 +70,14 @@ export default function About() {
             <div className="about-text">
               <span className="section-label">Who We Are</span>
               <h2>Built on Passion for Perfection</h2>
-              <p>LabShine Auto Detailing was founded in Houston, TX by Adrian Cespedes — a car enthusiast who turned his obsession with pristine paint into a professional mobile detailing business.</p>
+              <p>LabShine Auto Detailing was founded in Houston, TX by Adrian Medina — a car enthusiast who turned his obsession with pristine paint into a professional mobile detailing business.</p>
               <p>After years of detailing high-end vehicles, Adrian built a team that shares the same commitment to quality. Every vehicle we touch receives the same attention to detail, whether it's a daily driver or a six-figure supercar.</p>
               <p>We operate as a fully mobile service — no shop overhead, no waiting rooms, no dropping your car off. We come to your home, your office, or wherever is most convenient for you.</p>
-              <a href="/pricing#book" className="btn-primary">Book with Our Team</a>
+              <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book with Our Team</a>
             </div>
             <div className="about-images">
-              <div className="about-img-main" style={{ backgroundImage: `url(${img.adrianTeam})` }} />
-              <div className="about-img-secondary" style={{ backgroundImage: `url(${img.mobileUnit})` }} />
+              <div className="about-img-main" style={{ backgroundImage: 'url(/images/the-woodlands/IMG_5481.JPG)' }} />
+              <div className="about-img-secondary" style={{ backgroundImage: 'url(/images/memorial/IMG_5307.JPG)' }} />
             </div>
           </div>
         </div>
@@ -90,13 +107,59 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team photo */}
-      <section className="team-section">
-        <div className="team-img" style={{ backgroundImage: `url(${img.fireTruckCrew})` }}>
-          <div className="team-overlay" />
-          <div className="container team-text">
-            <h2>"Your Vehicle. Elevated."</h2>
-            <p>— The LabShine Team</p>
+      {/* Meet the Team */}
+      <section className="meet-team-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-label">The People Behind the Work</span>
+            <h2>Meet the <span className="cyan">Team</span></h2>
+            <p>Owner-operated. Every job is personal.</p>
+          </div>
+
+          <div className="team-owner-row">
+            <div className="team-owner-photo">
+              <img
+                src="/images/the-woodlands/IMG_5479.JPG"
+                alt="Adrian Medina — Owner and Operator, LabShine Auto Detailing, The Woodlands TX"
+                loading="lazy"
+              />
+            </div>
+            <div className="team-owner-bio">
+              <span className="team-role">Owner &amp; Operator</span>
+              <h3>Adrian Medina</h3>
+              <p>Adrian founded LabShine out of a genuine obsession with cars. What started as detailing friends' vehicles turned into Houston's most trusted mobile detailing service — built on showing up on time, doing the work right, and treating every car like it's his own.</p>
+              <p>He's on-site for every job or personally trains every technician he sends out. When you book LabShine, you're getting the owner's standards every single time.</p>
+              <div className="team-owner-stats">
+                <div><strong>500+</strong><span>Vehicles Detailed</span></div>
+                <div><strong>5+</strong><span>Years Experience</span></div>
+                <div><strong>4.9★</strong><span>Google Rating</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div className="team-crew-row">
+            <div className="team-crew-photo">
+              <img
+                src="/images/the-woodlands/IMG_5481.JPG"
+                alt="LabShine Auto Detailing team — Adrian Medina and technician with exotic car lineup, The Woodlands TX"
+                loading="lazy"
+              />
+              <div className="team-crew-caption">
+                <strong>The LabShine Team</strong>
+                <span>The Woodlands, TX</span>
+              </div>
+            </div>
+            <div className="team-crew-photo">
+              <img
+                src="/images/the-woodlands/IMG_5483.JPG"
+                alt="LabShine mobile detailing — owner Adrian Medina on the job with Ferrari 488 and branded van"
+                loading="lazy"
+              />
+              <div className="team-crew-caption">
+                <strong>Always On-Site</strong>
+                <span>Mobile across Greater Houston</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -107,7 +170,7 @@ export default function About() {
             <h2>Experience the LabShine Difference</h2>
             <p>Book your appointment and see why Houston trusts us with their vehicles.</p>
             <div className="cta-btns">
-              <a href="/pricing#book" className="btn-primary">Book Online</a>
+              <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="btn-primary">Book Online</a>
               <a href="tel:3464529991" className="btn-outline">Call (346) 452-9991</a>
             </div>
           </div>

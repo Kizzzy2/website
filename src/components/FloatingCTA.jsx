@@ -34,41 +34,39 @@ function getRecommendation(answers) {
     return {
       service: 'Ceramic Coating',
       desc: 'Based on your answers, ceramic coating will protect your paint for years and keep it looking fresh with minimal effort.',
-      price: 'From $800',
-      link: '/pricing',
+      price: 'From $599',
+      link: 'https://labshine-ops.vercel.app/book',
     }
   }
   if (priority === 'interior' || interior === 'dirty-interior') {
     return {
-      service: 'Interior Detail',
-      desc: 'Your interior needs some love — our steam clean + shampoo combo will make it smell and feel brand new.',
-      price: '$200 (all sizes)',
-      link: '/pricing',
+      service: 'Full Detail Reset',
+      desc: 'Your interior needs love — our Full Detail Reset steam cleans, shampoos, and conditions every surface inside and out.',
+      price: 'From $185',
+      link: 'https://labshine-ops.vercel.app/book',
     }
   }
   if (exterior === 'dirty-exterior' || interior === 'dirty-interior') {
     return {
-      service: 'Full Detail',
+      service: 'Full Detail Reset',
       desc: 'You need the full treatment — inside and out. Our most popular service will have your car looking showroom-ready.',
-      price: 'From $250',
-      link: '/pricing',
-      promo: true,
+      price: 'From $185',
+      link: 'https://labshine-ops.vercel.app/book',
     }
   }
   if (exterior === 'moderate-exterior' || exterior === 'dirty-exterior') {
     return {
-      service: 'Exterior Detail',
-      desc: 'Your exterior needs attention. Clay bar, hand polish, and paint sealant will restore that showroom shine.',
-      price: '$175 (all sizes)',
-      link: '/pricing',
+      service: 'Maintenance Wash & Wax',
+      desc: 'Your exterior needs a refresh. Foam cannon wash, iron removal, hand wax, and tire dressing will restore the shine.',
+      price: 'From $125',
+      link: 'https://labshine-ops.vercel.app/book',
     }
   }
   return {
-    service: 'Full Detail',
+    service: 'Full Detail Reset',
     desc: "Even if things look decent, a full detail will reveal what you've been missing. Most popular for good reason.",
-    price: 'From $250',
-    link: '/pricing',
-    promo: true,
+    price: 'From $185',
+    link: 'https://labshine-ops.vercel.app/book',
   }
 }
 
@@ -181,7 +179,6 @@ export default function FloatingCTA() {
                 <div className="quiz-result-service">{result.service}</div>
                 <p className="quiz-result-desc">{result.desc}</p>
                 <div className="quiz-result-price">{result.price}</div>
-                {result.promo && <div className="quiz-promo">🔥 $100 OFF — Promo active now</div>}
                 <div className="quiz-result-actions">
                   <a href={result.link} className="btn-primary">Book This →</a>
                   <button className="btn-outline quiz-restart" onClick={resetQuiz}>Retake Quiz</button>
