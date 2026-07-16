@@ -187,9 +187,9 @@
 /* Image-backed service cards */
 .service-img-card {
   position: relative;
-  height: 310px;
+  height: 370px;
   background-size: cover;
-  background-position: center;
+  background-position: center 30%;
   border-radius: var(--radius);
   overflow: hidden;
   cursor: pointer;
@@ -670,7 +670,7 @@
 
 @media (max-width: 600px) {
   .services-grid { grid-template-columns: 1fr; }
-  .service-img-card { height: 260px; }
+  .service-img-card { height: 300px; }
   .ceramic-list { grid-template-columns: 1fr; }
   .gallery-strip-grid { grid-template-columns: repeat(2, 1fr); height: 200px; }
   .hero-stats { flex-wrap: wrap; gap: 8px; }

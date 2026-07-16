@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import FloatingCTA from './components/FloatingCTA'
 import Cursor from './components/Cursor'
+import LeadCapture from './components/LeadCapture'
 
 // Lazy load every page — only loads what the user actually visits
 const Home = lazy(() => import('./pages/Home'))
@@ -113,6 +114,7 @@ export default function App() {
       </Suspense>
       <Footer />
       <FloatingCTA />
+      <LeadCapture />
     </>
   )
 }
