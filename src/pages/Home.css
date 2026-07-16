@@ -597,6 +597,141 @@
 
 
 /* ══════════════════════════════════════════
+   INSTAGRAM FEED
+══════════════════════════════════════════ */
+.ig-section {
+  background: var(--dark);
+  padding: 80px 0 72px;
+}
+
+.ig-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.ig-handle-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: opacity 0.2s;
+}
+
+.ig-handle-link:hover { opacity: 0.8; }
+
+.ig-icon {
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  fill: url(#ig-grad);
+  flex-shrink: 0;
+}
+
+/* Fallback: just make the svg purplish since SVG fill can't use CSS gradient */
+.ig-icon path {
+  fill: #c13584;
+}
+
+.ig-handle-link span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #c13584;
+}
+
+.ig-header p {
+  color: var(--gray);
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.ig-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-bottom: 28px;
+}
+
+.ig-cell {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: block;
+}
+
+.ig-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.ig-cell:hover img {
+  transform: scale(1.06);
+}
+
+.ig-cell-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(188, 24, 136, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ig-cell:hover .ig-cell-overlay {
+  opacity: 1;
+}
+
+.ig-follow-cta {
+  text-align: center;
+}
+
+.btn-ig {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 13px 32px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: opacity 0.25s, transform 0.25s;
+  box-shadow: 0 4px 20px rgba(131,58,180,0.4);
+}
+
+.btn-ig:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .ig-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+  }
+  .ig-handle-link span { font-size: 1.15rem; }
+}
+
+
+/* ══════════════════════════════════════════
    AREAS
 ══════════════════════════════════════════ */
 .areas-section {
