@@ -12,7 +12,7 @@ const schema = {
   "areaServed": "Sugar Land, TX",
   "address": { "@type": "PostalAddress", "addressLocality": "Sugar Land", "addressRegion": "TX", "addressCountry": "US" },
   "geo": { "@type": "GeoCoordinates", "latitude": 29.6197, "longitude": -95.6349 },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "127", "bestRating": "5", "worstRating": "1" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "72", "bestRating": "5", "worstRating": "1" },
   "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "07:00", "closes": "19:00" }]
 }
 
@@ -35,7 +35,7 @@ export default function SugarLandMobileDetailing() {
     </Helmet>
     <main className="location-page">
       <section className="location-hero">
-        <img src="/images/sugar-land/IMG_4403.JPG" alt="Mobile auto detailing in Sugar Land TX — LabShine" className="location-hero-img" loading="eager" />
+        <img src="/images/sugar-land/IMG_4403.JPG" alt="Mobile auto detailing in Sugar Land TX — LabShine" className="location-hero-img" loading="eager" width="1600" height="1200" />
         <div className="page-hero-overlay" />
         <div className="container">
           <span className="hero-badge">Serving Sugar Land, TX</span>

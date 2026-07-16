@@ -12,7 +12,7 @@ const schema = {
   "areaServed": "Cypress, TX",
   "address": { "@type": "PostalAddress", "addressLocality": "Cypress", "addressRegion": "TX", "addressCountry": "US" },
   "geo": { "@type": "GeoCoordinates", "latitude": 29.9691, "longitude": -95.6972 },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "127", "bestRating": "5", "worstRating": "1" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "72", "bestRating": "5", "worstRating": "1" },
   "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "07:00", "closes": "19:00" }]
 }
 
@@ -35,7 +35,7 @@ export default function CypressMobileDetailing() {
     </Helmet>
     <main className="location-page">
       <section className="location-hero">
-        <img src="/images/cypress/IMG_4290.JPG" alt="Mobile auto detailing in Cypress TX — LabShine" className="location-hero-img" loading="eager" />
+        <img src="/images/cypress/IMG_4290.JPG" alt="Mobile auto detailing in Cypress TX — LabShine" className="location-hero-img" loading="eager" width="1600" height="900" />
         <div className="page-hero-overlay" />
         <div className="container">
           <span className="hero-badge">Serving Cypress, TX</span>

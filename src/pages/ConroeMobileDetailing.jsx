@@ -12,7 +12,7 @@ const schema = {
   "areaServed": "Conroe, TX",
   "address": { "@type": "PostalAddress", "addressLocality": "Conroe", "addressRegion": "TX", "postalCode": "77301", "addressCountry": "US" },
   "geo": { "@type": "GeoCoordinates", "latitude": 30.3119, "longitude": -95.4561 },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "127", "bestRating": "5", "worstRating": "1" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "72", "bestRating": "5", "worstRating": "1" },
   "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "07:00", "closes": "19:00" }],
   "mainEntity": {
     "@type": "FAQPage",

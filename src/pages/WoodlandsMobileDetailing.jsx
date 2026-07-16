@@ -12,7 +12,7 @@ const schema = {
   "areaServed": "The Woodlands, TX",
   "address": { "@type": "PostalAddress", "addressLocality": "The Woodlands", "addressRegion": "TX", "addressCountry": "US" },
   "geo": { "@type": "GeoCoordinates", "latitude": 30.1658, "longitude": -95.4613 },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "127", "bestRating": "5", "worstRating": "1" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "72", "bestRating": "5", "worstRating": "1" },
   "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "07:00", "closes": "19:00" }]
 }
 
@@ -35,7 +35,7 @@ export default function WoodlandsMobileDetailing() {
     </Helmet>
     <main className="location-page">
       <section className="location-hero">
-        <img src="/images/the-woodlands/IMG_5416.JPG" alt="Mobile auto detailing in The Woodlands TX — LabShine" className="location-hero-img" loading="eager" />
+        <img src="/images/the-woodlands/IMG_5416.JPG" alt="Mobile auto detailing in The Woodlands TX — LabShine" className="location-hero-img" loading="eager" width="1600" height="900" />
         <div className="page-hero-overlay" />
         <div className="container">
           <span className="hero-badge">Serving The Woodlands, TX</span>
