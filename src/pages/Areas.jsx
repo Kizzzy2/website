@@ -1,32 +1,33 @@
+import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import './Areas.css'
 import img from '../lib/images'
 
 const areas = [
-  { name: 'Houston', desc: 'All Houston neighborhoods including Galleria, River Oaks, Midtown, Heights, Energy Corridor, and more.' },
-  { name: 'Cypress', desc: 'Mobile detailing throughout Cypress including Bridgeland, Stone Gate, and surrounding communities.' },
-  { name: 'Katy', desc: 'Full detailing services across Katy, including Cinco Ranch, Grand Lakes, and LaCenterra areas.' },
-  { name: 'Sugar Land', desc: 'Serving Sugar Land including First Colony, Riverstone, New Territory, and Telfair.' },
-  { name: 'The Woodlands', desc: 'Mobile detailing in The Woodlands, Spring Branch, and surrounding Woodlands communities.' },
-  { name: 'Pearland', desc: 'Detailing services in Pearland, Shadow Creek Ranch, and Silverlake communities.' },
-  { name: 'Spring', desc: 'Serving Spring, Klein, Tomball, and surrounding north Houston communities.' },
-  { name: 'Friendswood', desc: 'Mobile detailing in Friendswood and surrounding Clear Lake and Bay Area communities.' },
-  { name: 'Missouri City', desc: 'Serving Missouri City, Sienna Plantation, and surrounding Fort Bend County communities.' },
-  { name: 'Richmond', desc: 'Detailing in Richmond, Rosenberg, and surrounding Fort Bend County areas.' },
-  { name: 'Rosenberg', desc: 'Mobile detailing throughout Rosenberg and surrounding Richmond communities.' },
-  { name: 'Stafford', desc: 'Serving Stafford and surrounding southwest Houston and Sugar Land communities.' },
-  { name: 'League City', desc: 'Mobile detailing in League City, Kemah, and Clear Lake Shore communities.' },
-  { name: 'Pasadena', desc: 'Detailing services throughout Pasadena, South Houston, and Deer Park communities.' },
-  { name: 'Baytown', desc: 'Mobile detailing in Baytown, La Marque, and surrounding east Houston communities.' },
-  { name: 'Humble', desc: 'Serving Humble, Atascocita, and surrounding northeast Houston communities.' },
-  { name: 'Tomball', desc: 'Mobile detailing in Tomball, Magnolia, and surrounding northwest Houston communities.' },
-  { name: 'Conroe', desc: 'Detailing services in Conroe, Montgomery, and surrounding Lake Conroe communities.' },
-  { name: 'Kingwood', desc: 'Serving Kingwood, Summerwood, and surrounding Lake Houston area communities.' },
-  { name: 'Deer Park', desc: 'Mobile detailing in Deer Park, La Porte, and surrounding southeast Houston communities.' },
-  { name: 'La Porte', desc: 'Serving La Porte, Seabrook, and surrounding Galveston Bay communities.' },
-  { name: 'Webster', desc: 'Detailing in Webster, Nassau Bay, and surrounding Clear Lake communities.' },
-  { name: 'Clear Lake', desc: 'Mobile detailing throughout the Clear Lake City, Bay Area, and NASA communities.' },
-  { name: 'Galveston', desc: 'Detailing services on Galveston Island and surrounding Bolivar Peninsula communities.' },
+  { name: 'Houston', desc: 'All Houston neighborhoods including Galleria, River Oaks, Midtown, Heights, Energy Corridor, and more.', slug: null },
+  { name: 'Cypress', desc: 'Mobile detailing throughout Cypress including Bridgeland, Stone Gate, and surrounding communities.', slug: '/cypress-mobile-detailing' },
+  { name: 'Katy', desc: 'Full detailing services across Katy, including Cinco Ranch, Grand Lakes, and LaCenterra areas.', slug: '/katy-mobile-detailing' },
+  { name: 'Sugar Land', desc: 'Serving Sugar Land including First Colony, Riverstone, New Territory, and Telfair.', slug: '/sugar-land-mobile-detailing' },
+  { name: 'The Woodlands', desc: 'Mobile detailing in The Woodlands, Spring Branch, and surrounding Woodlands communities.', slug: '/woodlands-mobile-detailing' },
+  { name: 'Pearland', desc: 'Detailing services in Pearland, Shadow Creek Ranch, and Silverlake communities.', slug: '/pearland-mobile-detailing' },
+  { name: 'Spring', desc: 'Serving Spring, Klein, Tomball, and surrounding north Houston communities.', slug: '/spring-mobile-detailing' },
+  { name: 'Friendswood', desc: 'Mobile detailing in Friendswood and surrounding Clear Lake and Bay Area communities.', slug: '/friendswood-mobile-detailing' },
+  { name: 'Missouri City', desc: 'Serving Missouri City, Sienna Plantation, and surrounding Fort Bend County communities.', slug: '/missouri-city-mobile-detailing' },
+  { name: 'Richmond', desc: 'Detailing in Richmond, Rosenberg, and surrounding Fort Bend County areas.', slug: '/richmond-mobile-detailing' },
+  { name: 'Rosenberg', desc: 'Mobile detailing throughout Rosenberg and surrounding Richmond communities.', slug: null },
+  { name: 'Stafford', desc: 'Serving Stafford and surrounding southwest Houston and Sugar Land communities.', slug: null },
+  { name: 'League City', desc: 'Mobile detailing in League City, Kemah, and Clear Lake Shore communities.', slug: '/league-city-mobile-detailing' },
+  { name: 'Pasadena', desc: 'Detailing services throughout Pasadena, South Houston, and Deer Park communities.', slug: null },
+  { name: 'Baytown', desc: 'Mobile detailing in Baytown, La Marque, and surrounding east Houston communities.', slug: null },
+  { name: 'Humble', desc: 'Serving Humble, Atascocita, and surrounding northeast Houston communities.', slug: '/humble-mobile-detailing' },
+  { name: 'Tomball', desc: 'Mobile detailing in Tomball, Magnolia, and surrounding northwest Houston communities.', slug: '/tomball-mobile-detailing' },
+  { name: 'Conroe', desc: 'Detailing services in Conroe, Montgomery, and surrounding Lake Conroe communities.', slug: '/conroe-mobile-detailing' },
+  { name: 'Kingwood', desc: 'Serving Kingwood, Summerwood, and surrounding Lake Houston area communities.', slug: '/kingwood-mobile-detailing' },
+  { name: 'Deer Park', desc: 'Mobile detailing in Deer Park, La Porte, and surrounding southeast Houston communities.', slug: null },
+  { name: 'La Porte', desc: 'Serving La Porte, Seabrook, and surrounding Galveston Bay communities.', slug: null },
+  { name: 'Webster', desc: 'Detailing in Webster, Nassau Bay, and surrounding Clear Lake communities.', slug: null },
+  { name: 'Clear Lake', desc: 'Mobile detailing throughout the Clear Lake City, Bay Area, and NASA communities.', slug: '/clear-lake-mobile-detailing' },
+  { name: 'Galveston', desc: 'Detailing services on Galveston Island and surrounding Bolivar Peninsula communities.', slug: null },
 ]
 
 export default function Areas() {
@@ -79,9 +80,10 @@ export default function Areas() {
               <div key={area.name} className="area-card">
                 <h3>{area.name}</h3>
                 <p>{area.desc}</p>
-                <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="area-book-link">
-                  Book in {area.name} →
-                </a>
+                {area.slug
+                  ? <Link to={area.slug} className="area-book-link">See {area.name} Service →</Link>
+                  : <a href="https://labshine-ops.vercel.app/book" target="_blank" rel="noopener noreferrer" className="area-book-link">Book in {area.name} →</a>
+                }
               </div>
             ))}
           </div>

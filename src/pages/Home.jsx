@@ -73,12 +73,12 @@ const localBusinessSchema = {
 const heroBg = '/images/the-woodlands/IMG_5481.JPG'
 
 const services = [
-  { title: 'Full Detail', desc: 'Complete interior and exterior for a showroom finish. Our most popular package.', link: '/pricing', img: '/images/the-woodlands/IMG_5416.JPG', price: 'From $300', pos: 'center 35%' },
-  { title: 'Interior Detail', desc: 'Deep clean of every surface — seats, carpet, dash, panels, and trim.', link: '/interior-detailing', img: '/images/katy/IMG_5337.JPG', price: 'From $250', pos: 'center 20%' },
-  { title: 'Ceramic Coating', desc: '9H ceramic coating for years of paint protection and hydrophobic effect.', link: '/ceramic-coating', img: '/images/sugar-land/IMG_4403.JPG', price: 'From $599', pos: 'center 30%' },
-  { title: 'Paint Correction', desc: 'Remove swirl marks, scratches, and oxidation. Restore paint to new condition.', link: '/paint-correction', img: '/images/cypress/IMG_4133.JPG', price: 'From $350', pos: 'center 25%' },
-  { title: 'Exterior Detail', desc: 'Hand wash, clay bar, wax or sealant — exterior protection done right.', link: '/pricing', img: '/images/memorial/IMG_5217.JPG', price: 'From $150', pos: 'center 40%' },
-  { title: 'Fleet Services', desc: 'Recurring detailing programs for commercial fleets of any size in Houston.', link: '/fleet', img: '/images/houston/IMG_3345.JPG', price: 'Custom Quote', pos: 'center 35%' },
+  { title: 'Full Detail', desc: 'Complete interior and exterior for a showroom finish. Our most popular package.', link: '/pricing', img: '/images/the-woodlands/IMG_5416.JPG', price: 'From $300', pos: 'center 50%' },
+  { title: 'Interior Detail', desc: 'Deep clean of every surface — seats, carpet, dash, panels, and trim.', link: '/interior-detailing', img: '/images/katy/IMG_5337.JPG', price: 'From $250', pos: 'center 65%' },
+  { title: 'Ceramic Coating', desc: '9H ceramic coating for years of paint protection and hydrophobic effect.', link: '/ceramic-coating', img: '/images/sugar-land/IMG_4403.JPG', price: 'From $599', pos: 'center 50%' },
+  { title: 'Paint Correction', desc: 'Remove swirl marks, scratches, and oxidation. Restore paint to new condition.', link: '/paint-correction', img: '/images/cypress/IMG_4133.JPG', price: 'From $350', pos: 'center 68%' },
+  { title: 'Exterior Detail', desc: 'Hand wash, clay bar, wax or sealant — exterior protection done right.', link: '/pricing', img: '/images/katy/IMG_5346.JPG', price: 'From $150', pos: 'center 50%' },
+  { title: 'Fleet Services', desc: 'Recurring detailing programs for commercial fleets of any size in Houston.', link: '/fleet', img: '/images/sugar-land/IMG_4403.JPG', price: 'Custom Quote', pos: 'center 35%' },
 ]
 
 const areas = [

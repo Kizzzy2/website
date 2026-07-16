@@ -51,9 +51,14 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Top Areas</h4>
           <ul>
-            {['Houston','Cypress','Katy','Sugar Land','The Woodlands','Pearland','Spring','Friendswood'].map(city => (
-              <li key={city}><Link to="/areas">{city}</Link></li>
-            ))}
+            <li><Link to="/areas">Houston</Link></li>
+            <li><Link to="/cypress-mobile-detailing">Cypress</Link></li>
+            <li><Link to="/katy-mobile-detailing">Katy</Link></li>
+            <li><Link to="/sugar-land-mobile-detailing">Sugar Land</Link></li>
+            <li><Link to="/woodlands-mobile-detailing">The Woodlands</Link></li>
+            <li><Link to="/pearland-mobile-detailing">Pearland</Link></li>
+            <li><Link to="/spring-mobile-detailing">Spring</Link></li>
+            <li><Link to="/friendswood-mobile-detailing">Friendswood</Link></li>
           </ul>
         </div>
 

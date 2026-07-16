@@ -243,7 +243,7 @@ export default function Pricing() {
         "name": "LabShine Auto Detailing",
         "url": "https://labshineautodetailing.com/pricing",
         "telephone": "+13464529991",
-        "email": "info@labshineauto.com",
+        "email": "info@labshineautodetailing.com",
         "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX", "addressCountry": "US" },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",

@@ -255,7 +255,7 @@ const BLOG_POSTS = [
     category: 'Maintenance',
     date: 'July 14, 2026',
     emoji: '☀️',
-    featured: true,
+    featured: false,
     body: `
 <p>July is the hardest month of the year on a car in Houston. The UV index hits extreme levels almost daily, surface temps on dark paint and dashboards can exceed 160°F, and the combination of heat and humidity accelerates every form of deterioration — oxidation, fading, cracking, bacterial growth in interiors, and more.</p>
 
@@ -303,7 +303,7 @@ const BLOG_POSTS = [
     category: 'Maintenance',
     date: 'June 10, 2026',
     emoji: '📅',
-    featured: true,
+    featured: false,
     body: `
 <p>Houston is one of the hardest climates on a vehicle's paint and interior in the entire country. Between 100°F+ summers, year-round humidity, industrial fallout near the Ship Channel, tree sap in the Heights, and construction dust practically everywhere — your car takes a beating every single day.</p>
 
